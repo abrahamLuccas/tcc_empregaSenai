@@ -1,0 +1,463 @@
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #ffffff;
+    width: 100%;
+    height: 100%;
+    font-family: 'Montserrat', sans-serif;
+}
+/*             header             */
+.header{
+    display: grid;
+    grid-template-columns: 1fr;
+    border-bottom-color: #fb0000 !important;
+}
+.senai-img{
+    width: 17rem;
+}
+.emprega-senai{
+    height: 4.5rem;
+    color: #fb0000;
+    font-size: 2rem;
+}
+/*             fim-header             */
+
+
+/*             conteudo             */
+
+.conteudo{
+    background: #ffffff;
+    height: 45rem;
+    width: 50%;
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: 5fr 5fr;
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+    box-shadow: 0px 1px 24px 3px rgba(0,0,0,0.56);
+    -webkit-box-shadow: 0px 1px 24px 3px rgba(0,0,0,0.56);
+    -moz-box-shadow: 0px 1px 24px 3px rgba(0,0,0,0.56);
+    border-radius: 14px;
+}
+.form{
+    margin-top: 5rem;
+}
+.formulario{
+    margin-top: 5rem;
+    width: 80%;
+}
+.login{
+    color: #fb0000;
+    left: 70%;
+    position: relative;
+    font-size: large;
+}
+.linha{
+    background: #fb0000;
+    height: 85%;
+    width: 5px;
+}
+.esqueci-entrar{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    top: 1rem;
+    position: relative;
+    text-align: left;
+    font-size: large;
+}
+.cadastrar-frase{
+    margin-top: 3rem;
+}
+
+a:hover{
+    list-style: #fb0000;
+}
+.cadastrar, .entrar{
+    color: #fb0000;
+    text-align: left;
+    left: 100rem;
+}
+.cadastrar:hover, .entrar:hover{
+    color: #fb0000;
+}
+a:link{
+    text-decoration: none;
+}
+
+.esqueci{
+  right: 4rem;
+  position: relative;
+  top: 8rem;
+  font-size:large;
+
+}
+
+
+.esqueci-senha{
+    color: black;
+    text-align: left;
+}
+
+
+a{
+  text-align: center;
+}
+
+.esqueci-senha:hover{
+    color: #fb0000;
+}
+.fundo{
+    margin-left: -2.5rem;
+    height: 85%;
+    margin-top: 2.5rem;
+}
+img{
+    width: 120%;
+    height: 100%;
+}
+*{
+    margin: 0;
+    padding: 0;
+    outline: none;
+    box-sizing: border-box;
+  }
+
+  .wrapper2{
+    width: auto;
+    background: transparent;
+    position: relative;
+    top: 7rem;
+
+  }
+  .wrapper2 .input-data{
+    height: 40px;
+    width: 100%;
+    position: relative;
+  }
+  .wrapper2 .input-data input{
+    height: 100%;
+    width: 100%;
+    border: none;
+    font-size: 17px;
+    border-bottom: 3px solid #fb0000;
+    font-family: 'Poppins', sans-serif;
+  }
+  .wrapper2 .input-data label{
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    color: rgb(0, 0, 0);
+    pointer-events: none;
+    transition: all 0.3s ease;
+  }
+
+  .wrapper{
+    width: auto;
+    background: transparent;
+  }
+  .input-data{
+    margin-bottom: 3rem;
+  }
+  .wrapper .input-data{
+    height: 40px;
+    width: 100%;
+    position: relative;
+  }
+  .wrapper .input-data input{
+    height: 100%;
+    width: 100%;
+    border: none;
+    font-size: 17px;
+    border-bottom: 3px solid #fb0000;
+    font-family: 'Poppins', sans-serif;
+  }
+  .input-data input:focus ~ label,
+  .input-data input:valid ~ label{
+    transform: translateY(-20px);
+    font-size: 15px;
+    color: #fb0000;
+  }
+  .wrapper .input-data label{
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    color: rgb(0, 0, 0);
+    pointer-events: none;
+    transition: all 0.3s ease;
+  }
+  .input-data .underline{
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    bottom: 0;
+  }
+  .input-data .underline:before{
+    position: absolute;
+    content: "";
+    height: 100%;
+    width: 100%;
+    background: #fb0000;
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.3s ease;
+  }
+  .input-data input:focus ~ .underline:before,
+  .input-data input:valid ~ .underline:before{
+    transform: scaleX(1);
+  }
+
+  p{
+    text-align: center;
+    top: 1rem;
+    position: relative;
+    right: -10rem;
+  }
+
+  .pao a:link{
+    text-decoration: none;
+    color: black;
+  }
+
+  .pao{
+    height: 1px;
+    position: relative;
+    left: 60%;
+  }
+
+  .pao a:hover{
+    color: red;
+  }
+  .pao a:active{
+    color: black;
+  }
+
+  #lista a:hover {
+    background-color: #cacaca;
+    color: #fb0000;
+    position: relative;
+    
+}
+  #lista a:active{
+    background-color: #a8a8a8;
+    color: #fb0000;
+    
+}
+
+/*-------------MEDIA----------------------*/
+
+@media screen and (max-width: 770px) {
+  .conteudo{
+    background: #ffffff;
+    height: 80rem;
+    width: 50%;
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: 5fr 5fr;
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+    box-shadow: 0px 1px 24px 3px rgba(0,0,0,0.56);
+    -webkit-box-shadow: 0px 1px 24px 3px rgba(0,0,0,0.56);
+    -moz-box-shadow: 0px 1px 24px 3px rgba(0,0,0,0.56);
+    border-radius: 14px;
+}
+.form{
+    margin-top: 5rem;
+}
+.formulario{
+    margin-top: 5rem;
+    width: 80%;
+}
+.login{
+    color: #fb0000;
+    left: 2rem;
+    position: relative;
+    font-size: large;
+}
+.linha{
+    background: #fb0000;
+    height: 85%;
+    width: 5px;
+    right: 2rem;
+}
+.esqueci-entrar{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    top: 28rem;
+    position: relative;
+    text-align: left;
+    font-size: large;
+}
+.cadastrar-frase{
+    margin-top: 3rem;
+}
+
+a:hover{
+    list-style: #fb0000;
+}
+.cadastrar, .entrar{
+    color: #fb0000;
+    text-align: left;
+    left: 100rem;
+}
+.cadastrar:hover, .entrar:hover{
+    color: #fb0000;
+}
+a:link{
+    text-decoration: none;
+}
+
+.esqueci{
+  right: 8rem;
+  position: relative;
+  top: 40rem;
+  font-size:large;
+
+}
+
+
+.esqueci-senha{
+    color: black;
+    text-align: left;
+}
+
+
+a{
+  text-align: center;
+}
+
+.esqueci-senha:hover{
+    color: #fb0000;
+}
+.fundo{
+    margin-left: -2.5rem;
+    height: 85%;
+    margin-top: 2.5rem;
+}
+img{
+    width: 120%;
+    height: 100%;
+}
+*{
+    margin: 0;
+    padding: 0;
+    outline: none;
+    box-sizing: border-box;
+  }
+
+  .wrapper2 .input-data{
+    height: 40px;
+    width: 100%;
+    position: relative;
+    top: 18rem;
+    right: 8rem;
+  }
+  .wrapper2 .input-data input{
+    height: 100%;
+    width: 100%;
+    border: none;
+    font-size: 17px;
+    border-bottom: 3px solid #fb0000;
+    font-family: 'Poppins', sans-serif;
+  }
+  .wrapper2 .input-data label{
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    color: rgb(0, 0, 0);
+    pointer-events: none;
+    transition: all 0.3s ease;
+  }
+
+  .wrapper{
+    width: auto;
+    background: transparent;
+  }
+  .input-data{
+    margin-bottom: 3rem;
+  }
+  .wrapper .input-data{
+    height: 40px;
+    width: 100%;
+    position: relative;
+  }
+  .wrapper .input-data input{
+    height: 100%;
+    width: 100%;
+    border: none;
+    font-size: 17px;
+    border-bottom: 3px solid #fb0000;
+    font-family: 'Poppins', sans-serif;
+  }
+  .input-data input:focus ~ label,
+  .input-data input:valid ~ label{
+    transform: translateY(-20px);
+    font-size: 15px;
+    color: #fb0000;
+  }
+  .wrapper .input-data label{
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    color: rgb(0, 0, 0);
+    pointer-events: none;
+    transition: all 0.3s ease;
+  }
+  .input-data .underline{
+    position: absolute;
+    height: 3px;
+    width: 100%;
+    bottom: 0;
+  }
+  .input-data .underline:before{
+    position: absolute;
+    content: "";
+    height: 100%;
+    width: 150%;
+    background: #fb0000;
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.3s ease;
+  }
+  .input-data input:focus ~ .underline:before,
+  .input-data input:valid ~ .underline:before{
+    transform: scaleX(1);
+  }
+
+  p{
+    text-align: center;
+    top: 18rem;
+    position: relative;
+    right: -2rem;
+  }
+
+  .pao a:link{
+    text-decoration: none;
+    color: black;
+  }
+
+  .pao{
+    height: 1px;
+    position: relative;
+    left: 60%;
+  }
+
+  .pao a:hover{
+    color: red;
+  }
+  .pao a:active{
+    color: black;
+  }
+
+  #lista a:hover {
+    background-color: #cacaca;
+    color: #fb0000;
+    position: relative;
+    
+}
+  #lista a:active{
+    background-color: #a8a8a8;
+    color: #fb0000;
+    
+  }
+}

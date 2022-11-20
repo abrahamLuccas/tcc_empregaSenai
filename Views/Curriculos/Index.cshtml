@@ -1,0 +1,316 @@
+﻿@model IEnumerable<EmpregaSENAI.Models.Curriculo>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+
+
+
+
+ <section>
+        <div class="card">
+            <div class="card-header">
+                <div class="contato">
+                    <div class="nome">
+                        <h1>Abraham Luccas Cipriano dos Santos</h1>                    
+                    </div>
+                        <div class="idade">
+                            <h3>
+                                Idade: 20 anos 
+                            </h3>
+                        </div>
+                        <div class="telefone">
+                            <h3>
+                                Telefone: (16)991802986
+                            </h3>
+                        </div>
+                            <div class="linkedin">
+                                <h3>
+                                    Linkedin: Linkedin perfil nome
+                                </h3>             
+                            </div>
+                        <div class="email">
+                            <h3>
+                                Email: abrahamluccas13@gmail.com
+                            </h3>
+                        </div>
+                        <div class="estado-civil">
+                            <h3>
+                               Estado Civil: Solteiro
+                            </h3>
+                        </div>
+                        <div class="cidade-UF">
+                            <h3>
+                               Jardinópolis - SP
+                            </h3>
+                        </div>
+                        <div class="cep">
+                            <h3>
+                               CEP: 14680000
+                            </h3>
+                        </div>
+                </div>
+                <div class="resumo">
+                    <h3>Resumo</h3> <!-- Descrição -->
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                        Sapiente culpa voluptates ea officia sunt eaque suscipit porro, 
+                        obcaecati aspernatur quibusdam laboriosam ad modi, tenetur illum! 
+                        Repellendus esse beatae maxime incidunt.</p>
+                </div>
+            </div>
+                <div class="card-body">
+                    <div class="experiencias">
+                        <h2>Experiências</h2>
+                        <hr>
+                        
+                    </div>
+                    <div class="educacao">
+                        <h2>Educação</h2> <!--"LABEL"-->
+                        <hr>
+                        <div class="data-nome">
+                            <h3>Graduação em Ciências Econômicas</h3> <!-- Nome do Curso: Ciencia da Informação -->
+                            <h4>2010 - 2014</h3> <!--Data de início e término -->
+                            <h5>Pontíficia Universidade, Rio de Janeiro - RJ</h5> <!--Local de Graduação-->
+                        </div>                        
+                        <div class="data-nome">
+                            <h3>Graduação em Direito</h3> <!-- Nome do Curso: Ciencia da Informação -->
+                            <h4>2014 - 2019</h3> <!--Data de início e término -->
+                            <h5>Pontíficia Universidade, Rio de Janeiro - RJ</h5> <!--Local de Graduação-->
+                        </div>                        
+                        
+                    </div>
+                    <div class="competencias">
+                        <h2>Competências</h2>
+                        <hr>
+                    </div>
+                </div>
+                    <div class="card-footer">
+                    <div class="habilidades-interp">
+                        <h2>Habilidades Interpessoais</h2>
+                        <hr>
+                    </div>
+                    <div class="cursos-certif">
+                        <h2>Cursos e Certificados</h2>
+                        <hr>
+                    </div>
+                    </div>
+        </div>
+    </section>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&display=swap');
+        section{
+            margin: 0;
+            padding: 0;
+            justify-content: center;
+            display: flex;
+            font-family: 'Nanum Myeongjo', serif;
+        }
+        
+/* CARD */
+    .card{
+        display:flex;
+        flex-direction: column;
+        background-color:rgb(189, 207, 187);
+        width:500px;
+        height:max-content;
+
+    }
+
+/*CARD HEADER*/
+
+    .card-header{
+        background-color: rgb(194, 107, 245);
+    }
+
+    /*CONTATO*/
+    .nome{
+        position: relative;
+        text-align: center;
+    }
+
+    .idade{
+        position: relative;
+        flex-direction: row;
+        left: 10px
+    }
+
+    .estado-civil{
+        position: relative;
+        flex-direction: row;
+        left: 10px
+    }
+
+    .cidade-UF{
+        position: relative;
+        flex-direction: row;
+        left: 10px
+    }
+
+    .cep{
+        position: relative;
+        flex-direction: row;
+        left: 10px
+    }
+
+    .telefone{
+        position: relative;
+        flex-direction: row;
+        left: 10px;
+    }
+
+    .email{
+        position: relative;
+        flex-direction: row;
+        left: 10px;
+    }
+    
+    .linkedin{
+        position: relative;
+        flex-direction: row;
+        left: 10px;
+    }
+
+    .resumo{
+        left: 10px;
+        font-size: large;
+        position: relative;
+    }
+    
+     /*FIM CONTATO*/
+     
+/*FIM CARD HEADER*/
+
+/*CARD BODY*/
+    
+    .card-body{
+        background-color: pink;
+    }
+
+    /*EXPERIÊNCIAS*/
+    .experiencias{
+        position: relative;
+        margin-left: 5px;
+    }
+    /***/
+
+    /*EDUCAÇÃO*/
+    .educacao{
+        position: relative;
+        margin-left: 5px;
+    }
+    
+    .data-nome{
+        display: flex;
+        flex-direction:row;
+        justify-content: space-around;
+        margin-left: 20px;
+    }
+    /***/
+
+    /*COMPETENCIAS*/
+    .competencias{
+        position: relative;
+        margin-left: 5px;
+    }
+    /***/
+
+/*FIM CARD BODY*/
+
+
+    /*CARD FOOTER*/
+    .habilidades-interp{
+        position: relative;
+        margin-left: 10px;
+    }
+
+    .cursos-certif{
+        position: relative;
+        margin-left: 10px;
+    }
+
+    /*FIM CARD FOOTER*/
+
+/*FIM CARD*/
+
+    </style>
+
+@*
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Nome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Idade)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Telefone)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EstadoCivil)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Experiencia)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Formacao)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cidade)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CEP)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Idade)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Telefone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EstadoCivil)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Experiencia)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Formacao)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cidade)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CEP)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+*@

@@ -1,0 +1,141 @@
+﻿body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #ffffff;
+    width: 100%;
+    height: 100%;
+    font-family: 'Montserrat', sans-serif;
+}
+/*             header             */
+.header {
+    display: grid;
+    grid-template-columns: 1fr;
+    border-bottom-color: #fb0000 !important;
+    margin-top: 2.5rem;
+}
+
+.senai-img {
+    width: 13rem;
+}
+
+.emprega-senai {
+    height: 4.5rem;
+    color: #fb0000;
+    font-size: 1.5rem;
+}
+/*             fim-header             */
+
+/*             conteudo             */
+.conteudo {
+    margin-top: 3rem;
+    margin-bottom: 5rem;
+}
+
+p {
+    font-size: 1.8rem;
+    color: #fb0000;
+}
+
+h {
+    font-size: 1.2rem;
+    font-family: 'Poppins', sans-serif;
+}
+
+a, h3 {
+    color: #fb0000;
+}
+
+.email {
+    color: #fb0000;
+    text-decoration: underline;
+}
+
+.perguntas {
+    color: #fb0000;
+    font-weight: bold;
+}
+
+    .perguntas:hover {
+        color: rgb(202, 13, 13);
+        text-decoration: underline;
+    }
+
+.texto {
+    color: black;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.2rem;
+}
+
+.site {
+    text-decoration: none;
+}
+
+    .site:hover {
+        color: #fb0000;
+        text-decoration: underline;
+    }
+/*         fim do conteudo         */
+/*         footer                 */
+.border-top {
+    border-top-color: #fb0000 !important;
+}
+
+.projeto-suporte {
+    color: #fb0000;
+}
+
+.sobre a:link, .contato a:link {
+    text-decoration: none;
+}
+
+.sobre a:hover, .contato a:hover {
+    color: #fb0000;
+}
+
+.sobre, .contato {
+    width: 10.8rem;
+}
+
+    .sobre a, .contato a {
+        color: black;
+    }
+
+.projeto-suporte {
+    height: 3rem;
+}
+
+.footer1 {
+    height: 10rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.footer2 {
+    height: 8rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+}
+
+.entrar, .conjunto-suporte {
+    justify-self: end;
+}
+
+.conjunto-suporte {
+    margin-top: 1.5rem;
+}
+
+.senai-logo {
+    width: 10rem;
+}
+
+.endereco p, h {
+    color: black;
+    font-size: 18px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+li{
+    text-decoration: none;
+}

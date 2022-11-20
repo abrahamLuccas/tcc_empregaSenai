@@ -1,0 +1,214 @@
+﻿body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #ffffff;
+    width: 100%;
+    height: 100%;
+    font-family: 'Montserrat', sans-serif;
+}
+/*             header             */
+.header {
+    display: grid;
+    grid-template-columns: 1fr;
+    border-bottom: solid 5px red;
+    margin-top: 2.5rem;
+}
+
+.senai-img {
+    width: 13rem;
+}
+
+.emprega-senai {
+    height: 4.5rem;
+    color: #fb0000;
+    font-size: 1.5rem;
+}
+/*             fim-header             */
+
+
+/*             conteudo             */
+
+.conteudo {
+    background: #ffffff;
+    height: 35rem;
+    width: 70%;
+    display: grid;
+    grid-template-columns: 5fr 1fr 5fr;
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+    box-shadow: 0px 1px 24px 3px rgba(0,0,0,0.56);
+    -webkit-box-shadow: 0px 1px 24px 3px rgba(0,0,0,0.56);
+    -moz-box-shadow: 0px 1px 24px 3px rgba(0,0,0,0.56);
+    border-radius: 14px;
+    
+}
+
+.form {
+    margin-top: 5rem;
+}
+
+.formulario {
+    margin-top: 5rem;
+    width: 80%;
+}
+
+.linha {
+    background: #fb0000;
+    height: 85%;
+    width: 5px;
+}
+
+.esqueci-entrar {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 5rem;
+}
+
+.cadastrar-frase {
+    margin-top: 3rem;
+}
+
+a:hover {
+    list-style: #fb0000;
+}
+
+.cadastrar{
+    color: black;
+}
+.entrar {
+    color: black;
+}
+
+    .cadastrar:hover, .entrar:hover {
+        color: #fb0000;
+    }
+
+a:link {
+    text-decoration: none;
+}
+
+.esqueci-senha {
+    color: black;
+}
+
+    .esqueci-senha:hover {
+        color: #fb0000;
+    }
+
+.fundo {
+    margin-left: -2.5rem;
+    height: 85%;
+    margin-top: 2.5rem;
+}
+
+img {
+    width: 120%;
+    height: 100%;
+}
+
+
+.wrapper {
+    width: auto;
+    background: transparent;
+    color: black;
+}
+
+.input-data {
+    margin-bottom: 3rem;
+    color: black;
+}
+.input-box {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.1rem;
+}
+    /* caixinhas */
+    .input-box input {
+        margin: 0.6rem 0;
+        padding: 0.8rem 1.2rem;
+        border: none;
+        border-radius: 1px;
+        box-shadow: 1px 1px 6px #f5f4f4;
+        font-size: 0.8rem;
+        border-bottom: 2px solid red;
+    }
+
+        .input-box input:hover {
+            background-color: #ffffff;
+        }
+
+        .input-box input:focus-visible {
+            outline: 1px solid #ff0505;
+        }
+
+*/
+/* nomeações */
+.input-box label,
+.gender-title h6 {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #000000c0;
+}
+
+*/
+/* nomeações nas caixinhas */
+.input-box input::placeholder {
+    color: #000000be;
+}
+
+.wrapper .input-data {
+    height: 40px;
+    width: 100%;
+    position: relative;
+}
+
+    .wrapper .input-data input {
+        height: 100%;
+        width: 100%;
+        border: none;
+        font-size: 17px;
+        border-bottom: 3px solid #fb0000;
+        font-family: 'Poppins', sans-serif;
+    }
+
+.input-data input:focus ~ label,
+.input-data input:valid ~ label {
+    transform: translateY(-20px);
+    font-size: 15px;
+    color: #fb0000;
+}
+
+.wrapper .input-data label {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    color: rgb(0, 0, 0);
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+.input-data .underline {
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    bottom: 0;
+}
+
+    .input-data .underline:before {
+        position: absolute;
+        content: "";
+        height: 100%;
+        width: 100%;
+        background: #fb0000;
+        transform: scaleX(0);
+        transform-origin: center;
+        transition: transform 0.3s ease;
+    }
+
+.input-data input:focus ~ .underline:before,
+.input-data input:valid ~ .underline:before {
+    transform: scaleX(1);
+}
+
+/*             fim-conteudo             */

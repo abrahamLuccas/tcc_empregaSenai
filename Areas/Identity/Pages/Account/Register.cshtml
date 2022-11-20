@@ -1,0 +1,103 @@
+﻿@page
+@model RegisterModel
+
+@ViewData["Title"]
+
+
+
+
+<link href="~/css/cadastrar.css" rel="stylesheet" />
+
+<div class="parmera">
+    <div class="form">
+        <form id="registerForm" asp-route-returnUrl="@Model.ReturnUrl" method="post">
+            <hr />
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="form-group">
+                <select asp-for="Input.Tipo" class="form-control" id="opcao">
+                    <option selected></option>
+                    <option value="Empresa">Empresa</option>
+                    <option value="Aluno">Aluno</option>
+                </select>
+                <label asp-for="Input.Tipo"></label>
+                <span asp-validation-for="Input.Tipo" class="text-danger"></span>
+            </div>
+
+            <div class="input-group">
+                <div class="input-box">
+                    <input asp-for="Input.FirstName" class="form-control" autocomplete="firstname" aria-required="true" />
+                    <label asp-for="Input.FirstName"></label>
+                    <span asp-validation-for="Input.FirstName" class="text-danger"></span>
+                </div>
+                <div class="input-box">
+                    <input asp-for="Input.LastName" class="form-control" autocomplete="lastname" aria-required="true" />
+                    <label asp-for="Input.LastName"></label>
+                    <span asp-validation-for="Input.LastName" class="text-danger"></span>
+                </div>
+                <div class="input-box">
+                    <input asp-for="Input.Email" class="form-control" autocomplete="email" aria-required="true" />
+                    <label asp-for="Input.Email"></label>
+                    <span asp-validation-for="Input.Email" class="text-danger"></span>
+                </div>
+                <div class="input-box" id="form-empresa">
+                    <input class="form-control" autocomplete="email" />
+                    <label>Opcional Empresa</label>
+                </div>
+                <div class="input-box" id="form-aluno">
+                    <input class="form-control" autocomplete="email" />
+                    <label>Opcional Aluno</label>
+                </div>
+                <div class="input-box">
+                    <input asp-for="Input.Password" class="form-control" autocomplete="new-password" aria-required="true" />
+                    <label asp-for="Input.Password"></label>
+                    <span asp-validation-for="Input.Password" class="text-danger"></span>
+                </div>
+                <div class="input-box">
+                    <input asp-for="Input.ConfirmPassword" class="form-control" autocomplete="new-password" aria-required="true" />
+                    <label asp-for="Input.ConfirmPassword"></label>
+                    <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
+                </div>
+
+                <p>
+                    <li class="#">
+                        Eu concordo com os
+                        <a class="termos" asp-page="~/Areas/Identity/Pages/Account/termos.cshtml">
+                            termos e condições de uso do EmpregaSENAI
+                        </a></>
+                        <input type="checkbox">
+                </p>
+
+                <button id="registerSubmit" type="submit" class="w-100 btn btn-lg btn-danger">Cadastrar</button>
+            </div>
+        </form>
+        <button onclick=window.print()>
+    </div>
+</div>
+
+
+<script>
+     const condicionalEmpresa = document.getElementById("form-empresa"), condicionalAluno = document.getElementById("form-aluno");
+     const selectOptions = document.getElementById("opcao");
+     condicionalEmpresa.style.display = "none";
+     condicionalAluno.style.display = "none";
+
+     selectOptions.addEventListener("change", () => {
+
+           if(selectOptions.value === "Empresa"){
+               condicionalEmpresa.style.display = "block";
+               condicionalAluno.style.display = "none";
+
+           }else if(selectOptions.value === "Aluno"){
+               condicionalAluno.style.display = "block";
+               condicionalEmpresa.style.display = "none";
+           }
+
+
+    });
+</script>
+<script src="js/bootstrap.bundle.min.js"></script>
+
+@section Scripts {
+<partial name="_ValidationScriptsPartial" />
+}
