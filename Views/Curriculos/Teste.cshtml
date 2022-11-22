@@ -1,4 +1,4 @@
-﻿@model IEnumerable<EmpregaSENAI.Models.Curriculo>
+﻿@model EmpregaSENAI.Models.Curriculo
 
 @{
     ViewData["Title"] = "Index";
@@ -17,54 +17,22 @@
     <div class="card-curriculo">
         <div class="card-header">
             <div class="contato">
-                <div class="nome">
-                        <table class="table">
-                            <thead>
-                                <tr>
-                                    <th>
-                                        @Html.DisplayNameFor(model => model.Nome);
-                                    </th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                            @foreach (var item in Model) {
-                            <tr>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.Nome)
-                                </td>
-                            </tr>
-                            }
-                        </tbody>
-                    </table>
+                <label asp-for="Nome" class="control-label"></label>
+                <input asp-for="Nome" class="form-control" readonly/>
                     <h1>
                         
                     </h1>
                 </div>
                 <div class="idade">
-                    <table class="table">
-                        <thead>
-                            <tr>
-                                <th>
-                                    @Html.DisplayNameFor(model => model.Idade);
-                                </th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @foreach (var item in Model)
-                            {
-                                <tr>
-                                    <td>
-                                        @Html.DisplayFor(modelItem => item.Nome)
-                                    </td>
-                                </tr>
-                            }
-                        </tbody>
-                    </table>
+                    <label asp-for="Idade" class="control-label"></label>
+                    <input asp-for="Idade" class="form-control" readonly />
                     <h3>
                         
                     </h3>
+                    <label asp-for="Telefone" class="control-label"></label>
+                    <input asp-for="Telefone" class="form-control" readonly />
                     <h3>
-                        Telefone: (16)991802986
+                        
                     </h3>
                 </div>
                 <div class="linkedin">
