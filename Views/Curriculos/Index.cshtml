@@ -10,350 +10,331 @@
     <a asp-action="Create">Create New</a>
 </p>
 
-
-
-
 <section>
-    <div class="card-curriculo">
-        <div class="card-header">
-            <div class="contato">
-                <div class="nome">
-                        <table class="table">
-                            <thead>
-                                <tr>
-                                    <th>
-                                        @Html.DisplayNameFor(model => model.Nome);
-                                    </th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                            @foreach (var item in Model) {
+<div class="card">
+    <div class="card-header">
+        <div class="contato">
+            <div class="nome">
+                <table class="table">               
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
                             <tr>
                                 <td>
                                     @Html.DisplayFor(modelItem => item.Nome)
                                 </td>
                             </tr>
-                            }
-                        </tbody>
-                    </table>
-                    <h1>
-                        
-                    </h1>
-                </div>
-                <div class="idade">
-                    <table class="table">
-                        <thead>
+                        }
+                    </tbody>
+                </table>
+                <h1>
+                </h1>
+            </div>
+
+            <div class="idade">
+                <table class="table">
+                        <thead class="card-header">
                             <tr>
                                 <th>
-                                    @Html.DisplayNameFor(model => model.Idade);
+                                    @Html.DisplayNameFor(model => model.Idade)
                                 </th>
-                            </tr>
+                            <tr />
                         </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Idade)
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+                <div class="telefone">
+                    <table class="table">
+                            <thead class="card-header">
+                                <tr>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Telefone)
+                                    </th>
+                                <tr />
+                            </thead>
                         <tbody>
                             @foreach (var item in Model)
                             {
-                                <tr>
-                                    <td>
-                                        @Html.DisplayFor(modelItem => item.Nome)
-                                    </td>
-                                </tr>
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Telefone)
+                                </td>
+                            </tr>
                             }
                         </tbody>
                     </table>
-                    <h3>
-                        
-                    </h3>
-                    <h3>
-                        Telefone: (16)991802986
-                    </h3>
-                </div>
-                <div class="linkedin">
-                    <h3>
-                        Linkedin: Linkedin perfil nome
-                    </h3>
-                    <h3>
-                        Estado Civil: Solteiro
-                    </h3>
-                </div>
-                <div class="cep">
-                    <h3>
-                        Jardinópolis - SP
-                    </h3>
-                    <h3>
-                        CEP: 14680000
-                    </h3>
-                </div>
-                <div class="email">
-                    <h3>
-                        Email: abrahamluccas13@gmail.com
-                    </h3>
                 </div>
             </div>
-            <div class="resumo">
-                <h3>Resumo</h3> <!-- Descrição -->
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Sapiente culpa voluptates ea officia sunt eaque suscipit porro,
-                    obcaecati aspernatur quibusdam laboriosam ad modi, tenetur illum!
-                    Repellendus esse beatae maxime incidunt.
-                </p>
+
+            <div class="linkedin">
+                @*<h3>
+                    Linkedin: Linkedin perfil nome
+                </h3>*@
+                <table class="table">
+                        <thead class="card-header">
+                            <tr>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.EstadoCivil)
+                                </th>
+                            <tr />
+                        </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.EstadoCivil)
+                            </td>
+                        </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="cep">
+                <table class="table">
+                        <thead class="card-header">
+                            <tr>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Cidade)
+                                </th>
+                            <tr />
+                        </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Cidade)
+                            </td>
+                        </tr>
+                        }
+                    </tbody>
+                </table>
+                <table class="table">
+                        <thead class="card-header">
+                            <tr>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.CEP)
+                                </th>
+                            <tr />
+                        </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.CEP)
+                            </td>                
+                        </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="email">
+                <table class="table">
+                        <thead class="card-header">
+                            <tr>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Email)
+                                </th>
+                            <tr />
+                        </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Email)
+                            </td>
+                        </tr>
+
+                        }
+                    </tbody>
+                </table>
+            </div>
+
+        </div> <!--Contatos-->
+
+        <div class="resumo">
+            @*<h3>Resumo</h3>*@ <!-- Descrição -->
+            <p>
+                
+            </p>
+        </div>
+    </div>
+
+    <div class="card-body">
+        <div class="experiencias">
+            @*<h2>Experiências</h2>*@
+            <hr>
+            <div class="exp-card">
+                <div class="exp-card-body">
+                        <table class="table">
+                            <thead class="card-header">
+                                <tr>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Experiencia)
+                                    </th>
+                                <tr />
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Experiencia)
+                                        </td>
+                                    </tr>
+
+                                }
+                            </tbody>
+                        </table>                                  
+                </div>
             </div>
         </div>
-        <div class="card-body">
-            <div class="experiencias">
-                <h2>Experiências</h2>
-                <hr>
-                <div class="exp-card">
-                    <div class="exp-card-body">
-                        <div class="exp-card-title">
-                            <h3>2016 - Atualmente</h3>
-                            <h3>Coordenador de Contabilidade</h3>
-                        </div>
-                        <h4>Empresa Contábil, Rio de Janeiro, RJ</h4>
-                        <p>
-                            Revisei mensalmente levantamentos contábeis de ao menos 10 empregados;<br>
-                            Aumentei em 50% a satisfação interna da minha equipe.
-                        </p>
-                    </div>
-                </div>
-                <div class="exp-card">
-                    <div class="exp-card-body">
-                        <div class="exp-card-title">
-                            <h3>2010 - 2016</h3>
-                            <h3>Analista de Contabilidade</h3>
-                        </div>
-                        <h4>Empresa Contábil, Rio de Janeiro, RJ</h4>
-                        <p>
-                            Avaliei mensalmente demonstrações financeiras;<br>
-                            Auxiliei o controle das contas da organização.
-                        </p>
-                    </div>
-                </div>
+        <div class="educacao">
+            @*<h2>Educação</h2>*@ <!--"LABEL" Formação -->
+            <hr>
+            <div class="data-nome">
+                 <!-- Nome do Curso: Ciencia da Informação -->
+                 <!--Data de início e término -->
+                 <!--Local de Graduação-->
             </div>
-            <div class="educacao">
-                <h2>Educação</h2> <!--"LABEL"-->
-                <hr>
-                <div class="data-nome">
-                    <h3>Graduação em Ciência da Computação</h3> <!-- Nome do Curso: Ciencia da Informação -->
-                    <h3>2010 - 2014</h3> <!--Data de início e término -->
-                    <h4>Pontíficia Universidade, Rio de Janeiro - RJ</h4> <!--Local de Graduação-->
-                </div>
-                <div class="data-nome">
-                    <h3>Graduação em Direito</h3> <!-- Nome do Curso: Ciencia da Informação -->
-                    <h3>2014 - 2019</h3> <!--Data de início e término -->
-                    <h4>Pontíficia Universidade, Rio de Janeiro - RJ</h4> <!--Local de Graduação-->
-                </div>
-            </div>
-        </div>
-        <div class="card-footer">
-            <div class="habilidades-interp">
-                <h2>Habilidades Interpessoais</h2>
-                <hr>
-                <h3>Objetividade</h3>
-                <h3>Raciocínio Rápido</h3>
-                <h3>Gestão de Pessoas</h3>
-            </div>
-            <div class="cursos-certif">
-                <h2>Cursos e Certificados</h2>
-                <hr>
-                <h3>2010</h3>
-                <h4>Workshop de Análise e balanços - UFRJ</h4>
+            <div class="data-nome">
+                 <!-- Nome do Curso: Ciencia da Informação -->
+                 <!--Data de início e término -->
+                 <!--Local de Graduação-->
             </div>
         </div>
     </div>
+
+    <div class="card-footer">
+        <div class="habilidades-interp">
+            @*<h2>Habilidades Interpessoais</h2>
+            <hr>
+            <h3>Objetividade</h3>
+            <h3>Raciocínio Rápido</h3>
+            <h3>Gestão de Pessoas</h3>*@
+        </div>
+        <div class="cursos-certif">
+            @*<h2>Cursos e Certificados</h2>
+            <hr>
+            <h3>2010</h3>
+            <h4>Workshop de Análise e balanços - UFRJ</h4>*@
+        </div>
+    </div>
+
+</div>
 </section>
+
+@*<section>
+<div class="card">
+    <table class="table">
+        <thead class="card-header">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Nome)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Idade)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Telefone)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.EstadoCivil)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Email)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Experiencia)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Formacao)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Cidade)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CEP)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+    @foreach (var item in Model) {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nome)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Idade)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Telefone)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EstadoCivil)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Experiencia)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Formacao)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Cidade)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CEP)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                </td>
+            </tr>
+    }
+        </tbody>
+    </table>
+   </div>
+</section>*@
+
+
+
+
 <style>
-
-
-    section {
-        margin: 0;
-        padding: 0;
-        justify-content: center;
-        display: flex;
-        font-family: 'Montserrat', sans-serif;
-        background-color: rgb(243, 141, 243);
-    }
-
-    /* CARD */
-    .card-curriculo {
-        display: flex;
-        flex-direction: column;
-        background-color: rgb(255, 255, 255);
-        width: 900px;
-        height: max-content;
-        border-radius: 15px;
-        margin-top: 50px;
-        margin-bottom: 50px;
-    }
-
-    /*CARD HEADER*/
-
-    /*CONTATO*/
-    .nome {
-        position: relative;
-        text-align: center;
-    }
-
-    .idade {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-        margin-left: -20px;
-    }
-
-    .cep {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-        margin-left: -38px;
-    }
-
-    .email {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-    }
-
-    .linkedin {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-        margin-left: 20px;
-    }
-
-    .resumo {
-        left: 10px;
-        font-size: large;
-        position: relative;
-    }
-
-    /*FIM CONTATO*/
-
-    /*FIM CARD HEADER*/
-
-    /*CARD BODY*/
-
-    .card-body {
-        background-color: rgb(255, 255, 255);
-    }
-
-    /*EXPERIÊNCIAS*/
-    .experiencias {
-        position: relative;
-        margin-left: 5px;
-    }
-
-    .exp-card-body {
-        text-align: center;
-        align-items: center;
-        display: flex;
-        width: 850px;
-        height: max-content;
-        background-color: aliceblue;
-        margin-bottom: 10px;
-        border-radius: 10px;
-    }
-
-    .exp-card {
-        display: flex;
-        align-items: center;
-        align-content: center;
-        justify-content: center;
-        width: 900px;
-    }
-
-    .exp-card-title {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-evenly;
-        margin-left: 0px;
-    }
-    /***/
-
-    /*EDUCAÇÃO*/
-    .educacao {
-        position: relative;
-        margin-left: 5px;
-    }
-
-    .data-nome {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-        margin-left: 20px;
-    }
-    /***/
-
-    /*FIM CARD BODY*/
-
-
-    /*CARD FOOTER*/
-    .habilidades-interp {
-        position: relative;
-        margin-left: 10px;
-    }
-
-    .cursos-certif {
-        position: relative;
-        margin-left: 10px;
-    }
-
-    /*FIM CARD FOOTER*/
-
-    /*FIM CARD*/
-
-</style>
-
-<script>
-    const condicionalEmpresa = document.getElementById("form-empresa"), condicionalAluno = document.getElementById("form-aluno");
-    const selectOptions = document.getElementById("opcao");
-    condicionalEmpresa.style.display = "none";
-    condicionalAluno.style.display = "none";
-
-    selectOptions.addEventListener("change", () => {
-
-        if (selectOptions.value === "Empresa") {
-            condicionalEmpresa.style.display = "block";
-            condicionalAluno.style.display = "none";
-
-        } else if (selectOptions.value === "Aluno") {
-            condicionalAluno.style.display = "block";
-            condicionalEmpresa.style.display = "none";
-        }
-
-
-    });
-</script>
-<script src="js/bootstrap.bundle.min.js"></script>
-
-@section Scripts {
-    <partial name="_ValidationScriptsPartial" />
-}
-
-    <style>
      
         section{
             margin: 0;
             padding: 0;
             justify-content: center;
             display: flex;
-            font-family: 'Nanum Myeongjo', serif;
+            
         }
         
 /* CARD */
     .card{
         display:flex;
         flex-direction: column;
-        background-color:rgb(189, 207, 187);
-        width:500px;
+        background-color:red;
+        width:1000px;
         height:max-content;
 
-    }
-
-/*CARD HEADER*/
-
-    .card-header{
-        background-color: rgb(255, 255, 255);
     }
 
     /*CONTATO*/
@@ -409,10 +390,6 @@
         font-size: large;
         position: relative;
     }
-    
-     /*FIM CONTATO*/
-     
-/*FIM CARD HEADER*/
 
 /*CARD BODY*/
 
@@ -421,7 +398,6 @@
         position: relative;
         margin-left: 5px;
     }
-    /***/
 
     /*EDUCAÇÃO*/
     .educacao{
@@ -435,17 +411,12 @@
         justify-content: space-around;
         margin-left: 20px;
     }
-    /***/
 
     /*COMPETENCIAS*/
     .competencias{
         position: relative;
         margin-left: 5px;
     }
-    /***/
-
-/*FIM CARD BODY*/
-
 
     /*CARD FOOTER*/
     .habilidades-interp{
@@ -458,83 +429,56 @@
         margin-left: 10px;
     }
 
-    /*FIM CARD FOOTER*/
-
-/*FIM CARD*/
-
     </style>
 
-@*
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Nome)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Idade)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Telefone)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.EstadoCivil)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Email)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Experiencia)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Formacao)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Cidade)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.CEP)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Nome)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Idade)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Telefone)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.EstadoCivil)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Email)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Experiencia)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Formacao)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Cidade)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CEP)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
-*@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@*<script>
+    const condicionalEmpresa = document.getElementById("form-empresa"), condicionalAluno = document.getElementById("form-aluno");
+    const selectOptions = document.getElementById("opcao");
+    condicionalEmpresa.style.display = "none";
+    condicionalAluno.style.display = "none";
+
+    selectOptions.addEventListener("change", () => {
+
+        if (selectOptions.value === "Empresa") {
+            condicionalEmpresa.style.display = "block";
+            condicionalAluno.style.display = "none";
+
+        } else if (selectOptions.value === "Aluno") {
+            condicionalAluno.style.display = "block";
+            condicionalEmpresa.style.display = "none";
+        }
+
+
+    });
+</script>
+<script src="js/bootstrap.bundle.min.js"></script>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}*@
