@@ -12,7 +12,9 @@
 
 <section>
 <div class="card">
-    <div class="card-header">
+    <div class="card-header1">
+        
+        
         <div class="contato">
             <div class="nome">
                 <table class="table">               
@@ -26,41 +28,42 @@
                             </tr>
                         }
                     </tbody>
-                </table>
-                <h1>
-                </h1>
+                </table>                
             </div>
+
 
             <div class="idade">
                 <table class="table">
                         <thead class="card-header">
-                            <tr>
+                            <tr class="tr_header">
                                 <th>
                                     @Html.DisplayNameFor(model => model.Idade)
                                 </th>
                             <tr />
                         </thead>
-                    <tbody>
+                        <tbody class="cardTB-body">
                         @foreach (var item in Model)
                         {
                             <tr>
-                                <td>
+                                <td style="width:100px;">
                                     @Html.DisplayFor(modelItem => item.Idade)
                                 </td>
                             </tr>
                         }
                     </tbody>
                 </table>
+            </div>
+
                 <div class="telefone">
                     <table class="table">
                             <thead class="card-header">
-                                <tr>
+                            <tr class="tr_header">
                                     <th>
                                         @Html.DisplayNameFor(model => model.Telefone)
                                     </th>
                                 <tr />
                             </thead>
-                        <tbody>
+                        <tbody class="cardTB-body">
                             @foreach (var item in Model)
                             {
                             <tr>
@@ -72,7 +75,8 @@
                         </tbody>
                     </table>
                 </div>
-            </div>
+
+
 
             <div class="linkedin">
                 @*<h3>
@@ -80,13 +84,13 @@
                 </h3>*@
                 <table class="table">
                         <thead class="card-header">
-                            <tr>
+                            <tr class ="tr_header">
                                 <th>
                                     @Html.DisplayNameFor(model => model.EstadoCivil)
                                 </th>
                             <tr />
                         </thead>
-                    <tbody>
+                        <tbody class="cardTB-body">
                         @foreach (var item in Model)
                         {
                         <tr>
@@ -102,13 +106,13 @@
             <div class="cep">
                 <table class="table">
                         <thead class="card-header">
-                            <tr>
+                            <tr class="tr_header">
                                 <th>
                                     @Html.DisplayNameFor(model => model.Cidade)
                                 </th>
                             <tr />
                         </thead>
-                    <tbody>
+                        <tbody class="cardTB-body">
                         @foreach (var item in Model)
                         {
                         <tr>
@@ -119,15 +123,17 @@
                         }
                     </tbody>
                 </table>
+
+
                 <table class="table">
                         <thead class="card-header">
-                            <tr>
+                            <tr class="tr_header">
                                 <th>
                                     @Html.DisplayNameFor(model => model.CEP)
                                 </th>
                             <tr />
                         </thead>
-                    <tbody>
+                        <tbody class="cardTB-body">
                         @foreach (var item in Model)
                         {
                         <tr>
@@ -140,16 +146,17 @@
                 </table>
             </div>
 
+
             <div class="email">
                 <table class="table">
                         <thead class="card-header">
-                            <tr>
+                            <tr class="tr_header">
                                 <th>
                                     @Html.DisplayNameFor(model => model.Email)
                                 </th>
                             <tr />
                         </thead>
-                    <tbody>
+                    <tbody class="cardTB-body">
                         @foreach (var item in Model)
                         {
                         <tr>
@@ -162,13 +169,21 @@
                     </tbody>
                 </table>
             </div>
+        </div> 
 
-        </div> <!--Contatos-->
 
         <div class="resumo">
             @*<h3>Resumo</h3>*@ <!-- Descrição -->
             <p>
-                
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
+                    when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
+                    It has survived not only five centuries, but also the leap into electronic typesetting, 
+                    remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets 
+                    containing Lorem Ipsum passages, 
+                    and more recently with desktop publishing software like Aldus PageMaker 
+                    including versions of Lorem Ipsum.
+
             </p>
         </div>
     </div>
@@ -181,13 +196,13 @@
                 <div class="exp-card-body">
                         <table class="table">
                             <thead class="card-header">
-                                <tr>
+                                <tr class="tr_header">
                                     <th>
                                         @Html.DisplayNameFor(model => model.Experiencia)
                                     </th>
                                 <tr />
                             </thead>
-                            <tbody>
+                            <tbody class="cardTB-body">
                                 @foreach (var item in Model)
                                 {
                                     <tr>
@@ -202,37 +217,49 @@
                 </div>
             </div>
         </div>
+
+
         <div class="educacao">
             @*<h2>Educação</h2>*@ <!--"LABEL" Formação -->
-            <hr>
-            <div class="data-nome">
-                 <!-- Nome do Curso: Ciencia da Informação -->
-                 <!--Data de início e término -->
-                 <!--Local de Graduação-->
-            </div>
-            <div class="data-nome">
-                 <!-- Nome do Curso: Ciencia da Informação -->
-                 <!--Data de início e término -->
-                 <!--Local de Graduação-->
-            </div>
+                <table class="table">
+                    <thead class="card-header">
+                        <tr class="tr_header">
+                            <th>
+                                @Html.DisplayNameFor(model => model.Formacao)
+                            </th>
+                        <tr />
+                    </thead>
+                    <tbody class="cardTB-body">
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Formacao)
+                                </td>
+                            </tr>
+
+                        }
+                    </tbody>
+                </table>        
         </div>
     </div>
 
-    <div class="card-footer">
+
+    @*<div class="card-footer">
         <div class="habilidades-interp">
             @*<h2>Habilidades Interpessoais</h2>
             <hr>
             <h3>Objetividade</h3>
             <h3>Raciocínio Rápido</h3>
-            <h3>Gestão de Pessoas</h3>*@
+            <h3>Gestão de Pessoas</h3>
         </div>
         <div class="cursos-certif">
-            @*<h2>Cursos e Certificados</h2>
+            <h2>Cursos e Certificados</h2>
             <hr>
             <h3>2010</h3>
-            <h4>Workshop de Análise e balanços - UFRJ</h4>*@
+            <h4>Workshop de Análise e balanços - UFRJ</h4>
         </div>
-    </div>
+    </div>*@
 
 </div>
 </section>
@@ -330,23 +357,53 @@
 /* CARD */
     .card{
         display:flex;
-        flex-direction: column;
-        background-color:red;
-        width:1000px;
+        flex-direction: column;        
+        width:800px;
         height:max-content;
-
     }
+
+/*CARD HEADER TABLE*/
+    th{
+        display:flex;
+        width: 100px;
+        height: 35px;
+        border:none;
+        font-size:18px;
+        justify-content:center;
+    }
+
+    .card-header{
+        display:inline-flex;       
+        width:150px;
+        background-color:mediumpurple;                       
+        justify-content:center;
+    }
+
+    table{
+        background-color:pink;
+    }
+
+    /* TABLE-BODY*/
+    .cardTB-body{
+    display:inline-flex;   
+    text-align:center;
+    justify-content:center;
+    width:200px;
+    background-color:beige;
+    }
+
 
     /*CONTATO*/
     .nome{
         position: relative;
         text-align: center;
+        font-size: 32px
     }
 
     .idade{
         position: relative;
         flex-direction: row;
-        left: 10px
+      
     }
 
     .estado-civil{
@@ -403,13 +460,6 @@
     .educacao{
         position: relative;
         margin-left: 5px;
-    }
-    
-    .data-nome{
-        display: flex;
-        flex-direction:row;
-        justify-content: space-around;
-        margin-left: 20px;
     }
 
     /*COMPETENCIAS*/
