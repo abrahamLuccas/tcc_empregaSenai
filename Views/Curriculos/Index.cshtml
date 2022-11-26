@@ -170,11 +170,8 @@
                 </table>
             </div>
         </div> 
-
-
-        <div class="resumo">
-            @*<h3>Resumo</h3>*@ <!-- Descrição -->
-            <p>
+            <p class="resumo-txt">
+             <!-- <h3>Resumo</h3> Descrição -->
                     Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
                     Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
                     when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
@@ -184,8 +181,7 @@
                     and more recently with desktop publishing software like Aldus PageMaker 
                     including versions of Lorem Ipsum.
 
-            </p>
-        </div>
+            </p>       
     </div>
 
     <div class="card-body">
@@ -236,8 +232,12 @@
                                 <td>
                                     @Html.DisplayFor(modelItem => item.Formacao)
                                 </td>
+                                <!-- <td>
+                                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                                </td> -->
                             </tr>
-
                         }
                     </tbody>
                 </table>        
@@ -375,12 +375,15 @@
     .card-header{
         display:inline-flex;       
         width:150px;
-        background-color:mediumpurple;                       
+        background:none;
         justify-content:center;
+        border:none;
     }
 
     table{
-        background-color:pink;
+        /*background-color:pink;*/
+       
+        
     }
 
     /* TABLE-BODY*/
@@ -389,7 +392,10 @@
     text-align:center;
     justify-content:center;
     width:200px;
-    background-color:beige;
+    border-color:white;
+    border-style:none;
+    background:none;
+    margin-top:10px;
     }
 
 
@@ -403,7 +409,7 @@
     .idade{
         position: relative;
         flex-direction: row;
-      
+        left: 10px
     }
 
     .estado-civil{
@@ -449,6 +455,13 @@
     }
 
 /*CARD BODY*/
+
+    .resumo-txt{
+        display:flex;
+        justify-content:justify;
+        padding:10px;
+        margin:10px;
+    }
 
     /*EXPERIÊNCIAS*/
     .experiencias{
