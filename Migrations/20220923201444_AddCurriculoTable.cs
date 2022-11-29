@@ -16,14 +16,20 @@ namespace EmpregaSENAI.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Nome = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Idade = table.Column<int>(type: "int", nullable: false),
+                    DataNascimento = table.Column<int>(type: "int", nullable: false),
                     Telefone = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    EstadoCivil = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Email = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Experiencia = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Formacao = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Endereco = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Bairro = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Cidade = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    CEP = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    CEP = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Email = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    CargoInteresse = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Instituicao = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    GrauFormacao = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    NomeCurso = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Duracao = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    AnoConclusao = table.Column<int>(type: "int", nullable: false)
+
                 },
                 constraints: table =>
                 {
