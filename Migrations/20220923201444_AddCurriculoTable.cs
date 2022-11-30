@@ -13,8 +13,7 @@ namespace EmpregaSENAI.Migrations
                 schema: "Identity",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Id = table.Column<int>(type: "int", nullable: false).Annotation("SqlServer:Identity", "1, 1"),
                     Nome = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     DataNascimento = table.Column<int>(type: "int", nullable: false),
                     Telefone = table.Column<string>(type: "nvarchar(max)", nullable: false),

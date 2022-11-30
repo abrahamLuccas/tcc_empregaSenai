@@ -73,9 +73,26 @@
                             </tr>
                             }
                         </tbody>
+                    </table><table class="table">
+                            <thead class="card-header">
+                            <tr class="tr_header">
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.DataNascimento)
+                                    </th>
+                                <tr />
+                            </thead>
+                        <tbody class="cardTB-body">
+                            @foreach (var item in Model)
+                            {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.DataNascimento)
+                                </td>
+                            </tr>
+                            }
+                        </tbody>
                     </table>
                 </div>
-
 
 
             <div class="linkedin">
@@ -86,7 +103,7 @@
                         <thead class="card-header">
                             <tr class ="tr_header">
                                 <th>
-                                    @Html.DisplayNameFor(model => model.EstadoCivil)
+                                    @Html.DisplayNameFor(model => model.Bairro)
                                 </th>
                             <tr />
                         </thead>
@@ -95,7 +112,32 @@
                         {
                         <tr>
                             <td>
-                                @Html.DisplayFor(modelItem => item.EstadoCivil)
+                                @Html.DisplayFor(modelItem => item.Bairro)
+                            </td>
+                        </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="linkedin">
+                @*<h3>
+                    Linkedin: Linkedin perfil nome
+                </h3>*@
+                <table class="table">
+                        <thead class="card-header">
+                            <tr class ="tr_header">
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Endereco)
+                                </th>
+                            <tr />
+                        </thead>
+                        <tbody class="cardTB-body">
+                        @foreach (var item in Model)
+                        {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Endereco)
                             </td>
                         </tr>
                         }
@@ -194,7 +236,7 @@
                             <thead class="card-header">
                                 <tr class="tr_header">
                                     <th>
-                                        @Html.DisplayNameFor(model => model.Experiencia)
+                                        @Html.DisplayNameFor(model => model.CargoInteresse)
                                     </th>
                                 <tr />
                             </thead>
@@ -203,7 +245,87 @@
                                 {
                                     <tr>
                                         <td>
-                                            @Html.DisplayFor(modelItem => item.Experiencia)
+                                            @Html.DisplayFor(modelItem => item.CargoInteresse)
+                                        </td>
+                                    </tr>
+
+                                }
+                            </tbody>
+                        </table>  
+                        <table class="table">
+                            <thead class="card-header">
+                                <tr class="tr_header">
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.GrauFormacao)
+                                    </th>
+                                <tr />
+                            </thead>
+                            <tbody class="cardTB-body">
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.GrauFormacao)
+                                        </td>
+                                    </tr>
+
+                                }
+                            </tbody>
+                        </table>
+                        <table class="table">
+                            <thead class="card-header">
+                                <tr class="tr_header">
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.NomeCurso)
+                                    </th>
+                                <tr />
+                            </thead>
+                            <tbody class="cardTB-body">
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.NomeCurso)
+                                        </td>
+                                    </tr>
+
+                                }
+                            </tbody>
+                        </table>   
+                        <table class="table">
+                            <thead class="card-header">
+                                <tr class="tr_header">
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Duracao)
+                                    </th>
+                                <tr />
+                            </thead>
+                            <tbody class="cardTB-body">
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Duracao)
+                                        </td>
+                                    </tr>
+
+                                }
+                            </tbody>
+                        </table> 
+                        <table class="table">
+                            <thead class="card-header">
+                                <tr class="tr_header">
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.AnoConclusao)
+                                    </th>
+                                <tr />
+                            </thead>
+                            <tbody class="cardTB-body">
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.AnoConclusao)
                                         </td>
                                     </tr>
 
@@ -221,7 +343,7 @@
                     <thead class="card-header">
                         <tr class="tr_header">
                             <th>
-                                @Html.DisplayNameFor(model => model.Formacao)
+                                @Html.DisplayNameFor(model => model.Instituicao)
                             </th>
                         <tr />
                     </thead>
@@ -230,7 +352,7 @@
                         {
                             <tr>
                                 <td>
-                                    @Html.DisplayFor(modelItem => item.Formacao)
+                                    @Html.DisplayFor(modelItem => item.Instituicao)
                                 </td>
                                 <!-- <td>
                                     <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
