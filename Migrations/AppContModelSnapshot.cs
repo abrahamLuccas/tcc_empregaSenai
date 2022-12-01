@@ -69,9 +69,6 @@ namespace EmpregaSENAI.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("Idade")
-                        .HasColumnType("int");
-
                     b.Property<string>("Instituicao")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");

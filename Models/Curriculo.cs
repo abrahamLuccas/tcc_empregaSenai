@@ -5,7 +5,7 @@ using System.Runtime.ConstrainedExecution;
 
 namespace EmpregaSENAI.Models
 {
-    public class Curriculo 
+    public class Curriculo
     {
         [Key]
         public int Id { get; set; }
@@ -13,13 +13,13 @@ namespace EmpregaSENAI.Models
         [Required, Display(Name = "Nome:")]
         public string Nome { get; set; }
 
-        [Display(Name = "Data de Nascimento:")]
+        [Required, Display(Name = "Data de Nascimento:")]
         public int DataNascimento { get; set; }
 
-        [Display(Name = "Telefone:")]
+        [Required, Display(Name = "Telefone:")]
         public string Telefone { get; set; }
 
-        [Display(Name = "Endereco:")]
+        [Required, Display(Name = "Endereco:")]
         public string Endereco { get; set; }
 
         [Display(Name = "Bairro:")]
@@ -34,24 +34,23 @@ namespace EmpregaSENAI.Models
         [Required, Display(Name = "Email:")]
         public string Email { get; set; }
 
-        [Display(Name = "Cargo Interesse:")]
+        [Required, Display(Name = "Cargo Interesse:")]
         public string CargoInteresse { get; set; }
 
-        [Display(Name = "Instituição:")]
+        [Required, Display(Name = "Instituição:")]
         public string Instituicao { get; set; }
 
-        [Display(Name = "Grau Formação:")]
+        [Required, Display(Name = "Grau Formação:")]
         public string GrauFormacao { get; set; }
 
-        [Display(Name = "Nome do Curso:")]
+        [Required, Display(Name = "Nome do Curso:")]
         public string NomeCurso { get; set; }
 
-        [Display(Name = "Duração:")]
+        [Required, Display(Name = "Duração:")]
         public string Duracao { get; set; }
 
-        [Display(Name = "Ano de Conclusão:")]
+        [Required, Display(Name = "Ano de Conclusão:")]
         public int AnoConclusao { get; set; }
 
     }
 }
-                    

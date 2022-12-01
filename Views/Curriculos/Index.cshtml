@@ -13,7 +13,10 @@
 <section>
 <div class="card">
     <div class="card-header1">
-        
+            
+        @*<div class="botao-imprimir" onclick="window.print();" style="cursor:pointer;">
+                <i class="bi bi-printer-fill fw-bold"> Imprimir </i>
+            </div>*@
         
         <div class="contato">
             <div class="nome">
@@ -32,7 +35,7 @@
             </div>
 
 
-            <div class="idade">
+            <div class="data-nascimento">
                 <table class="table">
                         <thead class="card-header">
                             <tr class="tr_header">
@@ -72,14 +75,12 @@
                                 </td>
                             </tr>
                             }
-                        </tbody>                  
+                        </tbody>
+                    </table>
                 </div>
 
 
-            <div class="linkedin">
-                @*<h3>
-                    Linkedin: Linkedin perfil nome
-                </h3>*@
+            <div class="endereco">                
                 <table class="table">
                         <thead class="card-header">
                             <tr class ="tr_header">
@@ -98,13 +99,8 @@
                         </tr>
                         }
                     </tbody>
-                </table>
-            </div>
-            
-            <div class="linkedin">
-                @*<h3>
-                    Linkedin: Linkedin perfil nome
-                </h3>*@
+                </table>                      
+                            
                 <table class="table">
                         <thead class="card-header">
                             <tr class ="tr_header">
@@ -192,35 +188,40 @@
                     </tbody>
                 </table>
             </div>
+
         </div> 
+
+        <div>
+        <h4>Resumo</h4>
+        </div>
             <p class="resumo-txt">
              <!-- <h3>Resumo</h3> Descrição -->
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-                    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
-                    when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
-                    It has survived not only five centuries, but also the leap into electronic typesetting, 
-                    remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets 
-                    containing Lorem Ipsum passages, 
-                    and more recently with desktop publishing software like Aldus PageMaker 
-                    including versions of Lorem Ipsum.
+                A procura de me desenvolver cada vez mais em novos desafios que me proponho. 
+                Atualmente meu maior desafio e vontade é entregar meu TCC e começar em uma empresa que possa me ajudar na
+                caminhada para um desenvolvimento pessoal e principalmente desenvolvimento profissional. 
+                Sem experiencia com o mercado de trabalho mas com muitos pontos fortes como: proativa, criativa,
+                trabalho em grupo e raciocínio lógico.
+                Preferência de horário: turno da tarde se possível.
 
             </p>       
     </div>
 
     <div class="card-body">
-        <div class="experiencias">
-            @*<h2>Experiências</h2>*@
+        <div class="experiencias">     
+            <div>
+                <h4>Cargo de Interesse</h4>
+            </div>
             <hr>
             <div class="exp-card">
                 <div class="exp-card-body">
                         <table class="table">
-                            <thead class="card-header">
+                            @*<thead class="card-header">
                                 <tr class="tr_header">
                                     <th>
-                                        @Html.DisplayNameFor(model => model.CargoInteresse)
+                                        @Html.DisplayNameFor(model => model.CargoInteresse)                                        
                                     </th>
-                                <tr />
-                            </thead>
+                                <tr />                                
+                            </thead>  *@                         
                             <tbody class="cardTB-body">
                                 @foreach (var item in Model)
                                 {
@@ -232,7 +233,11 @@
 
                                 }
                             </tbody>
-                        </table>  
+                        </table>
+                        <div>
+                            <h4>Formação</h4>
+                        </div>
+                        <hr />                        
                         <table class="table">
                             <thead class="card-header">
                                 <tr class="tr_header">
@@ -277,6 +282,7 @@
                             <thead class="card-header">
                                 <tr class="tr_header">
                                     <th>
+
                                         @Html.DisplayNameFor(model => model.Duracao)
                                     </th>
                                 <tr />
@@ -318,8 +324,7 @@
         </div>
 
 
-        <div class="educacao">
-            @*<h2>Educação</h2>*@ <!--"LABEL" Formação -->
+        <div class="instituicao">           
                 <table class="table">
                     <thead class="card-header">
                         <tr class="tr_header">
@@ -347,105 +352,8 @@
         </div>
     </div>
 
-
-    @*<div class="card-footer">
-        <div class="habilidades-interp">
-            @*<h2>Habilidades Interpessoais</h2>
-            <hr>
-            <h3>Objetividade</h3>
-            <h3>Raciocínio Rápido</h3>
-            <h3>Gestão de Pessoas</h3>
-        </div>
-        <div class="cursos-certif">
-            <h2>Cursos e Certificados</h2>
-            <hr>
-            <h3>2010</h3>
-            <h4>Workshop de Análise e balanços - UFRJ</h4>
-        </div>
-    </div>*@
-
 </div>
 </section>
-
-@*<section>
-<div class="card">
-    <table class="table">
-        <thead class="card-header">
-            <tr>
-                <th>
-                    @Html.DisplayNameFor(model => model.Nome)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Idade)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Telefone)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.EstadoCivil)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Email)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Experiencia)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Formacao)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Cidade)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.CEP)
-                </th>
-                <th></th>
-            </tr>
-        </thead>
-        <tbody>
-    @foreach (var item in Model) {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Nome)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Idade)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Telefone)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.EstadoCivil)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Email)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Experiencia)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Formacao)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Cidade)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.CEP)
-                </td>
-                <td>
-                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-                </td>
-            </tr>
-    }
-        </tbody>
-    </table>
-   </div>
-</section>*@
-
-
-
 
 <style>
      
@@ -468,8 +376,8 @@
 
 /*CARD HEADER TABLE*/
     th{
-        display:flex;
-        width: 100px;
+        display:inline-flex;
+        width: 300px;
         height: 35px;
         border:none;
         font-size:18px;
@@ -478,9 +386,10 @@
 
     .card-header{
         display:inline-flex;       
-        width:150px;
+        width:250px;
         background:none;
-        justify-content:center;
+        flex-direction:row;
+        justify-content:space-between;
         border:none;
     }
 
@@ -510,50 +419,50 @@
         font-size: 32px
     }
 
-    .idade{
+    .data-nascimento{
         position: relative;
         flex-direction: row;
-        left: 10px
+       
     }
 
     .estado-civil{
         position: relative;
         flex-direction: row;
-        left: 10px
+       
     }
 
     .cidade-UF{
         position: relative;
         flex-direction: row;
-        left: 10px
+       
     }
 
     .cep{
         position: relative;
         flex-direction: row;
-        left: 10px
+       
     }
 
     .telefone{
         position: relative;
         flex-direction: row;
-        left: 10px;
+        
     }
 
     .email{
         position: relative;
         flex-direction: row;
-        left: 10px;
+        
     }
     
-    .linkedin{
+    .endereco{
         position: relative;
         flex-direction: row;
-        left: 10px;
+        
     }
 
     .resumo{
-        left: 10px;
+        
         font-size: large;
         position: relative;
     }
@@ -573,8 +482,8 @@
         margin-left: 5px;
     }
 
-    /*EDUCAÇÃO*/
-    .educacao{
+    /*INSTITUICAO*/
+    .instituicao{
         position: relative;
         margin-left: 5px;
     }

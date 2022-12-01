@@ -4,7 +4,7 @@
 
 namespace EmpregaSENAI.Migrations
 {
-    public partial class teste : Migration
+    public partial class refeitoModel2 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

@@ -7,8 +7,6 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using EmpregaSENAI.Areas.Identity.Data;
 using EmpregaSENAI.Models;
-using Microsoft.AspNetCore.Authorization;
-using EmpregaSENAI.Core;
 
 namespace EmpregaSENAI.Controllers
 {
@@ -46,7 +44,6 @@ namespace EmpregaSENAI.Controllers
         }
 
         // GET: Curriculos/Create
-        [Authorize(Policy = Constants.Policies.Aluno)]
         public IActionResult Create()
         {
             return View();
