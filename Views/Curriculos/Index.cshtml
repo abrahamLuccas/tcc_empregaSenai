@@ -37,7 +37,7 @@
                         <thead class="card-header">
                             <tr class="tr_header">
                                 <th>
-                                    @Html.DisplayNameFor(model => model.Idade)
+                                    @Html.DisplayNameFor(model => model.DataNascimento)
                                 </th>
                             <tr />
                         </thead>
@@ -46,7 +46,7 @@
                         {
                             <tr>
                                 <td style="width:100px;">
-                                    @Html.DisplayFor(modelItem => item.Idade)
+                                    @Html.DisplayFor(modelItem => item.DataNascimento)
                                 </td>
                             </tr>
                         }
@@ -72,26 +72,7 @@
                                 </td>
                             </tr>
                             }
-                        </tbody>
-                    </table><table class="table">
-                            <thead class="card-header">
-                            <tr class="tr_header">
-                                    <th>
-                                        @Html.DisplayNameFor(model => model.DataNascimento)
-                                    </th>
-                                <tr />
-                            </thead>
-                        <tbody class="cardTB-body">
-                            @foreach (var item in Model)
-                            {
-                            <tr>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.DataNascimento)
-                                </td>
-                            </tr>
-                            }
-                        </tbody>
-                    </table>
+                        </tbody>                  
                 </div>
 
 

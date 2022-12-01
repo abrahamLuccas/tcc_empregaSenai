@@ -57,7 +57,7 @@ namespace EmpregaSENAI.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Nome,Idade,Telefone,EstadoCivil,Email,Experiencia,Formacao,Cidade,CEP")] Curriculo curriculo)
+        public async Task<IActionResult> Create([Bind("Id,Nome,DataNascimento,Telefone,Endereco,Bairro,Cidade,CEP,Email,CargoInteresse,Instituicao,GrauFormacao,NomeCurso,Duracao,AnoConclusao")] Curriculo curriculo)
         {
             if (ModelState.IsValid)
             {
@@ -89,7 +89,7 @@ namespace EmpregaSENAI.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Nome,Idade,Telefone,EstadoCivil,Email,Experiencia,Formacao,Cidade,CEP")] Curriculo curriculo)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Nome,DataNascimento,Telefone,Endereco,Bairro,Cidade,CEP,Email,CargoInteresse,Instituicao,GrauFormacao,NomeCurso,Duracao,AnoConclusao")] Curriculo curriculo)
         {
             if (id != curriculo.Id)
             {

@@ -13,8 +13,6 @@ namespace EmpregaSENAI.Models
         [Required, Display(Name = "Nome:")]
         public string Nome { get; set; }
 
-        public int Idade { get; set; }
-
         [Display(Name = "Data de Nascimento:")]
         public int DataNascimento { get; set; }
 
