@@ -14,9 +14,9 @@
 <div class="card">
     <div class="card-header1">
             
-        @*<div class="botao-imprimir" onclick="window.print();" style="cursor:pointer;">
+        <div class="botao-imprimir" onclick="window.print();" style="cursor:pointer;">
                 <i class="bi bi-printer-fill fw-bold"> Imprimir </i>
-            </div>*@
+            </div>
         
         <div class="contato">
             <div class="nome">
@@ -190,10 +190,11 @@
             </div>
 
         </div> 
-
+        
         <div>
-        <h4>Resumo</h4>
+            <h4 style="margin-left:20px;">Resumo</h4>
         </div>
+        <hr />
             <p class="resumo-txt">
              <!-- <h3>Resumo</h3> Descrição -->
                 A procura de me desenvolver cada vez mais em novos desafios que me proponho. 
@@ -221,12 +222,12 @@
                                         @Html.DisplayNameFor(model => model.CargoInteresse)                                        
                                     </th>
                                 <tr />                                
-                            </thead>  *@                         
-                            <tbody class="cardTB-body">
+                            </thead>  *@                       
+                            <tbody class="cardTB-body" style="margin-left:260px;">
                                 @foreach (var item in Model)
                                 {
                                     <tr>
-                                        <td>
+                                        <td style="font-size:24px;">
                                             @Html.DisplayFor(modelItem => item.CargoInteresse)
                                         </td>
                                     </tr>
@@ -340,11 +341,11 @@
                                 <td>
                                     @Html.DisplayFor(modelItem => item.Instituicao)
                                 </td>
-                                <!-- <td>
+                                @*<td>
                                     <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
                                     <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
                                     <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-                                </td> -->
+                                </td> *@
                             </tr>
                         }
                     </tbody>
@@ -356,14 +357,14 @@
 </section>
 
 <style>
-     
-        section{
-            margin: 0;
-            padding: 0;
-            justify-content: center;
-            display: flex;
-            
-        }
+
+    section{
+        margin: 0;
+        padding: 0;
+        justify-content: center;
+        display: flex;
+        
+    }
         
 /* CARD */
     .card{
@@ -380,7 +381,9 @@
         width: 300px;
         height: 35px;
         border:none;
-        font-size:18px;
+        font-weight:normal;
+        font-style:normal;
+        font-size:20px;
         justify-content:space-between;
     }
 
@@ -391,6 +394,7 @@
         flex-direction:row;
         justify-content:space-between;
         border:none;
+        margin-left:50px;
     }
 
     /* TABLE-BODY*/
@@ -405,8 +409,9 @@
     width:200px;
     background:none;
     margin-top:10px;
-    margin-left:100px;
+    margin-left:200px;
     }
+
 
     /*CONTATO*/
     .nome{
@@ -467,7 +472,7 @@
 
     .resumo-txt{
         display:flex;
-        justify-content:justify;
+        text-align:justify;
         padding:10px;
         margin:10px;
     }
@@ -490,7 +495,8 @@
         margin-left: 5px;
     }
 
-    /*CARD FOOTER*/
+  
+  /*CARD FOOTER*/
     .habilidades-interp{
         position: relative;
         margin-left: 10px;
@@ -502,6 +508,113 @@
     }
 
     </style>
+
+<style type="text/css" media="screen and (max-width:989px)">
+
+    section {
+        margin: 0;
+        padding: 0;
+        justify-content: center;
+        display: flex;
+    }
+
+    body{
+        background-color: red
+    }
+
+    /*TABLE BODY*/
+    .cardTB-body {
+        display: inline-flex;
+        justify-content: center;
+        flex-direction: row;
+        text-align: center;
+        border-color: white;
+        border-style: none;
+        width: 200px;
+        background: none;             
+    }
+
+    /*CARD HEADER TABLE*/
+    th {
+        display: inline-flex;
+        width: 240px;
+        height: 35px;
+        border: none;
+        font-weight: normal;
+        font-style: normal;
+        font-size: 20px;
+        justify-content: space-between;
+    }
+
+    .card-header {
+        display: inline-flex;
+        width: 250px;
+        background: none;
+        flex-direction: row;
+        justify-content: space-between; 
+        border: none;
+        margin-left: 0px;
+    }
+
+</style>
+
+<style type="text/css" media="screen and (max-width:765px)">
+    
+    section {
+        margin: 0;
+        padding: 0;
+        justify-content: center;
+        display: flex;
+    }
+
+    body{
+        background-color:green;
+    }
+
+
+    /*TABLE BODY*/
+    .cardTB-body {
+        display: inline-flex;
+        justify-content: center;
+        flex-direction: row;
+        text-align: center;
+        border-color: white;
+        border-style: none;
+        width: 200px;
+        background: none;
+    }
+
+    /*CARD HEADER TABLE*/
+    th {
+        display: inline-flex;
+        width: 240px;
+        height: 35px;
+        border: none;
+        font-weight: normal;
+        font-style: normal;
+        font-size: 20px;
+        justify-content: space-between;
+    }
+
+    .card-header {
+        display: inline-flex;
+        width: 250px;
+        background: none;
+        flex-direction: row;
+        justify-content: space-between;
+        border: none;
+        margin-left: 0px;
+    }
+
+</style>
+
+<style type="text/css" media="screen and (max-width:559px)">
+
+    body{
+        background-color:blue;
+    }
+
+</style>
 
 
 
