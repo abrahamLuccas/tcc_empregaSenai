@@ -223,10 +223,10 @@
                                     </th>
                                 <tr />                                
                             </thead>  *@                       
-                            <tbody class="cardTB-body" style="margin-left:260px;">
+                            <tbody class="cardTB-body">
                                 @foreach (var item in Model)
                                 {
-                                    <tr>
+                                    <tr class="cargo">
                                         <td style="font-size:24px;">
                                             @Html.DisplayFor(modelItem => item.CargoInteresse)
                                         </td>
@@ -341,11 +341,11 @@
                                 <td>
                                     @Html.DisplayFor(modelItem => item.Instituicao)
                                 </td>
-                                @*<td>
-                                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                                <td>
+                                    @*<a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
                                     <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-                                </td> *@
+                                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>*@
+                                </td> 
                             </tr>
                         }
                     </tbody>
@@ -409,7 +409,7 @@
     width:200px;
     background:none;
     margin-top:10px;
-    margin-left:200px;
+    margin-left:250px;
     }
 
 
@@ -518,9 +518,6 @@
         display: flex;
     }
 
-    body{
-        background-color: red
-    }
 
     /*TABLE BODY*/
     .cardTB-body {
@@ -531,7 +528,15 @@
         border-color: white;
         border-style: none;
         width: 200px;
+        margin-left: 100px;
         background: none;             
+    }
+
+    .cargo{
+        display:flex;
+        margin-left:200px;
+    }
+
     }
 
     /*CARD HEADER TABLE*/
@@ -567,10 +572,6 @@
         display: flex;
     }
 
-    body{
-        background-color:green;
-    }
-
 
     /*TABLE BODY*/
     .cardTB-body {
@@ -580,8 +581,10 @@
         text-align: center;
         border-color: white;
         border-style: none;
-        width: 200px;
+        width: 100px;
         background: none;
+        margin-left:90px;
+        margin-top:20px;
     }
 
     /*CARD HEADER TABLE*/
@@ -608,16 +611,63 @@
 
 </style>
 
-<style type="text/css" media="screen and (max-width:559px)">
+<style type="text/css" media="screen and (max-width:558px)">
 
-    body{
-        background-color:blue;
+    section {
+        margin: 0;
+        padding: 0;
+        justify-content: center;
+        display: flex;
+    }
+
+    
+
+    .cargo{
+        display:flex;
+        margin-left:-90px;
+    }
+
+    .card{
+        text-align:center;
+        display:flexbox;
+        align-content:center;
+        justify-content:center;
+        align-items:center;
+        align-self:center;
+    }
+
+    /*TABLE BODY*/
+    .cardTB-body {
+        display: flexbox;
+        justify-content: center;
+        align-items:center;        
+        text-align: center;
+        border-color: white;        
+        width: 100px;        
+    }
+
+    /*CARD HEADER TABLE*/
+    th {
+        display: flexbox;
+        width: 100px;
+        height: 35px;
+        border: none;
+        font-size: 20px;
+        justify-content: center;
+        align-content:center;
+        text-align:center;
+        align-items:center;
+        margin-top:20px;
+    }
+
+    .card-header {
+        display: flexbox;
+        width: 120px;
+        align-items:center;
+        justify-content: center;        
     }
 
 </style>
-
-
-
 
 
 
