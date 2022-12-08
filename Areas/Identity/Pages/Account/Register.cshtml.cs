@@ -84,7 +84,7 @@ namespace EmpregaSENAI.Areas.Identity.Pages.Account
             [Display(Name = "Sobrenome")]
             [StringLength(255, ErrorMessage = "Limite de 255 caracteres atingido!")]
             public string LastName { get; set; }
-            
+
             [Required]
             [EmailAddress,]
             [Display(Name = "Email")]
@@ -92,7 +92,7 @@ namespace EmpregaSENAI.Areas.Identity.Pages.Account
 
             [Display(Name = "Empresa/Aluno")]
             public string Tipo { get; set; }
-      
+
             [Required]
             [StringLength(100, ErrorMessage = "A {0} precisa ter entre {2} e {1} caracteres.", MinimumLength = 6)]
             [DataType(DataType.Password)]
@@ -121,26 +121,26 @@ namespace EmpregaSENAI.Areas.Identity.Pages.Account
                 var user = CreateUser();
 
                 user.FirstName = Input.FirstName;
-                user.LastName = Input.LastName;           
+                user.LastName = Input.LastName;
 
                 await _userStore.SetUserNameAsync(user, Input.FirstName, CancellationToken.None);
                 await _emailStore.SetEmailAsync(user, Input.Email, CancellationToken.None);
                 var result = await _userManager.CreateAsync(user, Input.Password);
 
                 if (result.Succeeded)
-                { 
+                {
 
                     if (Input.Tipo == "Empresa")
                     {
-                         await _userManager.AddToRoleAsync(user, Constants.Roles.Empresa);
-                        
-                    }
-                    else if(Input.Tipo == "Aluno")
-                    {                        
-                       await _userManager.AddToRoleAsync(user, Constants.Roles.Aluno);
+                        await _userManager.AddToRoleAsync(user, Constants.Roles.Empresa);
 
                     }
-                    
+                    else if (Input.Tipo == "Aluno")
+                    {
+                        await _userManager.AddToRoleAsync(user, Constants.Roles.Aluno);
+
+                    }
+
                     _logger.LogInformation("User created a new account with password.");
 
                     var userId = await _userManager.GetUserIdAsync(user);
@@ -157,8 +157,8 @@ namespace EmpregaSENAI.Areas.Identity.Pages.Account
 
 
                     await _signInManager.SignInAsync(user, isPersistent: false);
-                        return LocalRedirect(returnUrl);
-                    
+                    return LocalRedirect(returnUrl);
+
 
 
                 }

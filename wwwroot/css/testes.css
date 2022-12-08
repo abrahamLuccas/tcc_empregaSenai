@@ -1,0 +1,183 @@
+﻿.bd-placeholder-img {
+    font-size: 1.125rem;
+    text-anchor: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+}
+
+
+
+@media (min-width: 768px) {
+    .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+    }
+}
+
+.b-example-divider {
+    height: 3rem;
+    background-color: rgba(0, 0, 0, .1);
+    border: solid rgba(0, 0, 0, .15);
+    border-width: 1px 0;
+    box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+}
+
+.b-example-vr {
+    flex-shrink: 0;
+    width: 1.5rem;
+    height: 100vh;
+}
+
+.bi {
+    vertical-align: -.125em;
+    fill: currentColor;
+}
+
+.nav-scroller {
+    position: relative;
+    z-index: 2;
+    height: 2.75rem;
+    overflow-y: hidden;
+}
+
+    .nav-scroller .nav {
+        display: flex;
+        flex-wrap: nowrap;
+        padding-bottom: 1rem;
+        margin-top: -1px;
+        overflow-x: auto;
+        text-align: center;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+    }
+/* fim css pronto */
+
+
+
+/* meu css */
+
+
+/*primeira seção do site */
+/* alinha foto da menina */
+.menina-curriculo {
+    display: flex;
+    justify-content: end;
+    align-content: flex-start;
+}
+
+    /* tamanho da imagem da menina */
+    .menina-curriculo img {
+        width: 75%;
+    }
+
+
+/* alinha textos da esquerda */
+.container-esquerda {
+    position: relative;
+    margin-top: -50px;
+}
+
+    /* palavra roxa do texto*/
+    .container-esquerda strong {
+        color: #6A45A5;
+    }
+
+.btn-criarCV {
+    background-color: #F20201;
+    color: white;
+}
+
+
+/* responsividade */
+@media (max-width: 991px) {
+    .menina-curriculo img {
+        width: 353px;
+        height: 461px;
+    }
+}
+
+@media (max-width: 767px) {
+    .menina-curriculo {
+        display: flex;
+        justify-content: center;
+    }
+}
+
+
+
+
+/* quinta secao */
+.texto-avaliacao {
+    line-height: 33px;
+}
+
+.icon-aspas {
+    color: #F20201;
+    font-size: 80px;
+}
+
+.texto-avaliacao p {
+    font-weight: 500;
+    font-size: 25px;
+}
+
+.cinco-estrelas {
+    margin-top: -10px;
+    font-size: 20px;
+}
+
+.texto-avaliacao h4 {
+    margin-top: -10px;
+}
+
+.texto-avaliacao h5 {
+    color: #818181;
+}
+
+.img-avaliacao img {
+    border-radius: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 991px) {
+    .menina-curriculo img {
+        width: 75%;
+        height: 461px;
+    }
+}
+
+@media (max-width: 767px) {
+    .menina-curriculo {
+        display: flex;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 572px) {
+    .menina-curriculo img {
+        width: 430px;
+        height: 480px;
+    }
+}
+
+@media (max-width: 1011px) {
+    #forms {
+        width: 100%;
+    }
+}
+/* @media (width: 910px){
+    #forms{
+        width: 100%;
+    }
+    }   */
+

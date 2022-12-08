@@ -1,198 +1,626 @@
+body {
+    overflow-x: hidden;
+}
+
+.bd-placeholder-img {
+    font-size: 1.125rem;
+    text-anchor: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+}
 
 @media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
+    .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+    }
 }
 
-html {
-  position: relative;
-  min-height: 100%;
-  font-size: 14px;
+.b-example-divider {
+    height: 3rem;
+    background-color: rgba(0, 0, 0, .1);
+    border: solid rgba(0, 0, 0, .15);
+    border-width: 1px 0;
+    box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
 }
 
-.logo1 {
-    width: 80%;
-}
-.logo2{
-    width: 40%;
-    position:relative;
-    right: 12rem;
+.b-example-vr {
+    flex-shrink: 0;
+    width: 1.5rem;
+    height: 100vh;
 }
 
-.nave {
-    margin-left: 10px;
+.bi {
+    vertical-align: -.125em;
+    fill: currentColor;
+}
+
+.nav-scroller {
+    position: relative;
+    z-index: 2;
+    height: 2.75rem;
+    overflow-y: hidden;
+}
+
+    .nav-scroller .nav {
+        display: flex;
+        flex-wrap: nowrap;
+        padding-bottom: 1rem;
+        margin-top: -1px;
+        overflow-x: auto;
+        text-align: center;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+    }
+/* fim css pronto */
+
+
+
+/* meu css */
+
+
+/*nav */
+
+/*cor da logo */
+.logo {
+    color: #F20201 !important;
+}
+
+/* cor btn login */
+.btn-login {
+    background-color: #F20201;
+    color: white;
+    border-radius: 10px;
+}
+
+/* cor botao hamburguer */
+.navbar-toggler i {
+    color: #6A45A5;
+    font-size: 45px;
+    font-weight: bold;
+}
+
+
+/* secao 1 */
+
+/* primeira seção um pouco mais pra baixo*/
+.header-container {
+    margin-top: 5px;
+}
+
+
+/* tamanho da imagem da menina */
+.div-foto-menina img {
+    width: 400px !important;
+    height: 450px;
+    margin-left: 19%; /* alinha foto da menina */
+}
+
+/* alinha textos da esquerda */
+.container-esquerda {
+    position: relative;
+    margin-top: -50px;
+}
+
+    /* palavra roxa do texto*/
+    .container-esquerda strong {
+        color: #6A45A5;
+    }
+
+    /* margin no texto */
+    .container-esquerda p {
+        margin-left: -10px;
+    }
+
+.container-esquerda {
+    margin-left: -25px;
+}
+
+/* botao de criar curriculo */
+.btn-criarCV {
+    background-color: #F20201;
+    color: white;
+    border-radius: 10px;
+}
+
+/* alinha no canto direito a foto da menina */
+.foto-menina {
+    position: relative;
+    left: 50px;
+}
+
+
+/* responsividade da primeira seção */
+
+@media (max-width: 1199px) { /*a baixo de 1199px*/
+    .foto-menina { /* deixa a foto da menina na posicao certa */
+        position: relative;
+        left: -20px;
+    }
+}
+
+@media (max-width: 991px) { /*a baixo de 991px*/
+    .div-foto-menina img { /*diminui o tamanho da imagem da menina*/
+        width: 450px !important;
+        height: 500px;
+    }
+
+    .div-foto-menina { /*tamanho da div que tem a foto dentro*/
+        width: 400px;
+    }
+
+    .foto-menina { /* posicao da foto e tamanho*/
+        position: relative;
+        left: -115px !important;
+        width: 10px !important;
+    }
+}
+
+@media (max-width: 767px) { /*a baixo de 757px*/
+    .div-foto-menina img {
+        position: relative;
+        left: 0px !important;
+        width: 350px !important;
+        height: 400px;
+    }
+}
+
+/*segunda seção do site */
+
+/* container inteiro da segunda secao */
+.section2 {
+    background-color: #6A45A5;
+    color: white;
+    height: 470px;
+    margin-top: -75px;
+    border-radius: 10px;
+}
+
+/* texto da empresa mais para baixo */
+.text-empresa {
+    position: relative;
+    top: 60px;
+}
+
+/*  linha dois sobre a empresa */
+.text-empresa2 {
+    font-weight: 300;
+}
+
+/* div do icon sobre a empresa */
+.icon-passo {
+    width: 65px;
+    height: 65px;
+    border-radius: 20px;
+    background-color: #F20201;
+}
+
+    /*aumenta o icone */
+    .icon-passo i {
+        font-size: 35px;
+    }
+
+/* card mais para baixo */
+.container-cards {
+    position: relative;
+    top: -50px;
+}
+
+/* responsividade secao 2 */
+@media (max-width: 1199px) { /*div roxa a baixo de 1199px*/
+    .section2 {
+        height: 550px;
+    }
+}
+
+@media (max-width: 991px) { /*div roxa a baixo de 991px*/
+    .section2 {
+        height: 920px;
+    }
+}
+
+@media (max-width: 767px) { /*div roxa a baixo de 767px*/
+    .section2 {
+        height: 1020px;
+    }
+}
+/* retira as bordas arredondadas das sections */
+@media (max-width: 575px) { /* a baixo de 575px*/
+    .section2 {
+        border-radius: 0;
+    }
+}
+
+@media (max-width: 537px) { /*div roxa a baixo de 537px*/
+    .section2 {
+        height: 1020px;
+    }
+}
+
+@media (max-width: 526px) { /*div roxa a baixo de 526px*/
+    .section2 {
+        height: 1050px;
+    }
+}
+
+@media (max-width: 504px) { /*div roxa a baixo de 504px*/
+    .section2 {
+        height: 1030px;
+    }
+}
+
+@media (max-width: 502px) { /*div roxa a baixo de 502px*/
+    .section2 {
+        height: 1080px;
+    }
+}
+
+@media (max-width: 501px) { /*div roxa a baixo de 501px*/
+    .section2 {
+        height: 1120px;
+    }
+}
+
+@media (max-width: 476px) { /*a baixo de 476px*/
+    .section2 {
+        height: 1200px;
+    }
+}
+
+/* terceira secao */
+/* responsividade secao 3 */
+
+
+
+
+/* quarta seção do site */
+
+
+.main-content {
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+.flex-center {
+    align-items: center;
+}
+
+.accordion-button {
+    margin-bottom: 10px;
+}
+
+.accordion-body {
+    margin-top: 15px;
+    padding: 25px;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 25px -3px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px;
+}
+
+.circle-icon {
+    height: 50px;
+    width: 50px;
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #F20201;
+    border: 5px solid #d6b2ff;
+    color: #fff;
+    margin-left: -20px;
     margin-right: 10px;
-
+    transform: scale(1.2);
 }
 
-body {
-    font-family: 'Montserrat', sans-serif;
-    margin-bottom: 60px;
+    .circle-icon i {
+        font-size: 25px;
+    }
+
+.accordion-item {
+    border: 0px !important;
 }
 
-.home, .vagas, .curriculo {
-    color: black;
-    font-size: 30px;
-    text-decoration: none;
-   
+.accordion-button:not(.collapsed) {
+    border: 0px !important;
+    color: #6A45A5;
+    background-color: #ffffff;
+    box-shadow: inset 0 0px 0 rgb(0 0 0 / 13%);
 }
 
-.home {
+.btn-collapse {
     position: relative;
-    padding: 5px;
+    right: 10px;
+    width: 550px;
 }
 
-.vagas {
-    position: relative;
-    right: -45px;
+.pergunta {
+    margin-right: -150px;
+    width: 460px;
 }
 
-.home a:active {
-    color: red;
+.btn-duvidas {
+    background-color: #F20201;
+    color: white;
+    border-radius: 10px;
 }
 
-.home a:hover, .vagas a:hover, .curriculo a:hover {
-    color: red;
-}
 
-.entrar a, .cadastrar a {
-    text-decoration: none;
-}
-
-    .entrar a:hover {
-        color: red;
+/* responsividade secao 4 */
+@media (max-width: 1199px) { /*div que envolve as perguntas a baixo de 1199px*/
+    .btn-collapse {
+        width: 480px;
+        position: relative;
+        right: 35px;
     }
 
-    .cadastrar a:hover {
-        color: black;
+    .pergunta {
+        width: 350px;
     }
 
-.entrar {
-    color: red;
-    list-style: none;
+    .quest-empregaSENAI, .answer-empregaSENAI {
+        width: 400px;
+    }
 }
 
-.cadastrar {
-    color: black;
-    list-style: none;
-}
-
-    .cadastrar a:active {
-        color: red;
+@media (max-width: 991px) { /*div que envolve as perguntas a baixo de 1199px*/
+    .btn-collapse {
+        position: relative;
+        left: 0;
+        width: 320px;
     }
 
-    .cadastrar a:hover {
-        color: red;
+    .pergunta {
+        width: 210px;
     }
 
-/*
-#pao a:active{
-        background-color: rgb(236, 126, 126);
-        color: black;
-}
-*/
-
-#texto {
-    text-align: justify;
+    .quest-empregaSENAI, .answer-empregaSENAI {
+        width: 300px;
+    }
 }
 
-.entrar, .cadastrar {
+@media (max-width: 767px) { /*div que envolve as perguntas a baixo de 1199px*/
+    .btn-collapse {
+        position: relative;
+        left: 0;
+        width: 480px;
+    }
+
+    .pergunta {
+        width: 350px;
+    }
+
+    .quest-empregaSENAI, .answer-empregaSENAI {
+        width: initial;
+    }
+}
+
+@media (max-width: 575px) { /*div que envolve as perguntas a baixo de 1199px*/
+    .btn-collapse {
+        position: relative;
+        left: 0;
+        width: 500px;
+    }
+}
+
+@media (max-width: 559px) { /*div que envolve as perguntas a baixo de 1199px*/
+    .btn-collapse {
+        position: relative;
+        left: 0;
+        width: 450px;
+    }
+}
+
+@media (max-width: 509px) { /*div que envolve as perguntas a baixo de 1199px*/
+    .btn-collapse {
+        position: relative;
+        left: 0;
+        width: 370px;
+    }
+
+    .pergunta {
+        width: 250px;
+    }
+}
+
+
+
+/* quinta secao */
+.texto-avaliacao {
+    line-height: 33px;
+}
+
+.icon-aspas {
+    color: #F20201;
+    font-size: 80px;
+}
+
+.texto-avaliacao p {
+    font-weight: 500;
+    font-size: 25px;
+}
+
+.cinco-estrelas {
+    margin-top: -10px;
     font-size: 20px;
 }
 
-.linha {
-    background-color: red;
-    height: 5px;
+.texto-avaliacao h4 {
+    margin-top: -10px;
 }
 
-.dropdown a:hover {
-    color: red;
+.texto-avaliacao h5 {
+    color: #818181;
 }
 
-.dropdown {
-    /*aba das vagas*/
-    top: 8px;
-    position: relative;
-    font-size: xx-large;
+.img-avaliacao img {
+    border-radius: 10px;
 }
 
-.dropdown2 {
-    /*aba dos currículos*/
-    top: 10px;
-    position: relative;
-    right: -100px;
-    font-size: 30px;
+.carrosel-avaliacao {
+    margin-top: -50px;
+    margin-bottom: 70px;
+}
+/* responsividade secao 5 */
+@media (max-width: 1199px) {
+    .img-avaliacao img {
+        margin-left: -10px;
+    }
 }
 
-    .dropdown2 a:hover {
-        /*aba dos currículos*/
-        color: red;
+@media (max-width: 1093px) {
+    .texto-avaliacao p {
+        width: 480px;
+        font-size: 25px;
     }
 
-a:link {
-    text-decoration: none;
+    .img-avaliacao img {
+        margin-left: -10px;
+        margin-top: 10%;
+    }
 }
 
-footer {
-    border-top: 5px solid red;
-    width: 84%;
-    margin-left: 8%;
+@media (max-width: 991px) { /*div que envolve as perguntas a baixo de 1199px*/
+    .img-avaliacao img {
+        width: 200px;
+        border-radius: 50%;
+    }
+
+    .texto-avaliacao p {
+        width: 400px;
+        font-size: 20px;
+    }
 }
 
-.img {
-    width: 30%;
+@media (max-width: 767px) { /*div que envolve as perguntas a baixo de 1199px*/
+    .carrosel-avaliacao {
+        margin-bottom: 130px;
+    }
 }
 
-#suporte {
-    border-left: 4px solid red;
-    font: bold;
-    text-decoration: none;
-    color: red;
-    text-align: left;
-    left: 20px;
+
+/* sexta secao */
+.section6 {
+    margin-top: 50px;
+    margin-bottom: 60px;
+}
+
+.div-menina-mensagem > img {
+    width: 300px;
     position: relative;
+    left: 55px;
 }
 
-
-
-#projeto {
-    color: red;
-    text-align: left;
-    left: 170px;
+.div-form-perguntas {
     position: relative;
+    left: -50px;
+    background-color: #F20201;
+    color: white;
+    height: 465px;
+    border-radius: 10px;
 }
 
-
-.letra {
-    font: bold;
-    text-decoration: none;
+.form-perguntas {
+    position: relative;
+    top: 30px;
 }
 
-a:link {
-    text-decoration: none;
+.btn-enviarMSG {
+    border-radius: 10px;
+    height: 45px;
+    background-color: #6A45A5;
+    color: #d6b2ff;
+}
+/* responsividade secao 6 */
+@media (max-width: 991px) { /*div que envolve as perguntas a baixo de 1199px*/
+    .div-menina-mensagem > img {
+        visibility: hidden;
+    }
+
+    .div-menina-mensagem {
+        visibility: hidden;
+    }
+
+    .div-form-perguntas {
+        height: 470px;
+        position: relative;
+        left: -50%;
+    }
+
+    .form-perguntas {
+        width: 700px;
+    }
+
+    .div-form-perguntas2 {
+        width: 705px;
+        height: 470px;
+        background-color: #F20201;
+        border-radius: 10px;
+    }
 }
 
-#senai {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: bold;
-    text-align: left;
+@media (max-width: 767px) { /*div que envolve as perguntas a baixo de 1199px*/
+    .section6 {
+        margin-top: -500px;
+        margin-bottom: 60px;
+    }
+
+    .div-form-perguntas {
+        height: 540px;
+        position: relative;
+        left: 0%;
+    }
+
+    .div-form-perguntas2 {
+        width: 0;
+    }
+
+    .form-perguntas {
+        width: 500px;
+    }
+
+    .pergunta-nome {
+        width: 470px;
+    }
 }
 
-#sobre {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: bold;
+@media (max-width: 575px) { /*div que envolve as perguntas a baixo de 1199px*/
+    .div-form-perguntas {
+        border-radius: 0;
+    }
+
+    .section6 {
+        margin-bottom: 0;
+    }
 }
 
-#texto {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: bold;
-    margin-top: 40px;
+@media (max-width: 551px) {
+    .pergunta-nome {
+        width: 370px;
+    }
+
+    .form-perguntas {
+        width: 400px;
+    }
 }
 
-.flexa {
-    color: #fb0000;
+/* footer */
+.footer {
+    background-color: #d6b2ff;
 }
 
+.btn-enviar {
+    border-radius: 10px;
+    background-color: #6A45A5;
+    color: #d6b2ff;
+}
 
-
+.campo-email {
+    color: #6A45A5;
+}
+/* icones de contato*/
+.icon-contato i {
+    font-size: 25px;
+    margin: 7px;
+    color: #6A45A5;
+}

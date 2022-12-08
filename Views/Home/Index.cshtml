@@ -9,32 +9,392 @@
     ViewData["Title"] = "Tela inical";
 }
 
-<div class="text-center">
-    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                
-                    <img style="object-fit:cover; border-radius:30px" src="~/img/folder-exemplo.jpg" class="w-50">
-                
-            </div>
-            <div class="carousel-item">
-                
-                    <img style="object-fit:cover; border-radius:30px" src="~/img/folder-exemplo.jpg" class="w-50">
-                
-            </div>
-            <div class="carousel-item">
-                
-                    <img style="object-fit:cover; border-radius:30px" src="~/img/folder-exemplo.jpg" class="w-50">
-                
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"] - EmpregaSENAI</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/EmpregaSENAI.styles.css" asp-append-version="true" />
+</head>
+
+
+<section class="section1 container header-container py-5">
+    <div class="row align-items-md-stretch">
+        <div class="col-md-6">
+            <div class="container-esquerda container-fluid py-5">
+                <h1 class="display-5 fw-bold">Crie seu CV e baixe em PDF</h1>
+                <p class="col-md-8 fs-4">A maneira mais simples de criar um currículo que se <strong>destaque</strong> e te leve ao seu próximo emprego.</p>
+                <button class="btn-criarCV btn btn-lg fw-bolder" type="button" asp-controller="Curriculos" asp-action="Create">Crie seu CV</button>
             </div>
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-        </button>
+        <div class="col-md-6">
+            <div class="div-foto-menina">
+                <img src="./img/menina-curriculo.png" class="foto-menina col-md-12" alt="menina-curriculo">
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section2 container">
+    <div class="container text-empresa px-5 my-5">
+        <div class="mb-5">
+            <h1 class="fw-bold">Tem uma empresa? aqui ela também possui vantagens.</h1>
+            <p class="text-empresa2 lead mb-0">Veja no passo a passo abaixo como é simples.</p>
+        </div>
+    </div>
+
+    <section class="py-5" id="features">
+        <div class="container container-cards px-5 my-5">
+            <div class="container container-footer row gx-5">
+                <div class="col-lg-4 mb-5 mb-lg-0">
+                    <div class="icon-passo feature text-white rounded-3 mb-3 d-flex align-items-center justify-content-center">
+                        <i class="bi bi-ui-radios"></i>
+                    </div>
+                    <h2 class="h4 fw-bolder">Cadastre a nova vaga</h2>
+                    <p>Você conclui esta etapa após nos <strong>responder algumas perguntas</strong> sobre a vaga a ser dulvulgada.</p>
+                </div>
+                <div class="col-lg-4 mb-5 mb-lg-0">
+                    <div class="icon-passo feature text-white rounded-3 mb-3 d-flex align-items-center justify-content-center">
+                        <i class="bi bi-ui-checks"></i>
+                    </div>
+                    <h2 class="h4 fw-bolder">Nós analisamos</h2>
+                    <p>Após a <strong>análise e a aprovação dos dados</strong> contidos na vaga ela está pronta para ser divulgada.</p>
+                </div>
+                <div class="col-lg-4">
+                    <div class="icon-passo feature text-white rounded-3 mb-3 d-flex align-items-center justify-content-center">
+                        <i class="bi bi-bar-chart-fill"></i>
+                    </div>
+                    <h2 class="h4 fw-bolder">Sua vaga em nosso site</h2>
+                    <p>Na última etapa a vaga é divulgada para mais de <strong>50 mil alunos e ex-alunos</strong> já cadastrados no EmpregaSENAI.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</section>
+
+
+
+
+<div class="container py-5">
+    <h2 class="pb-2 border-bottom fw-bold">Dúvidas Frequentes</h2>
+
+    <div class="row row-cols-1 row-cols-md-2  g-5 py-5">
+        <div class="d-flex flex-column align-items-start gap-2">
+            <h3 class="fw-bold quest-empregaSENAI">O que é o EmpregaSENAI e o que ele muda na vida de alunos e ex-alunos do SENAI?</h3>
+            <p class="text-muted answer-empregaSENAI">
+                O EmpregaSENAI é um site de tecnologia que conecta empresas parceiras e
+                alunos/ex-alunos do SENAI. Fundada em 2022, temos como propósito mudar vidas por meio do trabalho e
+                atuamos 100% online.
+            </p>
+            <a href="#" class="btn-duvidas btn btn-lg fw-bold">Ver mais dúvidas</a>
+        </div>
+        <div class="row row-cols-1 row-cols-sm-1 g-4">
+
+
+            <div class="accordion" id="accordionExample">
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingOne">
+                        <button class="accordion-button collapsed btn-collapse" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                            <div class="circle-icon"> <i class="bi bi-question"></i> </div>
+                            <span class="pergunta fw-bold">Como as empresas entram em contato comigo caso se interessem pelo meu currículo?</span>
+                        </button>
+                    </h2>
+                    <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            <strong>É de suma responsabilidade das empresas</strong> que se interessarem por
+                            algum dos currículos disponiveis em nosso site fazer todo o intermédio e entrar em contato com o dono do
+                            currículo por meio de seu email. Por isso a importância de se ter bastante atenção ao preencher e gerar
+                            o seu currículo. E claro, ficar sempre atento ao emails que chegam em seu dispositivo.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingTwo">
+                        <button class="accordion-button collapsed btn-collapse" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            <div class="circle-icon"> <i class="bi bi-question"></i> </div>
+                            <span class="pergunta fw-bold">Não sou aluno nem ex-aluno do SENAI, posso criar uma conta mesmo assim?</span>
+                        </button>
+                        </button>
+                    </h2>
+                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            <strong>Não é possível a realização da conta!</strong> O site foi desenvolvido
+                            apenas para que alunos/ex-alunos do Senai tenham acesso. Ao se cadastrar é necessário que se
+                            tenha o RA do aluno.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingThree">
+                        <button class="accordion-button collapsed btn-collapse" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            <div class="circle-icon"> <i class="bi bi-question"></i> </div>
+                            <span class="pergunta fw-bold">Qualquer empresa pode divulgar vagas no site?</span>
+                        </button>
+                        </button>
+                    </h2>
+                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            <strong>Não é qualquer empresa que pode divulgar vagas no site.</strong>
+                            Somente empresas parceiras do SENAI! Temos controle por meio do CNPJ da empresa que é colocado no cadastro.
+                            Mas não se desanime, para se tornar uma empresa parceira do SENAI é super simples, entre em contato
+                            diretamente com a instituição e lá eles te ensinarão passo a passo.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingFor">
+                        <button class="accordion-button collapsed btn-collapse" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFor" aria-expanded="false" aria-controls="collapseFor">
+                            <div class="circle-icon"> <i class="bi bi-question"></i> </div>
+                            <span class="pergunta fw-bold">Com funciona o processo de análise e aprovação das vagas que coloco no site?</span>
+                        </button>
+                    </h2>
+                    <div id="collapseFor" class="accordion-collapse collapse" aria-labelledby="headingFor" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            <strong>É simples,</strong> para que se mantenha uma organização e o padrão da
+                            Instituição SENAI é necessário que tanto os currículos como as vagas sejam preenchidos somente com
+                            o que é solicitado no formulário. Caso ao contrário será removido pelos adm’s da página.
+                            Os currículos que estiverem com todos os dados corretos será direcionado às empresas interessadas e
+                            que se encaixam ao cargo solicitado. E empresas que preencheram os dados da vaga de forma correta terá
+                            o seu banner com as informações divulgadas no site, na opção: Ver vagas.
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
     </div>
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="carouselExampleIndicators" class="carrosel-avaliacao carousel slide" data-bs-ride="true">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <div class="container">
+                <div class="row featurette">
+                    <div class="texto-avaliacao col-md-7 order-md-2">
+                        <i class="icon-aspas bi bi-quote"></i>
+                        <p class="lead">
+                            Moonlight newspaper up its enjoyment Um ótimo conteúdo de espaço reservado para o primeiro
+                            featurette aqui. Imagine uma prosa emocionante aqui Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                            Corporis libero delectus quisquam quaerat, totam, nemo dignissimos.
+                        </p>
+                        <ul class="cinco-estrelas list-unstyled d-flex">
+                            <li class="ms-3"><i class="bi bi-star-fill text-warning"></i>
+                            <li class="ms-3"><i class="bi bi-star-fill text-warning"></i>
+                            <li class="ms-3"><i class="bi bi-star-fill text-warning"></i>
+                            <li class="ms-3"><i class="bi bi-star-half text-warning"></i>
+                            <li class="ms-3"><i class="bi bi-star text-warning"></i>
+                        </ul>
+                        <h4 class="fw-bold">Billy Vasquez</h4>
+                        <h5 class="fw-normal">Empregado há 3 meses</h5>
+                    </div>
+                    <div class="img-avaliacao col-md-5 order-md-1 text-center">
+                        <img src="./img/avaliacao-1.jpg" alt="avaliação1" width="395">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <div class="container">
+                <div class="row featurette">
+                    <div class="texto-avaliacao col-md-7 order-md-2">
+                        <i class="icon-aspas bi bi-quote"></i>
+                        <p class="lead">
+                            Moonlight newspaper up its enjoyment Um ótimo conteúdo de espaço reservado para o primeiro
+                            featurette aqui. Imagine uma prosa emocionante aqui Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                            Corporis libero delectus quisquam quaerat, totam, nemo dignissimos.
+                        </p>
+                        <ul class="cinco-estrelas list-unstyled d-flex">
+                            <li class="ms-3"><i class="bi bi-star-fill text-warning"></i>
+                            <li class="ms-3"><i class="bi bi-star-fill text-warning"></i>
+                            <li class="ms-3"><i class="bi bi-star-fill text-warning"></i>
+                            <li class="ms-3"><i class="bi bi-star-half text-warning"></i>
+                            <li class="ms-3"><i class="bi bi-star text-warning"></i>
+                        </ul>
+                        <h4 class="fw-bold">Billy Vasquez</h4>
+                        <h5 class="fw-normal">Empregado há 2 semanas</h5>
+                    </div>
+                    <div class="img-avaliacao col-md-5 order-md-1 text-center">
+                        <img src="./img/avaliacao-2.jpg" alt="avaliação2" width="395">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <div class="container">
+                <div class="row featurette">
+                    <div class="texto-avaliacao col-md-7 order-md-2">
+                        <i class="icon-aspas bi bi-quote"></i>
+                        <p class="lead">
+                            Moonlight newspaper up its enjoyment Um ótimo conteúdo de espaço reservado para o primeiro
+                            featurette aqui. Imagine uma prosa emocionante aqui Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                            Corporis libero delectus quisquam quaerat, totam, nemo dignissimos.
+                        </p>
+                        <ul class="cinco-estrelas list-unstyled d-flex">
+                            <li class="ms-3"><i class="bi bi-star-fill text-warning"></i>
+                            <li class="ms-3"><i class="bi bi-star-fill text-warning"></i>
+                            <li class="ms-3"><i class="bi bi-star-fill text-warning"></i>
+                            <li class="ms-3"><i class="bi bi-star-half text-warning"></i>
+                            <li class="ms-3"><i class="bi bi-star text-warning"></i>
+                        </ul>
+                        <h4 class="fw-bold">Billy Vasquez</h4>
+                        <h5 class="fw-normal">Empregado há 1 semana</h5>
+                    </div>
+                    <div class="img-avaliacao col-md-5 order-md-1 text-center">
+                        <img src="./img/avaliacao-3.jpg" alt="avaliação3" width="395">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@*<section class="section6 container">
+  <div class="row align-items-md-stretch">
+    <div class="div-menina-mensagem col-md-6">
+      <img src="./img/menina-mensagem.png" class="menina-mensagem" alt="">
+    </div>
+    <div class="div-form-perguntas col-md-6 ">
+      <div class="div-form-perguntas2">
+      <h2 class=" fw-bold fs-3 container form-perguntas">Ficou com alguma dúvida?</h2>
+      <form class="container form-perguntas">
+          <div class="row form-group">
+            <div class="col-6">
+              <label class="control-label">Nome Completo *</label>
+              <input type="text" class="pergunta-nome form-control">
+            </div>
+            <div class="col-md-6">
+              <label class="control-label">E-mail *</label>
+              <input type="email" class="form-control">
+            </div>
+          </div>
+          <div class="row form-group">
+            <div class="col-md-12">
+              <label class="control-label">Telefone ou Celular *</label>
+                <input type="tel" class="form-control">
+            </div>
+          </div>
+          <div class="row form-group">
+            <div class="col-md-12">
+              <label class="control-label">Mensagem *</label>
+              <textarea id="message" class="form-control" rows="2" name="message"></textarea>
+            </div>
+          </div>
+          <div class="form-check form-group">
+            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+            <label class="form-check-label" for="flexCheckDefault">
+              <a href="#">Concordo com os termos do EmpregaSENAI.</a>
+            </label>
+          </div>
+          <div class="row form-group">
+            <div class="col-12">
+              <button class="btn-enviarMSG btn  pull-left fw-bold">Enviar Mensagem</button>
+            </div>
+          </div>
+      </form>
+</div>
+    </div>
+  </div>
+</section>*@
+
+
+
+
+
+
+
+
+
+<div class="footer">
+    <div class="container">
+        <footer class="py-5">
+            <div class="row">
+                <div class="col-6 col-md-2 mb-3">
+                    <h5 _msthash="1118078" _msttexthash="109447">Empresa</h5>
+                    <ul class="nav flex-column">
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted" _msthash="1617278" _msttexthash="42250">Sobre</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted" _msthash="1617642" _msttexthash="253617">Política de Privacidade</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted" _msthash="1617824" _msttexthash="429065">Como Trabalhamos</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted" _msthash="1618006" _msttexthash="59826">Fazer Parte</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-6 col-md-2 mb-3">
+                    <h5 _msthash="1118286" _msttexthash="109447">Suporte</h5>
+                    <ul class="nav flex-column">
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted" _msthash="1617785" _msttexthash="313612">SENAI RP</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted" _msthash="1617967" _msttexthash="253617">SENAI SP</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted" _msthash="1618149" _msttexthash="429065">Fale com a gente</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted" _msthash="1618331" _msttexthash="59826">Ajuda</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-6 col-md-2 mb-3">
+                    <h5 _msthash="1118494" _msttexthash="109447">Contato</h5>
+                    <ul class="nav flex-column">
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted" _msthash="1617928" _msttexthash="42250">Desenvolvedores</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted" _msthash="1618110" _msttexthash="313612">SENAI RP</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted" _msthash="1618292" _msttexthash="253617">SENAI SP</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
+                <p _msthash="794300" _msttexthash="1579513">© 2022 EmpregaSENAI, Inc. Todos os direitos reservados.</p>
+                <ul class="icon-contato list-unstyled d-flex">
+                    <li class="ms-3"><a class="link-dark" href="#"></a><i class="bi bi-dribbble"></i></li>
+                    <li class="ms-3"><a class="link-dark" href="#"><i class="bi bi-linkedin"></i></a></li>
+                    <li class="ms-3"><a class="link-dark" href="#"><i class="bi bi-github"></i></a></li>
+                </ul>
+            </div>
+        </footer>
+    </div>
+</div>
+
