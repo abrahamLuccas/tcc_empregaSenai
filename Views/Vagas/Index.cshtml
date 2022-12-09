@@ -10,51 +10,52 @@
 <p>
     <a asp-action="Create">Create New</a>
 </p>
-<section>
+<section>  
 <div class="card">
-<table class="table">
+    <table class="table">
     <thead>
         <tr>
-            <th>
+            @*<th>
                 @Html.DisplayNameFor(model => model.Desc)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Setor)
-            </th>
-            <th>
+            </th>*@
+            <th class="requisitos">
                 @Html.DisplayNameFor(model => model.Requisitos)
             </th>
-            <th>
+            @*<th>
                 @Html.DisplayNameFor(model => model.Infos)
             </th>
-            <th></th>
+            <th></th>*@
         </tr>
     </thead>
     <tbody>
 @foreach (var item in Model) {
         <tr>
-            <td>
+            <td class="descricao">
                 @Html.DisplayFor(modelItem => item.Desc)
             </td>
-            <td>
+            <td class="setor">
                 @Html.DisplayFor(modelItem => item.Setor)
             </td>
-            <td>
+            <td class="reqbody">
                 @Html.DisplayFor(modelItem => item.Requisitos)
             </td>
-            <td>
+            <td class="info">
                 @Html.DisplayFor(modelItem => item.Infos)
             </td>
-            <td>
+           @* <td>
                 <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
                 <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
                 <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
+            </td>*@
         </tr>
 }
     </tbody>
 </table>
 </div>
+
 </section>
 
 
@@ -64,10 +65,47 @@
         padding: 0;
         justify-content: center;
         display: flex;
+        background-color:red;
     }
 
     .card{
-        width:500px;
-        height:500px;
+        width:483px;
+        height:483px;
+        display:flex;
+        /* background: src(../wwwroot/img/folder-exemplo.jpg);*/
+        flex-direction:column;
+        float:left;           
     }
+
+    .requisitos{
+        border:none;
+        margin-top:0px;
+    }
+
+    .setor{
+        background-color:pink;
+        display:flex;
+        margin-top:-90px;
+        border:none;
+    }
+
+    .descricao{
+        display:flex;
+        margin-top:50px;
+        border:none;
+    }
+
+    .reqbody{
+        border:none;
+        display:flex;
+        margin-top:110px;
+    }
+
+    .info{
+        border:none;
+        display:flex;
+        margin-top:150px;
+    }
+
 </style>
+
