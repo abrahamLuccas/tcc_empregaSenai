@@ -6,9 +6,15 @@
 
 <h1>Index</h1>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
+
+@{
+    var x = 0;
+    foreach (var i in Model)
+    {
+        x++;
+    }
+    if (x >= 1)
+    {
 
 <section>
 <div class="card">
@@ -197,13 +203,10 @@
         <hr />
             <p class="resumo-txt">
              <!-- <h3>Resumo</h3> Descrição -->
-                A procura de me desenvolver cada vez mais em novos desafios que me proponho. 
-                Atualmente meu maior desafio e vontade é entregar meu TCC e começar em uma empresa que possa me ajudar na
-                caminhada para um desenvolvimento pessoal e principalmente desenvolvimento profissional. 
-                Sem experiencia com o mercado de trabalho mas com muitos pontos fortes como: proativa, criativa,
-                trabalho em grupo e raciocínio lógico.
-                Preferência de horário: turno da tarde se possível.
-
+                @foreach (var item in Model)
+                        {
+                           @Html.DisplayFor(model => item.Resumo) 
+                        }
             </p>       
     </div>
 
@@ -355,6 +358,13 @@
 
 </div>
 </section>
+
+}
+    else
+    {
+        <h1>Você ainda não criou nenhum curriculo <a asp-action="Create">Criar Curriculo</a></h1>                          
+    }
+}
 
 <style>
 

@@ -7,25 +7,44 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using EmpregaSENAI.Areas.Identity.Data;
 using EmpregaSENAI.Models;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Authorization;
+using EmpregaSENAI.Core;
 
 namespace EmpregaSENAI.Controllers
 {
     public class CurriculosController : Controller
     {
         private readonly AppCont _context;
+        private readonly UserManager<Users> _userManager;
 
-        public CurriculosController(AppCont context)
+        public CurriculosController(
+            AppCont context,
+            UserManager<Users> userManager
+        )
         {
+            _userManager = userManager;
             _context = context;
+            
         }
 
         // GET: Curriculos
         public async Task<IActionResult> Index()
         {
-              return View(await _context.Curriculo.ToListAsync());
-        }
+            var user = await _userManager.GetUserAsync(User);
+            if (user == null)
+            {
+                return NotFound("VOCÊ NÃO ESTÁ LOGADO");
+            }
+            var userId = await _userManager.GetUserIdAsync(user);
+            var curriculo = await _context.Curriculo.Where(x => x.FK_UserId == userId).ToListAsync();
+            
 
+            return View(curriculo);
+        }
+       
         // GET: Curriculos/Details/5
+        [Authorize(Policy = Constants.Policies.Aluno)]
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null || _context.Curriculo == null)
@@ -44,8 +63,9 @@ namespace EmpregaSENAI.Controllers
         }
 
         // GET: Curriculos/Create
+        [Authorize(Policy = Constants.Policies.Aluno)]
         public IActionResult Create()
-        {
+        {                     
             return View();
         }
 
@@ -54,10 +74,18 @@ namespace EmpregaSENAI.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Nome,DataNascimento,Telefone,Endereco,Bairro,Cidade,CEP,Email,CargoInteresse,Instituicao,GrauFormacao,NomeCurso,Duracao,AnoConclusao")] Curriculo curriculo)
+        [Authorize(Policy = Constants.Policies.Aluno)]
+        public async Task<IActionResult> Create([Bind("Id,FK_UserId,Nome,DataNascimento,Telefone,Endereco,Bairro,Cidade,CEP,Email,CargoInteresse,Instituicao,GrauFormacao,NomeCurso,Duracao,AnoConclusao, Resumo")] Curriculo curriculo)
         {
-            if (ModelState.IsValid)
+            var user = await _userManager.GetUserAsync(User);
+            if(user == null)
             {
+                return NotFound($"Unable to load user with ID '{_userManager.GetUserId(User)}'.");
+            }
+            var userId = await _userManager.GetUserIdAsync(user);
+            curriculo.FK_UserId = userId;
+            if (ModelState.IsValid)
+            {              
                 _context.Add(curriculo);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
@@ -66,6 +94,7 @@ namespace EmpregaSENAI.Controllers
         }
 
         // GET: Curriculos/Edit/5
+        [Authorize(Policy = Constants.Policies.Aluno)]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null || _context.Curriculo == null)
@@ -86,6 +115,7 @@ namespace EmpregaSENAI.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Policy = Constants.Policies.Aluno)]
         public async Task<IActionResult> Edit(int id, [Bind("Id,Nome,DataNascimento,Telefone,Endereco,Bairro,Cidade,CEP,Email,CargoInteresse,Instituicao,GrauFormacao,NomeCurso,Duracao,AnoConclusao")] Curriculo curriculo)
         {
             if (id != curriculo.Id)
@@ -117,6 +147,7 @@ namespace EmpregaSENAI.Controllers
         }
 
         // GET: Curriculos/Delete/5
+        [Authorize(Policy = Constants.Policies.Aluno)]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null || _context.Curriculo == null)
@@ -137,6 +168,7 @@ namespace EmpregaSENAI.Controllers
         // POST: Curriculos/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize(Policy = Constants.Policies.Aluno)]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             if (_context.Curriculo == null)

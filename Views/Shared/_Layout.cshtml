@@ -1,4 +1,10 @@
-﻿<!DOCTYPE html>
+﻿@using Microsoft.AspNetCore.Identity
+@using EmpregaSENAI.Areas.Identity.Data
+
+@inject SignInManager<EmpregaSENAI.Models.Users> SignInManager
+@inject UserManager<EmpregaSENAI.Models.Users> UserManager
+
+<!DOCTYPE html>
 <html lang="pt-br">
 
 <head>
@@ -42,7 +48,23 @@
                     </li>
                     <li class="nav-item active"><a class="nav-link text-dark" href="#"> Contato </a></li>
                 </ul>
-                <li class="entrar btn btn-login fw-bold text-dark"><a class="entrar" asp-area="Identity" style="text-decoration:none; color:white;" asp-page="/Account/Login">Entrar </a></li>
+                @if (SignInManager.IsSignedIn(User))
+                {
+                    <div class=" col-md-3 d-flex justify-content-end py-3">
+
+                        <a id="manage" class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Bem Vindo @UserManager.GetUserName(User)!</a>
+
+                        <form id="logoutForm" class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
+                            <button id="logout" type="submit" class="nav-link btn btn-link text-dark">Sair</button>
+                        </form>
+
+                    </div>
+                }
+                else
+                {
+                    <li class="entrar btn btn-login fw-bold text-dark"><a class="entrar" asp-area="Identity" style="text-decoration:none; color:white;" asp-page="/Account/Login">Entrar </a></li>
+
+                }
             </div> <!-- navbar-collapse.// -->
         </div>
         @*<partial name="_LoginPartial" />*@

@@ -65,6 +65,9 @@ namespace EmpregaSENAI.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("FK_UserId")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("GrauFormacao")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -78,6 +81,10 @@ namespace EmpregaSENAI.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("NomeCurso")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Resumo")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -190,6 +197,15 @@ namespace EmpregaSENAI.Migrations
 
                     b.Property<string>("Setor")
                         .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("UserEmail")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("UserId")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("UserNome")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");

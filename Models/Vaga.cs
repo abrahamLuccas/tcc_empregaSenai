@@ -7,6 +7,15 @@ namespace EmpregaSENAI.Models
         [Key]
         public int Id { get; set; }
 
+        public string? UserId { get; set; }
+
+        [Display(Name = "E-mail")]
+        public string? UserEmail { get; set; }
+
+        [Display(Name = "Nome")]
+        public string? UserNome { get; set; }
+
+
         [Required, Display(Name = "Descrição da vaga")]
         public string Desc { get; set; }
 

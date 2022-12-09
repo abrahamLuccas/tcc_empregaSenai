@@ -14,6 +14,7 @@ namespace EmpregaSENAI.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false).Annotation("SqlServer:Identity", "1, 1"),
+                    FK_UserId = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     Nome = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     DataNascimento = table.Column<int>(type: "int", nullable: false),
                     Telefone = table.Column<string>(type: "nvarchar(max)", nullable: false),
@@ -27,14 +28,25 @@ namespace EmpregaSENAI.Migrations
                     GrauFormacao = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     NomeCurso = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Duracao = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Resumo = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     AnoConclusao = table.Column<int>(type: "int", nullable: false)
 
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Curriculo", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Curriculo_UserId",
+                        column: x => x.FK_UserId,
+                        principalSchema: "Identity",
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+
                 });
         }
+
+
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {

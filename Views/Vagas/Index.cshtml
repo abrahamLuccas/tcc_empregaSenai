@@ -1,4 +1,10 @@
-﻿@model IEnumerable<EmpregaSENAI.Models.Vaga>
+﻿@using Microsoft.AspNetCore.Identity
+@using EmpregaSENAI.Areas.Identity.Data
+
+@inject SignInManager<EmpregaSENAI.Models.Users> SignInManager
+@inject UserManager<EmpregaSENAI.Models.Users> UserManager
+
+@model IEnumerable<EmpregaSENAI.Models.Vaga>
 
 @{
     ViewData["Title"] = "Index";
@@ -10,53 +16,50 @@
 <p>
     <a asp-action="Create">Create New</a>
 </p>
-<section>  
-<div class="card">
-    <table class="table">
-    <thead>
+
+
+<section>
+<table class="table">
+    @*<thead>
         <tr>
-            @*<th>
-                @Html.DisplayNameFor(model => model.Desc)
+            <th class="nomeheader">
+                @Html.DisplayNameFor(model => model.UserNome)
             </th>
-            <th>
+            <th class="emailheader">
+                @Html.DisplayNameFor(model => model.UserEmail)
+            </th>           
+            <th class="setorheader">
                 @Html.DisplayNameFor(model => model.Setor)
-            </th>*@
-            <th class="requisitos">
-                @Html.DisplayNameFor(model => model.Requisitos)
-            </th>
-            @*<th>
-                @Html.DisplayNameFor(model => model.Infos)
-            </th>
-            <th></th>*@
+            </th>                   
         </tr>
-    </thead>
+    </thead>*@
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td class="descricao">
-                @Html.DisplayFor(modelItem => item.Desc)
-            </td>
-            <td class="setor">
-                @Html.DisplayFor(modelItem => item.Setor)
-            </td>
-            <td class="reqbody">
-                @Html.DisplayFor(modelItem => item.Requisitos)
-            </td>
-            <td class="info">
-                @Html.DisplayFor(modelItem => item.Infos)
-            </td>
-           @* <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-            </td>*@
-        </tr>
-}
+        @foreach (var item in Model)
+        {            
+            <tr class="card">
+                <td class="nomebody">
+                    @Html.DisplayFor(modelItem => item.UserNome)
+                </td>
+                <td class="setorbody">
+                            @*<i class="bi bi-pin-angle-fill"></i> pin icone *@
+                    @Html.DisplayFor(modelItem => item.Setor)
+                </td>                      
+                <td class="emailbody">
+                    @Html.DisplayFor(modelItem => item.UserEmail)
+                </td>                
+                <td class="detailsbody">
+                    @if(@item.UserId == @UserManager.GetUserId(User))
+                    {
+                        <a asp-action="Details" asp-route-id="@item.Id">Details</a>
+                    }
+
+                </td>
+            </tr>          
+        }
     </tbody>
 </table>
-</div>
-
 </section>
+
 
 
 <style>
@@ -65,47 +68,67 @@
         padding: 0;
         justify-content: center;
         display: flex;
-        background-color:red;
+        background-color:pink;
     }
 
     .card{
-        width:483px;
-        height:483px;
+        width:283px;
+        height:283px;
         display:flex;
         /* background: src(../wwwroot/img/folder-exemplo.jpg);*/
         flex-direction:column;
-        float:left;           
-    }
+        float:left;  
+        border-radius:15px;
+        margin-right:15px;
+        margin-top:15px;
+        margin-left:15px;
+        nackground-color:red;
+    }  
 
-    .requisitos{
-        border:none;
-        margin-top:0px;
-    }
 
-    .setor{
-        background-color:pink;
-        display:flex;
-        margin-top:-90px;
-        border:none;
-    }
-
-    .descricao{
-        display:flex;
-        margin-top:50px;
-        border:none;
-    }
-
-    .reqbody{
+    /*CARD BODY*/
+    
+    .nomebody{
         border:none;
         display:flex;
-        margin-top:110px;
+        margin-top:40px;
+        justify-content:center;        
+        align-items:center;          
+        padding:100px;
+        color:red;
+        font-weight:bold;
     }
 
-    .info{
+    .emailbody{
         border:none;
         display:flex;
-        margin-top:150px;
+        margin-top:20px;
+        justify-content:center;
+        align-items:center;
+    }
+    /*cargo*/
+    .setorbody{       
+        border:none;
+        display:flex;
+        margin-top:20px;
+        justify-content:center;
+        align-items:center;
+        font-weight:bold;
+    }
+
+    /*botao detalhes */
+    .detailsbody{
+        border:none;
+        display:flex;
+        margin-top:10px;
+        justify-content:center;
+        align-items:center;
+        
+    }
+
+    a:link{
+        text-decoration:none;
+        color:black;
     }
 
 </style>
-

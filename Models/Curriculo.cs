@@ -7,8 +7,11 @@ namespace EmpregaSENAI.Models
 {
     public class Curriculo
     {
+
         [Key]
         public int Id { get; set; }
+
+        public string? FK_UserId { get; set; }
 
         [Required, Display(Name = "Nome:")]
         public string Nome { get; set; }
@@ -39,6 +42,9 @@ namespace EmpregaSENAI.Models
 
         [Required, Display(Name = "Instituição:")]
         public string Instituicao { get; set; }
+
+        [Required, Display(Name = "Resumo:")]
+        public string Resumo { get; set; }
 
         [Required, Display(Name = "Grau Formação:")]
         public string GrauFormacao { get; set; }

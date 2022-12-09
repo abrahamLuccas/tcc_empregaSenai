@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EmpregaSENAI.Migrations
 {
     [DbContext(typeof(AppCont))]
-    [Migration("20221209021503_pcAbraha")]
-    partial class pcAbraha
+    [Migration("20221209142305_caralho")]
+    partial class caralho
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -67,6 +67,9 @@ namespace EmpregaSENAI.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("FK_UserId")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("GrauFormacao")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -80,6 +83,10 @@ namespace EmpregaSENAI.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("NomeCurso")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Resumo")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -192,6 +199,15 @@ namespace EmpregaSENAI.Migrations
 
                     b.Property<string>("Setor")
                         .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("UserEmail")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("UserId")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("UserNome")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
