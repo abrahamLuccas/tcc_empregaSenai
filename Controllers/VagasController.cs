@@ -77,8 +77,8 @@ namespace EmpregaSENAI.Controllers
             var userNome = await _userManager.GetUserNameAsync(user);
             var userEmail = await _userManager.GetEmailAsync(user);
 
-            vaga.UserEmail = userEmail;
-            vaga.UserNome = userNome;
+            /*vaga.UserEmail = userEmail;
+            vaga.UserNome = userNome;*/
             vaga.UserId = userId;
 
             if (ModelState.IsValid)
@@ -143,8 +143,8 @@ namespace EmpregaSENAI.Controllers
             var userNome = await _userManager.GetUserNameAsync(user);
             var userEmail = await _userManager.GetEmailAsync(user);
 
-            vaga.UserEmail = userEmail;
-            vaga.UserNome = userNome;
+            /*vaga.UserEmail = userEmail;
+            vaga.UserNome = userNome;*/
             vaga.UserId = userId;
 
             if (ModelState.IsValid)
