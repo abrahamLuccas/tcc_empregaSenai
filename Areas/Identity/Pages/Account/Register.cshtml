@@ -3,6 +3,7 @@
 @{
 }
 <h1>@ViewData["Title"]</h1>
+<html>
 <body>
     <link href="~/css/testes.css rel="stylesheet" />
     @*<style>
@@ -10,7 +11,7 @@
     padding: 25px;
     background-color: white;
     color: black;
-    font-size: 25px;
+border-colort-size: 25px;
     }
     .dark-mode {
     background-color: black;
@@ -46,8 +47,7 @@
 
             <div class="vh-100 d-flex justify-content-center align-items-center" id="forms">
                 <div class="col-md-4 p-5 shadow-sm border border rounded-3">
-                    <h2 class="text-center mb-4 text-danger">Register Form</h2>
-
+                    <h2 class="text-center mb-4" style="color: #F20201;">Criar Conta</h2>
 
 
                     <div class="form">
@@ -73,24 +73,24 @@
 
 
 
-                                <input asp-for="Input.FirstName" type="text" class="form-control border border-danger" autocomplete="firstname" aria-required="true" />
+                                <input asp-for="Input.FirstName" type="text" class="form-control" style="border:1px solid #F20201;" autocomplete="firstname" aria-required="true" />
                                 <label asp-for="Input.FirstName" class="form-label">Nome</label>
-                                <span asp-validation-for="Input.FirstName" class="text-danger fw-bold"></span>
+                                <span asp-validation-for="Input.FirstName" class=" fw-bold"></span>
 
 
 
 
-                                <input asp-for="Input.Email" class="form-control border border-danger" autocomplete="username" aria-required="true" />
+                                <input asp-for="Input.Email" class="form-control" style="border:1px solid #F20201;" autocomplete="username" aria-required="true" />
                                 <label asp-for="Input.Email" class="form-label">E-Mail</label>
-                                <span asp-validation-for="Input.Email" class="text-danger"></span>
+                                <span asp-validation-for="Input.Email" class="  "></span>
 
 
 
                             </div>
                             <div class="col-sm-6">
-                                <input asp-for="Input.LastName" class="form-control border border-danger" autocomplete="lastname" aria-required="true" />
+                                <input asp-for="Input.LastName" class="form-control" style="border:1px solid #F20201;" autocomplete="lastname" aria-required="true" />
                                 <label asp-for="Input.LastName" class="form-label">Sobrenome</label>
-                                <span asp-validation-for="Input.LastName" class="text-danger"></span>
+                                <span asp-validation-for="Input.LastName" class="  "></span>
 
 
 
@@ -99,11 +99,11 @@
 
 
                                 <div class="form-label" id="form-empresa">
-                                    <input class="form-control border border-danger" autocomplete="email" />
+                                    <input class="form-control" style="border:1px solid #F20201;" autocomplete="email" />
                                     <label>CNPJ</label>
                                 </div>
                                 <div class="form-label" id="form-aluno">
-                                    <input class="form-control border border-danger" autocomplete="email" />
+                                    <input class="form-control" style="border:1px solid #F20201;" autocomplete="email" />
                                     <label>RA</label>
                                 </div>
 
@@ -114,33 +114,31 @@
                         </div>
 
                         <div class="md-12">
-                            <input asp-for="Input.Password" class="form-control border border-danger" autocomplete="new-password" aria-required="true" />
+                            <input asp-for="Input.Password" class="form-control" style="border:1px solid #F20201;" autocomplete="new-password" aria-required="true" />
                             <label asp-for="Input.Password" class="form-label">Senha</label>
-                            <span asp-validation-for="Input.Password" class="text-danger"></span>
+                            <span asp-validation-for="Input.Password" class="  "></span>
                         </div>
 
 
 
                         <div class="mb-3">
-                            <input asp-for="Input.ConfirmPassword" class="form-control border border-danger" autocomplete="new-password" aria-required="true" />
+                            <input asp-for="Input.ConfirmPassword" class="form-control" style="border:1px solid #F20201;" autocomplete="new-password" aria-required="true" />
                             <label asp-for="Input.ConfirmPassword" class="form-label">Confirmar Senha</label>
-                            <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
-
-
-
-
+                            <span asp-validation-for="Input.ConfirmPassword" class="  "></span>
                         </div>
-                        <p class="small"><a class="text-danger" href="forget-password.html">Forgot password?</a></p>
+                        <div class="form-check text-center">
+                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                            <label class="form-check-label fw-bold" for="exampleCheck1">Eu conconcordo com os <a href="../Account/Termos" style="color: #6A45A5;">termos de uso</a> do EmpregaSENAI.</label>
+                        </div>                        
+
                         <div class="d-grid">
-                            <button id="registerSubmit" type="submit" class="w-100 btn btn-lg btn-danger">Cadastrar</button>
+                            <button id="registerSubmit" type="submit" class="w-100 btn btn-lg" style="background-color: #F20201;color:white;">Cadastrar</button>
                         </div>
                     </form>
                     <div class="mt-3">
                         <p class="mb-0  text-center text-bg-danger">
-                            Ja tem uma conta? <a href="signup.html"
-                                                 class="text-danger fw-bold">
-                                Login
-                                Up
+                            Ja tem uma conta? <a href="../Account/Login" class="fw-bold" style="color: #F20201;">
+                                Faça login
                             </a>
                         </p>
                     </div>
@@ -151,257 +149,8 @@
 
 
         </form>
-        </div>
 
-        <div class="container">
-
-            <div class="row align-items-md-stretch">
-                <div class="tutu col-md-6">
-                    <div class="container-esquerda container-fluid py-5">
-                        <h1 class="display-5 fw-bold">Crie seu CV e baixe em PDF</h1>
-                        <p class="col-md-8 fs-4">A maneira mais simples de criar um currículo que <strong>chame atenção</strong> e te levará ao seu próximo emprego.</p>
-                        <button class="btn-criarCV btn btn-lg fw-bolder" type="button">Crie seu CV</button>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="menina-curriculo h-100 rounded-3">
-                        <img src="./img/menina-curriculo.png" class="col-md-12" alt="">
-                    </div>
-                </div>
-            </div>
-
-        </div>
-
-
-
-
-
-
-
-
-
-        <div class="login-page bg-light">
-            <div class="">
-                <div class="row">
-                    <div class="col-lg-10 offset-lg-1">
-                        <h3 class="mb-3">Login Now</h3>
-                        <div class="bg-white shadow rounded">
-                            <div class="row">
-                                <div class="col-md-7 pe-0">
-                                    <div class="form-left h-100 py-5 px-5">
-                                        <form action="" class="row g-4">
-                                            <div class="col-12">
-                                                <label>Username<span class="text-danger">*</span></label>
-                                                <div class="input-group">
-                                                    <div class="input-group-text"><i class="bi bi-person-fill"></i></div>
-                                                    <input type="text" class="form-control" placeholder="Enter Username">
-                                                </div>
-                                            </div>
-
-                                            <div class="col-12">
-                                                <label>Password<span class="text-danger">*</span></label>
-                                                <div class="input-group">
-                                                    <div class="input-group-text"><i class="bi bi-lock-fill"></i></div>
-                                                    <input type="text" class="form-control" placeholder="Enter Password">
-                                                </div>
-                                            </div>
-
-                                            <div class="col-sm-6">
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="checkbox" id="inlineFormCheck">
-                                                    <label class="form-check-label" for="inlineFormCheck">Remember me</label>
-                                                </div>
-                                            </div>
-
-                                            <div class="col-sm-6">
-                                                <a href="#" class="float-end text-primary">Forgot Password?</a>
-                                            </div>
-
-                                            <div class="col-12">
-                                                <button type="submit" class="btn btn-primary px-4 float-end mt-4">login</button>
-                                            </div>
-                                        </form>
-                                    </div>
-                                </div>
-                                <div class="col-md-5 ps-0 d-none d-md-block">
-                                    <div class="form-right h-100 bg-primary text-white text-center pt-5">
-                                        <i class="bi bi-bootstrap"></i>
-                                        <h2 class="fs-1">Welcome Back!!!</h2>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
-            <div class="carousel-indicators">
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-            </div>
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <div class="container py-5">
-                        <div class="row featurette">
-                            <div class="texto-avaliacao col-md-7">
-                                <i class="icon-aspas bi bi-quote"></i>
-                                <p class="lead">
-                                    Moonlight newspaper up its enjoyment Um ótimo conteúdo de espaço reservado para o primeiro
-                                    featurette aqui. Imagine uma prosa emocionante aqui Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                    Corporis libero delectus quisquam quaerat, totam, nemo dignissimos.
-                                </p>
-                                <ul class="cinco-estrelas list-unstyled d-flex">
-                                    <li class="ms-3"><i class="bi bi-star-fill text-warning"></i>
-                                    <li class="ms-3"><i class="bi bi-star-fill text-warning"></i>
-                                    <li class="ms-3"><i class="bi bi-star-fill text-warning"></i>
-                                    <li class="ms-3"><i class="bi bi-star-half text-warning"></i>
-                                    <li class="ms-3"><i class="bi bi-star text-warning"></i>
-                                </ul>
-                                <h4 class="fw-bold">Billy Vasquez</h4>
-                                <h5 class="fw-normal">Empregado há 3 meses</h5>
-                            </div>
-                            <div class="img-avaliacao col-md-5 text-center">
-                                <img src=~"~/img/avaliacao-1.jpg" alt="" width="395">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="container py-5">
-                        <div class="row featurette">
-                            <div class="col-md-7 order-md-2">
-                                <i class="icon-aspas bi bi-quote"></i>
-                                <p class="lead">
-                                    Moonlight newspaper up its enjoyment Um ótimo conteúdo de espaço reservado para o primeiro
-                                    featurette aqui. Imagine uma prosa emocionante aqui Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                    Corporis libero delectus quisquam quaerat, totam, nemo dignissimos.
-                                </p>
-                                <ul class="cinco-estrelas list-unstyled d-flex">
-                                    <li class="ms-3"><i class="bi bi-star-fill text-warning"></i>
-                                    <li class="ms-3"><i class="bi bi-star-fill text-warning"></i>
-                                    <li class="ms-3"><i class="bi bi-star-fill text-warning"></i>
-                                    <li class="ms-3"><i class="bi bi-star-half text-warning"></i>
-                                    <li class="ms-3"><i class="bi bi-star text-warning"></i>
-                                </ul>
-                                <h4 class="fw-bold">Billy Vasquez</h4>
-                                <h5 class="fw-normal">Empregado há 2 semanas</h5>
-                            </div>
-                            <div class="img-avaliacao col-md-5 order-md-1 text-center">
-                                <img src="./img/avaliacao-2.jpg" alt="avaliação2" width="395">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="container py-5">
-                        <div class="row featurette">
-                            <div class="texto-avaliacao col-md-7">
-                                <i class="icon-aspas bi bi-quote"></i>
-                                <p class="lead">
-                                    Moonlight newspaper up its enjoyment Um ótimo conteúdo de espaço reservado para o primeiro
-                                    featurette aqui. Imagine uma prosa emocionante aqui Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                    Corporis libero delectus quisquam quaerat, totam, nemo dignissimos.
-                                </p>
-                                <ul class="cinco-estrelas list-unstyled d-flex">
-                                    <li class="ms-3"><i class="bi bi-star-fill text-warning"></i>
-                                    <li class="ms-3"><i class="bi bi-star-fill text-warning"></i>
-                                    <li class="ms-3"><i class="bi bi-star-fill text-warning"></i>
-                                    <li class="ms-3"><i class="bi bi-star-half text-warning"></i>
-                                    <li class="ms-3"><i class="bi bi-star text-warning"></i>
-                                </ul>
-                                <h4 class="fw-bold">Billy Vasquez</h4>
-                                <h5 class="fw-normal">Empregado há 1 mes</h5>
-                            </div>
-                            <div class="img-avaliacao col-md-5 text-center">
-                                <img src="./img/avaliacao-3.jpg" alt="avaliação3" width="395">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
-        </div>
-
-
-
-
-
-        <nav class="navbar navbar-expand-lg navbar-dark">
-            <div class="container">
-                <a class="logo navbar-brand fw-bold" href="#">EmpregaSENAI!</a>
-                <buttom class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main_nav">
-                    <span><i class="bi bi-list"></i></span>
-                </buttom>
-                <div class="collapse navbar-collapse" id="main_nav">
-                    <ul class="navbar-nav mx-auto">
-                        <li class="nav-item active fw-bold"> <a class="nav-link text-dark" href="#">Home </a> </li>
-                        <li class="nav-item active"><a class="nav-link text-dark" href="#"> Ver vagas </a></li>
-                        <li class="nav-item active"><a class="nav-link text-dark" href="#"> Criar CV </a></li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link  dropdown-toggle active text-dark" href="#" data-toggle="dropdown">
-                                Blog
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item text-dark" href="#"> Artigos para Alunos   </a></li>
-                                <li><a class="dropdown-item text-dark" href="#"> Artigos para empresas </a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item active"><a class="nav-link text-dark" href="#"> Contato </a></li>
-                    </ul>
-                    <div class="dropdown text-end">
-                        <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                            <img src="https://github.com/mdo.png" alt="mdo" width="32" height="32" class="rounded-circle" _mstalt="33306">
-                        </a>
-                        <ul class="dropdown-menu text-small" _mstvisible="0">
-                            <li _mstvisible="1"><a class="dropdown-item" href="#" _msthash="2061878" _msttexthash="221169" _mstvisible="2">Novo projeto...</a></li>
-                            <li _mstvisible="1"><a class="dropdown-item" href="#" _msthash="2062060" _msttexthash="288522" _mstvisible="2">Configurações</a></li>
-                            <li _mstvisible="1"><a class="dropdown-item" href="#" _msthash="2062242" _msttexthash="76245" _mstvisible="2">Perfil</a></li>
-                            <li _mstvisible="1"><hr class="dropdown-divider" _mstvisible="2"></li>
-                            <li _mstvisible="1"><a class="dropdown-item" href="#" _msthash="2062606" _msttexthash="44746" _mstvisible="2">Sair</a></li>
-                        </ul>
-                    </div>
-                </div> <!-- navbar-collapse.// -->
-            </div>
-        </nav>
-
-
-
-
-
-
-
-
-
-
-
+</section>
 </body>
 </html>
 
@@ -420,8 +169,8 @@
         }
     });
 </script>
+
 <script src="js/bootstrap.bundle.min.js"></script>
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />
 }
-    </section>

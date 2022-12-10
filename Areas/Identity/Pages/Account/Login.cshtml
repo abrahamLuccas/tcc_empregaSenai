@@ -97,15 +97,13 @@
                          @Html.DisplayNameFor(m => m.Input.RememberMe)
                      </label>
                  </div>
-            </div>
-            <p class="small"><a class="esquece-senha" href="forget-password.html">Esqueceu sua senha?</a></p>
+            </div>            
             <div class="d-grid">
               <button class="form-btn-entrar btn fw-bold" type="submit">Entrar</button>
             </div>
             <div class="sem-conta mt-3">
               <p class="mb-0  text-center">Não tem uma conta? <a href="../Account/Register" class="fw-bold">Inscreva-se</a></p>
-            </div>
-            <small class="text-muted">Ao clicar em Inscrever-se, você concorda com os termos de uso.</small>
+            </div>            
           </form>
         </div>
       </div>
@@ -142,9 +140,9 @@
         <div class="col mb-3">
           <h5 _msthash="1118286" _msttexthash="109447">Suporte</h5>
             <ul class="nav flex-column">
-              <li class="nav-item mb-2"><a href="https://ribeiraopreto.sp.senai.br/" class="nav-link p-0 text-muted" _msthash="1617785" _msttexthash="313612">SENAI RP</a></li>
-              <li class="nav-item mb-2"><a href="https://www.sp.senai.br/" class="nav-link p-0 text-muted" _msthash="1617967" _msttexthash="253617">SENAI SP</a></li>
-              <li class="nav-item mb-2"><a href="https://www.sp.senai.br/fale-conosco?menu=39&idescola=602" class="nav-link p-0 text-muted" _msthash="1618149" _msttexthash="429065">Fale com a gente</a></li>
+              <li class="nav-item mb-2"><a href="https://ribeiraopreto.sp.senai.br/" target="_blank" class="nav-link p-0 text-muted" _msthash="1617785" _msttexthash="313612">SENAI RP</a></li>
+              <li class="nav-item mb-2"><a href="https://www.sp.senai.br/" target="_blank" class="nav-link p-0 text-muted" _msthash="1617967" _msttexthash="253617">SENAI SP</a></li>
+              <li class="nav-item mb-2"><a href="https://www.sp.senai.br/fale-conosco?menu=39&idescola=602" target="_blank" class="nav-link p-0 text-muted" _msthash="1618149" _msttexthash="429065">Fale com a gente</a></li>
             </ul>
         </div>
     
@@ -152,8 +150,8 @@
           <h5 _msthash="1118494" _msttexthash="109447">Contato</h5>
             <ul class="nav flex-column">
               <li class="nav-item mb-2"><a href="./contato-dev.html" class="nav-link p-0 text-muted" _msthash="1617928" _msttexthash="42250">Desenvolvedores</a></li>
-              <li class="nav-item mb-2"><a href="https://ribeiraopreto.sp.senai.br/" class="nav-link p-0 text-muted" _msthash="1618110" _msttexthash="313612">SENAI RP</a></li>
-              <li class="nav-item mb-2"><a href="https://www.sp.senai.br/" class="nav-link p-0 text-muted" _msthash="1618292" _msttexthash="253617">SENAI SP</a></li>
+              <li class="nav-item mb-2"><a href="https://ribeiraopreto.sp.senai.br/" target="_blank" class="nav-link p-0 text-muted" _msthash="1618110" _msttexthash="313612">SENAI RP</a></li>
+              <li class="nav-item mb-2"><a href="https://www.sp.senai.br/" target="_blank" class="nav-link p-0 text-muted" _msthash="1618292" _msttexthash="253617">SENAI SP</a></li>
             </ul>
         </div>
       </footer>
@@ -167,7 +165,6 @@
 
 
 <style>
-
 body{
     overflow-x: hidden;
 }
@@ -178,7 +175,6 @@ body{
     -moz-user-select: none;
     user-select: none;
 }
-
 
 .b-example-divider {
     height: 3rem;
@@ -276,7 +272,7 @@ body{
 .login-container{
     margin-top: 5%;
 }
-.login-form-header{   
+.login-form-header{
     height: 5px;
 }
 .login-form-title, .esquece-senha, .sem-conta a{
@@ -304,6 +300,9 @@ body{
     border: 1px solid #F20201 !important;
     border-radius: 10px;
 }
+.form-check-label a{
+    color: #6A45A5;
+}
 
 /* footer */
 .footer{
@@ -324,7 +323,6 @@ body{
     margin: 7px;
     color: #6A45A5;
 }
-</style>
 
 <style type="text/css" media="screen and (max-width:768px)">
     .bd-placeholder-img-lg {
