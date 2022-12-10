@@ -1,82 +1,333 @@
 ﻿@page
 @model LoginModel
 
-<link href="~/css/entrar.css" rel="stylesheet" />
+<html>
+<body>
 
-    <div class="conteudo container">
-     <div class="conteudo-esquerda">
-<div class="form">
-        <section>
-            <form id="account" method="post">
-                <hr />
-                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-
-                <div class="formulario container">
-                    <div class="wrapper">
-                <div class="input-box">
-                    <input asp-for="Input.Email" class="form-control" autocomplete="username" aria-required="true" />
-                    <label asp-for="Input.Email" class="form-label"></label>
-                    <span asp-validation-for="Input.Email" class="text-danger"></span>
-                </div>
-                <div class="input-box">
-                    <input asp-for="Input.Password" class="form-control" autocomplete="current-password" aria-required="true" />
-                    <label asp-for="Input.Password" class="form-label"></label>
-                    <span asp-validation-for="Input.Password" class="text-danger"></span>
-                </div>
-                </div>
-                <div>
-                    <div class="checkbox">
-                        <label asp-for="Input.RememberMe" class="form-label">
-                            <input class="form-check-input" asp-for="Input.RememberMe" />
-                            @Html.DisplayNameFor(m => m.Input.RememberMe)
-                        </label>
-                    </div>
-                </div>
-                <div>
-                    <button id="login-submit" type="submit" class="w-100 btn btn-lg btn-danger">Entrar</button>
-                </div>
-                </div>
-            </form>
-        </section>
-    </div>
-    </div>
-
-     <div class="linha mx-auto my-auto"></div>
-        <div class="conteudo-direita">
-            <div class="fundo">
-                <img src="~/img/senas.png" alt="">
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    @*<div class="container">
+      <a class="logo navbar-brand fw-bold" href="./home.html">EmpregaSENAI!</a>
+      <buttom class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main_nav">
+        <span><i class="bi bi-list"></i></span>
+      </buttom>
+      <div class="collapse navbar-collapse" id="main_nav">
+        <ul class="navbar-nav mx-auto">
+          <li class="nav-item active fw-bold"> <a class="nav-link text-dark" href="./home.html">Home </a> </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link  dropdown-toggle active text-dark" href="#" data-toggle="dropdown">  
+              Vagas
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item text-dark" href="./entrar.html"> Adicionar vagas   </a></li>
+              <li><a class="dropdown-item text-dark" href="./entrar.html"> Ver vagas </a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link  dropdown-toggle active text-dark" href="#" data-toggle="dropdown">  
+              Currículos
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item text-dark" href="./entrar.html"> Adicionar currículo   </a></li>
+              <li><a class="dropdown-item text-dark" href="./entrar.html"> Ver currículo </a></li>
+            </ul>
+          </li>
+          <li class="nav-item active"><a class="nav-link text-dark" href="./contato-dev.html"> Contato </a></li>
+        </ul>
+        <button type="button" class="btn-login btn fw-bold" data-bs-toggle="modal" data-bs-target="#JanelaModal">
+          Entrar
+        </button>*@
+        @*<div id="JanelaModal" class="modal fade">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content rounded-4 shadow">
+              <div class="modal-header p-5 pb-4 border-bottom-0">
+                <h3 class="modal-title fw-bold">Entrar</h3>
+                <button type="button" class="btn btn-close" data-bs-dismiss="modal"></button>
+              </div>
+              <div class="modal-body p-5 pt-0">
+                <form class="modal-form">
+                  <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">E-mail</label>
+                    <input type="email" class="form-control border" id="exampleInputEmail1" aria-describedby="emailHelp">
+                  </div>
+                  <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">Senha</label>
+                    <input type="password" class="form-control border" id="exampleInputPassword1">
+                  </div>
+                  <p class="small"><a class="esquece-senha" href="forget-password.html">Esqueceu sua senha?</a></p>
+                  <div class="d-grid">
+                    <button class="modal-btn-enviar btn fw-bold" type="submit">Entrar</button>
+                  </div>
+                  <div class="sem-conta mt-3">
+                    <p class="mb-0  text-center">Não tem uma conta? <a href="./registro.html"class=" fw-bold">Inscreva-se</a></p>
+                  </div>
+                  <small class="text-muted">Ao clicar em Inscrever-se, você concorda com os termos de uso.</small>
+                </form>
+              </div>
             </div>
+          </div>
         </div>
+      </div> <!-- navbar-collapse.// -->
+    </div>*@
+    </nav>
 
+
+
+
+  <div class="login-container h-100 d-flex justify-content-center align-items-center">
+      <div class="rounded-4 shadow">
+        <div class="login-form-header p-5 pb-5 border-bottom-0">
+          <h3 class="login-form-title fw-bold">Entrar</h3>
+        </div>
+        <div class="form-body p-5 pt-0">
+                <form class="login-form" id="account" method="post">
+            <div class="input-box mb-1">                          
+                        <input asp-for="Input.Email" class="form-control border" id="exampleInputEmail1" aria-describedby="emailHelp" aria-required="true" />
+                        <label asp-for="Input.Email" for="exampleInputEmail1" class="form-label">Email</label>
+                        <span asp-validation-for="Input.Email" class="text-danger"></span>
+            </div>
+            <div class="input-box mb-3">
+                    <input asp-for="Input.Password" class="form-control border" id="exampleInputPassword1" autocomplete="current-password" aria-required="true" />
+                    <label asp-for="Input.Password" for="exampleInputPassword1" class="form-label">Senha</label>
+                    <span asp-validation-for="Input.Password" class="text-danger"></span>
+            </div>
+            <div>
+                 <div class="checkbox">
+                     <label asp-for="Input.RememberMe" class="form-label">
+                         <input class="form-check-input" asp-for="Input.RememberMe" />
+                         @Html.DisplayNameFor(m => m.Input.RememberMe)
+                     </label>
+                 </div>
+            </div>
+            <p class="small"><a class="esquece-senha" href="forget-password.html">Esqueceu sua senha?</a></p>
+            <div class="d-grid">
+              <button class="form-btn-entrar btn fw-bold" type="submit">Entrar</button>
+            </div>
+            <div class="sem-conta mt-3">
+              <p class="mb-0  text-center">Não tem uma conta? <a href="../Account/Register" class="fw-bold">Inscreva-se</a></p>
+            </div>
+            <small class="text-muted">Ao clicar em Inscrever-se, você concorda com os termos de uso.</small>
+          </form>
+        </div>
+      </div>
+  </div>
+    
+
+
+
+  <div class="footer">
+    <div class="container">
+      <div class="py-5">
+      <footer class="row row-cols-1 row-cols-sm-2 row-cols-md-5 py-5 my-5">
+        <div class="col mb-3">
+          <ul class="icon-contato list-unstyled d-flex">
+            <li class="ms-3"><a class="link-dark" href="#"></a><i class="bi bi-dribbble"></i></li>
+            <li class="ms-3"><a class="link-dark" href="#"><i class="bi bi-linkedin"></i></a></li>
+            <li class="ms-3"><a class="link-dark" href="#"><i class="bi bi-github"></i></a></li>
+          </ul>
+          <p class="text-muted text-decoration-none" _msthash="769574" _msttexthash="116831">
+            © 2022 EmpregaSENAI, Inc. Todos os direitos reservados.
+          </p>
+        </div>
+        <div class="col mb-3"></div>
+    
+        <div class="col mb-3">
+          <h5 _msthash="1118078" _msttexthash="109447">Empresa</h5>
+            <ul class="nav flex-column">
+              <li class="nav-item mb-2"><a href="./sobre-nos.html" class="nav-link p-0 text-muted" _msthash="1617278" _msttexthash="42250">Sobre</a></li>
+              <li class="nav-item mb-2"><a href="./termos.html" class="nav-link p-0 text-muted" _msthash="1617642" _msttexthash="253617">Política de Privacidade</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted" _msthash="1618006" _msttexthash="59826">Fazer Parte</a></li>
+            </ul>
+        </div>
+    
+        <div class="col mb-3">
+          <h5 _msthash="1118286" _msttexthash="109447">Suporte</h5>
+            <ul class="nav flex-column">
+              <li class="nav-item mb-2"><a href="https://ribeiraopreto.sp.senai.br/" class="nav-link p-0 text-muted" _msthash="1617785" _msttexthash="313612">SENAI RP</a></li>
+              <li class="nav-item mb-2"><a href="https://www.sp.senai.br/" class="nav-link p-0 text-muted" _msthash="1617967" _msttexthash="253617">SENAI SP</a></li>
+              <li class="nav-item mb-2"><a href="https://www.sp.senai.br/fale-conosco?menu=39&idescola=602" class="nav-link p-0 text-muted" _msthash="1618149" _msttexthash="429065">Fale com a gente</a></li>
+            </ul>
+        </div>
+    
+        <div class="col mb-3">
+          <h5 _msthash="1118494" _msttexthash="109447">Contato</h5>
+            <ul class="nav flex-column">
+              <li class="nav-item mb-2"><a href="./contato-dev.html" class="nav-link p-0 text-muted" _msthash="1617928" _msttexthash="42250">Desenvolvedores</a></li>
+              <li class="nav-item mb-2"><a href="https://ribeiraopreto.sp.senai.br/" class="nav-link p-0 text-muted" _msthash="1618110" _msttexthash="313612">SENAI RP</a></li>
+              <li class="nav-item mb-2"><a href="https://www.sp.senai.br/" class="nav-link p-0 text-muted" _msthash="1618292" _msttexthash="253617">SENAI SP</a></li>
+            </ul>
+        </div>
+      </footer>
+    </div>
+    </div>
     </div>
 
-    <div class="col-md-6 col-md-offset-2">
-        <section>
-            
-            <hr />
-            @{
-                if ((Model.ExternalLogins?.Count ?? 0) == 0)
-                {
-                    
-                }
-                else
-                {
-                    <form id="external-account" asp-page="./ExternalLogin" asp-route-returnUrl="@Model.ReturnUrl" method="post" class="form-horizontal">
-                        <div>
-                            <p>
-                                @foreach (var provider in Model.ExternalLogins)
-                                {
-                                    <button type="submit" class="btn btn-primary" name="provider" value="@provider.Name" title="Log in using your @provider.DisplayName account">@provider.DisplayName</button>
-                                }
-                            </p>
-                        </div>
-                    </form>
-                }
-            }
-        </section>
-    </div>
-</div>
 
-@section Scripts {
-    <partial name="_ValidationScriptsPartial" />
+</body>
+</html>
+
+
+<style>
+
+body{
+    overflow-x: hidden;
 }
+.bd-placeholder-img {
+    font-size: 1.125rem;
+    text-anchor: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+}
+
+
+.b-example-divider {
+    height: 3rem;
+    background-color: rgba(0, 0, 0, .1);
+    border: solid rgba(0, 0, 0, .15);
+    border-width: 1px 0;
+    box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+}
+
+.b-example-vr {
+    flex-shrink: 0;
+    width: 1.5rem;
+    height: 100vh;
+}
+
+.bi {
+    vertical-align: -.125em;
+    fill: currentColor;
+}
+
+.nav-scroller {
+    position: relative;
+    z-index: 2;
+    height: 2.75rem;
+    overflow-y: hidden;
+}
+
+.nav-scroller .nav {
+    display: flex;
+    flex-wrap: nowrap;
+    padding-bottom: 1rem;
+    margin-top: -1px;
+    overflow-x: auto;
+    text-align: center;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+}
+/* fim css pronto */
+
+
+
+/* meu css */
+
+
+/*nav */
+
+/*cor da logo */
+.logo{
+    color: #F20201 !important;
+}
+
+/*nav */
+
+/*cor da logo */
+.logo{
+    color: #F20201 !important;
+}
+/*modal*/
+.modal-header{
+    height: 5px;
+}
+.modal-title, .esquece-senha, .sem-conta a{
+    color: #F20201;
+}
+.modal-btn-enviar{
+    background-color: #F20201;
+    color: white;
+    border-radius: 10px;
+}
+.modal-form{
+    margin-top: -25px;
+}
+.form-control{
+    border: 1px solid #F20201 !important;
+    border-radius: 10px;
+}
+
+/* cor btn login */
+.btn-login{
+    background-color: #F20201;
+    color: white;
+    border-radius: 10px;
+}
+
+/* cor botao hamburguer */
+.navbar-toggler i{
+    color: #6A45A5;
+    font-size: 45px;
+    font-weight:bold;
+}
+
+
+
+/*form-login*/
+.login-container{
+    margin-top: 5%;
+}
+.login-form-header{   
+    height: 5px;
+}
+.login-form-title, .esquece-senha, .sem-conta a{
+    color: #F20201;
+}
+.form-btn-entrar{
+    background-color: #F20201;
+    color: white;
+    border-radius: 10px;
+}
+.btn-login:hover{
+    background-color: #6A45A5;
+    color: white;
+    text-decoration: none;
+}
+.form-btn-entrar:hover{
+    background-color: #6A45A5;
+    color: white;
+    text-decoration: none;
+}
+.login-form{
+    margin-top: -25px;
+}
+.form-control{
+    border: 1px solid #F20201 !important;
+    border-radius: 10px;
+}
+
+/* footer */
+.footer{
+    background-color: #d6b2ff;
+    margin-top: 100px;
+}
+.btn-enviar{
+    border-radius: 10px;
+    background-color: #6A45A5;
+    color: #d6b2ff;
+}
+.campo-email{
+    color: #6A45A5;
+}
+/* icones de contato*/
+.icon-contato i{
+    font-size: 25px;
+    margin: 7px;
+    color: #6A45A5;
+}
+</style>
+
+<style type="text/css" media="screen and (max-width:768px)">
+    .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+    }
+</style>
