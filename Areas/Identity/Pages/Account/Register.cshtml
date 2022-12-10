@@ -41,6 +41,72 @@ border-colort-size: 25px;
     content.innerText = "Dark Mode is OFF";
     }
     </script>*@
+
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="logo navbar-brand fw-bold" href="./home.html">EmpregaSENAI!</a>
+            <buttom class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main_nav">
+                <span><i class="bi bi-list"></i></span>
+            </buttom>
+            <div class="collapse navbar-collapse" id="main_nav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item active fw-bold"> <a class="nav-link text-dark" href="./home.html">Home </a> </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link  dropdown-toggle active text-dark" href="#" data-toggle="dropdown">
+                            Vagas
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item text-dark" href="./entrar.html"> Adicionar vagas   </a></li>
+                            <li><a class="dropdown-item text-dark" href="./entrar.html"> Ver vagas </a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link  dropdown-toggle active text-dark" href="#" data-toggle="dropdown">
+                            Currículos
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item text-dark" href="./entrar.html"> Adicionar currículo   </a></li>
+                            <li><a class="dropdown-item text-dark" href="./entrar.html"> Ver currículo </a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item active"><a class="nav-link text-dark" href="./contato-dev.html"> Contato </a></li>
+                </ul>
+                <button type="button" class="btn-login btn fw-bold" data-bs-toggle="modal" data-bs-target="#JanelaModal">
+                    Entrar
+                </button>
+                <div id="JanelaModal" class="modal fade">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content rounded-4 shadow">
+                            <div class="modal-header p-5 pb-4 border-bottom-0">
+                                <h3 class="modal-title fw-bold">Entrar</h3>
+                                <button type="button" class="btn btn-close" data-bs-dismiss="modal"></button>
+                            </div>
+                            <div class="modal-body p-5 pt-0">
+                                <form class="modal-form">
+                                    <div class="mb-3">
+                                        <label for="exampleInputEmail1" class="form-label">E-mail</label>
+                                        <input type="email" class="form-control border" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="exampleInputPassword1" class="form-label">Senha</label>
+                                        <input type="password" class="form-control border" id="exampleInputPassword1">
+                                    </div>
+                                    <p class="small"><a class="esquece-senha" href="forget-password.html">Esqueceu sua senha?</a></p>
+                                    <div class="d-grid">
+                                        <button class="modal-btn-enviar btn fw-bold" type="submit">Entrar</button>
+                                    </div>
+                                    <div class="sem-conta mt-3">
+                                        <p class="mb-0  text-center">Não tem uma conta? <a href="./registro.html" class=" fw-bold">Inscreva-se</a></p>
+                                    </div>
+                                    <small class="text-muted">Ao clicar em Inscrever-se, você concorda com os termos de uso.</small>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> <!-- navbar-collapse.// -->
+        </div>
+    </nav>
     <section>
         <form id="registerForm" asp-route-returnUrl="@Model.ReturnUrl" method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>

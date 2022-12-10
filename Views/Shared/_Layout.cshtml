@@ -4,7 +4,7 @@
 @inject SignInManager<EmpregaSENAI.Models.Users> SignInManager
 @inject UserManager<EmpregaSENAI.Models.Users> UserManager
 
-@*<head>
+<head>
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -19,13 +19,13 @@
     <script src="~/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js"></script>
     <link href="~/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/EmpregaSENAI.styles.css" asp-append-version="true" />
+    @*<link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/EmpregaSENAI.styles.css" asp-append-version="true" />*@
 </head>
 <body>
 
 
-    <nav class="navbar navbar-expand-lg navbar-dark">
+    @*<nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container">
             <a class="logo navbar-brand fw-bold" href="#">EmpregaSENAI!</a>
             <buttom class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main_nav" aria-expanded="true">
@@ -69,6 +69,13 @@
         </div>
         <partial name="_LoginPartial" />
     </nav>
+*@
+
+
+
+
+</body>
+</html>
 
 
     @RenderBody()
@@ -77,9 +84,3 @@
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
-
-
-
-</body>
-</html>
-*@
