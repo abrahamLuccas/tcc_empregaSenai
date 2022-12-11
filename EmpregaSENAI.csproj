@@ -19,6 +19,7 @@
 
   <ItemGroup>
     <None Include="wwwroot\bootstrap\js\bootstrap.bundle.min.js" />
+    <None Include="wwwroot\img\background-vagas.png" />
     <None Include="wwwroot\img\menina-curriculo.svg" />
     <None Include="wwwroot\img\menina-mensagem.svg" />
     <None Include="wwwroot\js\bootstrap.bundle.min.js" />

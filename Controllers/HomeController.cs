@@ -13,6 +13,11 @@ namespace EmpregaSENAI.Controllers
             return View();
         }
 
+        public ActionResult Contato()
+        {
+            return View();
+        }
+
         [Authorize(Policy = $"{Constants.Policies.Empresa}")]
         public ActionResult Empresa()
         {

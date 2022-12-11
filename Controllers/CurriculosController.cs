@@ -25,10 +25,11 @@ namespace EmpregaSENAI.Controllers
         {
             _userManager = userManager;
             _context = context;
-            
+
         }
 
         // GET: Curriculos
+        [Authorize(Policy = Constants.Policies.Aluno)]
         public async Task<IActionResult> Index()
         {
             var user = await _userManager.GetUserAsync(User);
@@ -38,11 +39,11 @@ namespace EmpregaSENAI.Controllers
             }
             var userId = await _userManager.GetUserIdAsync(user);
             var curriculo = await _context.Curriculo.Where(x => x.FK_UserId == userId).ToListAsync();
-            
+
 
             return View(curriculo);
         }
-       
+
         // GET: Curriculos/Details/5
         [Authorize(Policy = Constants.Policies.Aluno)]
         public async Task<IActionResult> Details(int? id)
@@ -64,9 +65,26 @@ namespace EmpregaSENAI.Controllers
 
         // GET: Curriculos/Create
         [Authorize(Policy = Constants.Policies.Aluno)]
-        public IActionResult Create()
-        {                     
-            return View();
+        public async Task<IActionResult> Create()
+        {
+
+            var user = await _userManager.GetUserAsync(User);
+            if (user == null)
+            {
+                return NotFound($"Unable to load user with ID '{_userManager.GetUserId(User)}'.");
+            }
+            var userId = await _userManager.GetUserIdAsync(user);
+            var curriculo = await _context.Curriculo.Where(x => x.FK_UserId == userId).CountAsync();
+
+            if (curriculo > 0)
+            {
+                return NotFound("Você já possui Curriculo criado");
+            }
+            else
+            {
+                return View();
+            }
+
         }
 
         // POST: Curriculos/Create
@@ -78,19 +96,21 @@ namespace EmpregaSENAI.Controllers
         public async Task<IActionResult> Create([Bind("Id,FK_UserId,Nome,DataNascimento,Telefone,Endereco,Bairro,Cidade,CEP,Email,CargoInteresse,Instituicao,GrauFormacao,NomeCurso,Duracao,AnoConclusao, Resumo")] Curriculo curriculo)
         {
             var user = await _userManager.GetUserAsync(User);
-            if(user == null)
+            if (user == null)
             {
                 return NotFound($"Unable to load user with ID '{_userManager.GetUserId(User)}'.");
             }
             var userId = await _userManager.GetUserIdAsync(user);
             curriculo.FK_UserId = userId;
             if (ModelState.IsValid)
-            {              
+            {
                 _context.Add(curriculo);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
             return View(curriculo);
+
+
         }
 
         // GET: Curriculos/Edit/5
@@ -116,7 +136,7 @@ namespace EmpregaSENAI.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Authorize(Policy = Constants.Policies.Aluno)]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Nome,DataNascimento,Telefone,Endereco,Bairro,Cidade,CEP,Email,CargoInteresse,Instituicao,GrauFormacao,NomeCurso,Duracao,AnoConclusao")] Curriculo curriculo)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,FK_UserId,Nome,DataNascimento,Telefone,Endereco,Bairro,Cidade,CEP,Email,CargoInteresse,Instituicao,GrauFormacao,NomeCurso,Duracao,AnoConclusao, Resumo")] Curriculo curriculo)
         {
             if (id != curriculo.Id)
             {
@@ -180,14 +200,14 @@ namespace EmpregaSENAI.Controllers
             {
                 _context.Curriculo.Remove(curriculo);
             }
-            
+
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
         private bool CurriculoExists(int id)
         {
-          return _context.Curriculo.Any(e => e.Id == id);
+            return _context.Curriculo.Any(e => e.Id == id);
         }
     }
 }

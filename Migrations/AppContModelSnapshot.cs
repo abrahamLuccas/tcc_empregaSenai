@@ -31,15 +31,14 @@ namespace EmpregaSENAI.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<int>("AnoConclusao")
+                    b.Property<int?>("AnoConclusao")
+                        .IsRequired()
                         .HasColumnType("int");
 
                     b.Property<string>("Bairro")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("CEP")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("CargoInteresse")
@@ -47,10 +46,10 @@ namespace EmpregaSENAI.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Cidade")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("DataNascimento")
+                    b.Property<int?>("DataNascimento")
+                        .IsRequired()
                         .HasColumnType("int");
 
                     b.Property<string>("Duracao")
@@ -188,15 +187,12 @@ namespace EmpregaSENAI.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Infos")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Requisitos")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Setor")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("UserEmail")

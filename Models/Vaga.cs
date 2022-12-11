@@ -17,16 +17,16 @@ namespace EmpregaSENAI.Models
 
 
         [Required, Display(Name = "Descrição da vaga")]
-        public string Desc { get; set; }
+        public string? Desc { get; set; }
 
         [Display(Name = "Setor")]
-        public string Setor { get; set; }
+        public string? Setor { get; set; }
 
         [Display(Name = "Requisitos")]
-        public string Requisitos { get; set; }
+        public string? Requisitos { get; set; }
 
         [Display(Name = "Informações adicionais")]
-        public string Infos { get; set; }
+        public string? Infos { get; set; }
 
 
     }

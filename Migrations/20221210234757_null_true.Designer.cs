@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EmpregaSENAI.Migrations
 {
     [DbContext(typeof(AppCont))]
-    [Migration("20221208171441_prontinho")]
-    partial class prontinho
+    [Migration("20221210234757_null_true")]
+    partial class null_true
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -33,15 +33,14 @@ namespace EmpregaSENAI.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<int>("AnoConclusao")
+                    b.Property<int?>("AnoConclusao")
+                        .IsRequired()
                         .HasColumnType("int");
 
                     b.Property<string>("Bairro")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("CEP")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("CargoInteresse")
@@ -49,10 +48,10 @@ namespace EmpregaSENAI.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Cidade")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("DataNascimento")
+                    b.Property<int?>("DataNascimento")
+                        .IsRequired()
                         .HasColumnType("int");
 
                     b.Property<string>("Duracao")
@@ -65,6 +64,9 @@ namespace EmpregaSENAI.Migrations
 
                     b.Property<string>("Endereco")
                         .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FK_UserId")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("GrauFormacao")
@@ -80,6 +82,10 @@ namespace EmpregaSENAI.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("NomeCurso")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Resumo")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -183,15 +189,21 @@ namespace EmpregaSENAI.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Infos")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Requisitos")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Setor")
-                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("UserEmail")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("UserId")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("UserNome")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");

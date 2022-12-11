@@ -5,11 +5,10 @@
 @inject SignInManager<EmpregaSENAI.Models.Users> SignInManager
 @inject UserManager<EmpregaSENAI.Models.Users> UserManager
 
-@model EmpregaSENAI.Models.Vaga
-
 @{
-    ViewData["Title"] = "Deletar Vaga";
+    ViewData["Title"] = "Tela de contato";
 }
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -105,119 +104,133 @@
         </div> <!-- navbar-collapse.// -->
     </div>
 </nav>
-<br />
-<br />
-<br />
-<br />
-<br />
-
-
-<h3 style="margin-left:120px">Tem certeza que deseja deletar? Após clicar em deletar não sera mais possível a visualização desta vaga.</h3>
-<section class="vh-100 gradient-custom">
-    <div class="container py-5 h-100">
-        <div class="row justify-content-center align-items-center h-100">
-            <div class="col-12 col-lg-9 col-xl-7">
-                <div class="card shadow card-registration" style="border-radius: 15px;">
-                    <div class="card-body p-4 p-md-5">
-                        <h3 class="form-title mb-4 pb-2 pb-md-0 mb-md-5 fw-bold">Detalhes da vaga</h3>
-                        <div class="row">
-                            <div class="col-md-6 mb-4 pb-2">
-                                <div class="mb-3 form-outline">
-                                    <label class="form-label">@Html.DisplayNameFor(model => model.UserNome)</label>
-                                    <a class="form-control border" id="nome-empresa" aria-describedby="nome-empresa">@Html.DisplayFor(model => model.UserNome)</a>
-                                </div>
-                            </div>
-                            <div class="col-md-6 mb-4 pb-2">
-                                <div class="mb-3 form-outline">
-                                    <label class="form-label">@Html.DisplayNameFor(model => model.UserEmail)</label>
-                                    <a class="form-control border" id="nome-empresa" aria-describedby="nome-empresa">@Html.DisplayFor(model => model.UserEmail)</a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="col-md-6 mb-4 pb-2">
-                                <div class="mb-3 form-outline">
-                                    <label class="form-label">@Html.DisplayNameFor(model => model.Setor)</label>
-                                    <a class="form-control border" id="nome-empresa" aria-describedby="nome-empresa">@Html.DisplayFor(model => model.Setor)</a>
-                                </div>
-                            </div>
-                            <div class="col-md-6 mb-4 pb-2">
-                                <div class="mb-3 form-outline">
-                                    <label class="form-label">@Html.DisplayNameFor(model => model.Desc)</label>
-                                    <a class="form-control border" id="nome-empresa" aria-describedby="nome-empresa">@Html.DisplayFor(model => model.Desc)</a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="col-md-6 mb-4 pb-2">
-                                <div class="mb-3">
-                                    <label class="form-label" for="form4Example3">@Html.DisplayNameFor(model => model.Requisitos)</label>
-                                    <textarea class="form-control" id="form4Example3" rows="4">@Html.DisplayFor(model => model.Requisitos)</textarea>
-                                </div>
-                            </div>
-                            <div class="col-md-6 mb-4 pb-2">
-                                <div class="mb-3">
-                                    <label class="form-label" for="form4Example3">@Html.DisplayNameFor(model => model.Infos)</label>
-                                    <textarea class="form-control" id="form4Example3" rows="4">@Html.DisplayFor(model => model.Infos)</textarea>
-                                </div>
-                            </div>
-                        </div>
-
-
-                        <div>
-                            <form asp-action="Delete">
-                                <a asp-action="Index">
-                                    <button class="form-btn-editar btn fw-bold" type="submit">
-                                        <i class="bi bi-arrow-left-short"> Voltar </i>
-                                    </button>
-                                </a>
-
-
-                                <input type="hidden" asp-for="Id" />
-                                <i class="bi bi-trash3"><input type="submit" value="Delete" class="form-btn-editar btn fw-bold" /></i>
-                            </form>
 
 
 
-                            @*
 
-                                <div id="JanelaModal" class="modal fade">
-                                <div class="modal-dialog" role="document">
-                                <div class="modal-content rounded-4">
-                                <div class="modal-header">
-                                <h4 class="modal-title fw-bold">Deletar esta vaga</h4>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                </div>
-                                <div class="modal-body">
-                                <p>Tem certeza que deseja deletar? Após clicar em deletar não sera mais possível a visualização desta vaga.</p>
-                                </div>
-                                <div class="modal-footer">
-                                <a asp-action="Delete" asp-route-id="@Model?.Id">
-                                <button type="button" class="form-btn-deletar btn fw-bold rounded-3">
-                                <i class="bi bi-trash3"> Deletar </i>
-                                </button>
-                                </a>
-                                </div>
-                                </div>
-                                </div>
-                                </div>*@
-                        </div>
+
+
+<!-- Bootstrap 5 Cards in Grid -->
+<section class="py-4 my-5">
+    <div class="container">
+        <div class="row">
+            <div class="section-title col-12">
+                <h2 class="mb-3">Fale com quem produziu este site!</h2>
+            </div>
+
+            <div class="card-dev col-md-6 col-lg-4">
+                <div class="card my-3">
+                    <div class="card-thumbnail">
+                        <img src="./img/leo.png">
+                        <img />
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title"><a href="#">Leonardo Davi</a></h3>
+                        <p class="card-text">Idade: 18 anos</p>
+                        <p class="card-text">Estudante de ADS</p>
+                        <p class="card-text">Responsável pelo Front-End</p>
+                        <h5 class="card-contato"><a href="#">Contatos:</a></h5>
+                        <p class="card-text">Telefone: </p>
+                        <p class="card-text">Email: </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-dev col-md-6 col-lg-4">
+                <div class="card my-3">
+                    <div class="card-thumbnail">
+                        <img src="img/murilo.png" class="img-fluid" alt="thumbnail">
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title"><a href="#">Murilo Amaral</a></h3>
+                        <p class="card-text">Idade: 22 anos</p>
+                        <p class="card-text">Estudante de ADS</p>
+                        <p class="card-text">Responsável pelo Back-End</p>
+                        <h5 class="card-contato"><a href="#">Contatos:</a></h5>
+                        <p class="card-text">Telefone: </p>
+                        <p class="card-text">Email: </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-dev col-md-6 col-lg-4">
+                <div class="card my-3">
+                    <div class="card-thumbnail">
+                        <img src="img/sara.png" class="img-fluid" alt="thumbnail">
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title"><a href="#">Sara Borges</a></h3>
+                        <p class="card-text">Idade: 18 anos</p>
+                        <p class="card-text">Estudante de ADS e T.I</p>
+                        <p class="card-text">Responsável pela documentação e Front-End</p>
+                        <h5 class="card-contato"><a href="#">Contatos:</a></h5>
+                        <p class="card-text">Telefone: </p>
+                        <p class="card-text">Email: </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-dev col-md-6 col-lg-4">
+                <div class="card my-3">
+                    <div class="card-thumbnail">
+                        <img src="../wwwroot/img/abraham.png" class="img-fluid" alt="thumbnail">
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title"><a href="#">Abraham Luccas</a></h3>
+                        <p class="card-text">Idade: 20 anos</p>
+                        <p class="card-text">Estudante de ADS</p>
+                        <p class="card-text">Responsável pelo Back-End</p>
+                        <h5 class="card-contato"><a href="#">Contatos:</a></h5>
+                        <p class="card-text">Telefone: </p>
+                        <p class="card-text">Email: </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-dev col-md-6 col-lg-4">
+                <div class="card my-3">
+                    <div class="card-thumbnail">
+                        <img src="./img/lorena.png" class="img-fluid" alt="thumbnail">
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title"><a href="#">Lorena Franco</a></h3>
+                        <p class="card-text">Idade: 18 anos</p>
+                        <p class="card-text">Estudante de ADS</p>
+                        <p class="card-text">Responsável pelo Front-End</p>
+                        <h5 class="card-contato"><a href="#">Contatos:</a></h5>
+                        <p class="card-text">Telefone: </p>
+                        <p class="card-text">Email: </p>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-dev col-md-6 col-lg-4">
+                <div class="card my-3">
+                    <div class="card-thumbnail">
+                        <img src="./img/senai.png" class="img-fluid" alt="thumbnail">
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title"><a href="#" class="text-secondary">SENAI Ribeirão Preto</a></h3>
+                        <p class="card-text">Texto sobre senai aqui</p>
+                        <h5 class="card-contato"><a href="#">Contatos:</a></h5>
+                        <p class="card-text">Telefone: </p>
+                        <p class="card-text">Email: </p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
+
+
+
+
+
+
+
+
+
 <div class="footer">
     <div class="container">
         <div class="py-5">
@@ -266,13 +279,11 @@
 </div>
 
 
-<style type="text/css" media="screen and (max-width:768px)">
 
-    .bd-placeholder-img-lg {
-        font-size: 3.5rem;
-    }
 
-</style>
+
+
+
 
 <style>
 
@@ -287,6 +298,7 @@
         -moz-user-select: none;
         user-select: none;
     }
+
 
     .b-example-divider {
         height: 3rem;
@@ -339,8 +351,10 @@
     }
 
     /* cor btn login */
-    .btn-perfil i {
-        font-size: 30px;
+    .btn-login {
+        background-color: #F20201;
+        color: white;
+        border-radius: 10px;
     }
 
     /* cor botao hamburguer */
@@ -349,17 +363,23 @@
         font-size: 45px;
         font-weight: bold;
     }
+    /*modal*/
+    .modal-header {
+        height: 5px;
+    }
 
-
-
-    .form-title {
+    .modal-title, .esquece-senha, .sem-conta a {
         color: #F20201;
     }
 
-    .form-btn-editar, .form-btn-deletar {
+    .modal-btn-enviar {
         background-color: #F20201;
         color: white;
         border-radius: 10px;
+    }
+
+    .modal-form {
+        margin-top: -25px;
     }
 
     .form-control {
@@ -367,11 +387,29 @@
         border-radius: 10px;
     }
 
-    .modal-title {
-        color: #6A45A5;
+    .btn-login:hover {
+        background-color: #6A45A5;
+        color: white;
+        text-decoration: none;
     }
 
 
+    .section-title {
+        color: #F20201;
+    }
+
+    .card {
+        border-radius: 10px;
+    }
+
+    .card-thumbnail img {
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+    }
+
+    .card-title a, .card-contato a {
+        color: #6A45A5;
+    }
 
 
 
@@ -379,7 +417,6 @@
     /* footer */
     .footer {
         background-color: #d6b2ff;
-        margin-top: 100px;
     }
 
     .btn-enviar {
@@ -398,4 +435,10 @@
         color: #6A45A5;
     }
 
+</style>
+
+<style type="text/css" media="screen and (max-width:768px)">
+    .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+    }
 </style>

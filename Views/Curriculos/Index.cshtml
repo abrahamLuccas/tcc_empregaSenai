@@ -1,10 +1,13 @@
 ﻿@model IEnumerable<EmpregaSENAI.Models.Curriculo>
+@using Microsoft.AspNetCore.Identity
+@using EmpregaSENAI.Areas.Identity.Data
 
+@inject SignInManager<EmpregaSENAI.Models.Users> SignInManager
+@inject UserManager<EmpregaSENAI.Models.Users> UserManager
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Index Curriculo";
 }
 
-<h1>Index</h1>
 
 
 @{
@@ -16,237 +19,334 @@
     if (x >= 1)
     {
 
-<section>
-<div class="card">
-    <div class="card-header1">
-            
-        <div class="botao-imprimir" onclick="window.print();" style="cursor:pointer;">
-                <i class="bi bi-printer-fill fw-bold"> Imprimir </i>
-            </div>
-        
-        <div class="contato">
-            <div class="nome">
-                <table class="table">               
-                    <tbody>
-                        @foreach (var item in Model)
+        <section>
+            <div class="card">
+                <div class="card-header1">
+
+                    <div class="botao-imprimir" onclick="window.print();" style="cursor:pointer;">
+                        <i class="bi bi-printer-fill fw-bold"> Imprimir </i>
+                    </div>
+
+                    @foreach (var item in Model)
+                    {
+                        @if (@item.FK_UserId == @UserManager.GetUserId(User))
                         {
-                            <tr>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.Nome)
-                                </td>
-                            </tr>
+                            <div style="cursor:pointer;">
+                                <i class="bi bi-printer-fill fw-bold"> <a asp-action="Edit" asp-route-id="@item.Id">Editar Curriculo</a> </i>
+                            </div>
                         }
-                    </tbody>
-                </table>                
-            </div>
+                    }
 
-
-            <div class="data-nascimento">
-                <table class="table">
-                        <thead class="card-header">
-                            <tr class="tr_header">
-                                <th>
-                                    @Html.DisplayNameFor(model => model.DataNascimento)
-                                </th>
-                            <tr />
-                        </thead>
-                        <tbody class="cardTB-body">
-                        @foreach (var item in Model)
-                        {
-                            <tr>
-                                <td style="width:100px;">
-                                    @Html.DisplayFor(modelItem => item.DataNascimento)
-                                </td>
-                            </tr>
-                        }
-                    </tbody>
-                </table>
-            </div>
-
-                <div class="telefone">
-                    <table class="table">
-                            <thead class="card-header">
-                            <tr class="tr_header">
-                                    <th>
-                                        @Html.DisplayNameFor(model => model.Telefone)
-                                    </th>
-                                <tr />
-                            </thead>
-                        <tbody class="cardTB-body">
-                            @foreach (var item in Model)
-                            {
-                            <tr>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.Telefone)
-                                </td>
-                            </tr>
-                            }
-                        </tbody>
-                    </table>
-                </div>
-
-
-            <div class="endereco">                
-                <table class="table">
-                        <thead class="card-header">
-                            <tr class ="tr_header">
-                                <th>
-                                    @Html.DisplayNameFor(model => model.Bairro)
-                                </th>
-                            <tr />
-                        </thead>
-                        <tbody class="cardTB-body">
-                        @foreach (var item in Model)
-                        {
-                        <tr>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Bairro)
-                            </td>
-                        </tr>
-                        }
-                    </tbody>
-                </table>                      
-                            
-                <table class="table">
-                        <thead class="card-header">
-                            <tr class ="tr_header">
-                                <th>
-                                    @Html.DisplayNameFor(model => model.Endereco)
-                                </th>
-                            <tr />
-                        </thead>
-                        <tbody class="cardTB-body">
-                        @foreach (var item in Model)
-                        {
-                        <tr>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Endereco)
-                            </td>
-                        </tr>
-                        }
-                    </tbody>
-                </table>
-            </div>
-
-            <div class="cep">
-                <table class="table">
-                        <thead class="card-header">
-                            <tr class="tr_header">
-                                <th>
-                                    @Html.DisplayNameFor(model => model.Cidade)
-                                </th>
-                            <tr />
-                        </thead>
-                        <tbody class="cardTB-body">
-                        @foreach (var item in Model)
-                        {
-                        <tr>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Cidade)
-                            </td>
-                        </tr>
-                        }
-                    </tbody>
-                </table>
-
-
-                <table class="table">
-                        <thead class="card-header">
-                            <tr class="tr_header">
-                                <th>
-                                    @Html.DisplayNameFor(model => model.CEP)
-                                </th>
-                            <tr />
-                        </thead>
-                        <tbody class="cardTB-body">
-                        @foreach (var item in Model)
-                        {
-                        <tr>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.CEP)
-                            </td>                
-                        </tr>
-                        }
-                    </tbody>
-                </table>
-            </div>
-
-
-            <div class="email">
-                <table class="table">
-                        <thead class="card-header">
-                            <tr class="tr_header">
-                                <th>
-                                    @Html.DisplayNameFor(model => model.Email)
-                                </th>
-                            <tr />
-                        </thead>
-                    <tbody class="cardTB-body">
-                        @foreach (var item in Model)
-                        {
-                        <tr>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Email)
-                            </td>
-                        </tr>
-
-                        }
-                    </tbody>
-                </table>
-            </div>
-
-        </div> 
-        
-        <div>
-            <h4 style="margin-left:20px;">Resumo</h4>
-        </div>
-        <hr />
-            <p class="resumo-txt">
-             <!-- <h3>Resumo</h3> Descrição -->
-                @foreach (var item in Model)
-                        {
-                           @Html.DisplayFor(model => item.Resumo) 
-                        }
-            </p>       
-    </div>
-
-    <div class="card-body">
-        <div class="experiencias">     
-            <div>
-                <h4>Cargo de Interesse</h4>
-            </div>
-            <hr>
-            <div class="exp-card">
-                <div class="exp-card-body">
-                        <table class="table">
-                            @*<thead class="card-header">
-                                <tr class="tr_header">
-                                    <th>
-                                        @Html.DisplayNameFor(model => model.CargoInteresse)                                        
-                                    </th>
-                                <tr />                                
-                            </thead>  *@                       
-                            <tbody class="cardTB-body">
-                                @foreach (var item in Model)
-                                {
-                                    <tr class="cargo">
-                                        <td style="font-size:24px;">
-                                            @Html.DisplayFor(modelItem => item.CargoInteresse)
-                                        </td>
-                                    </tr>
-
-                                }
-                            </tbody>
-                        </table>
-                        <div>
-                            <h4>Formação</h4>
+                    <div class="contato">
+                        <div class="nome">
+                            <table class="table">
+                                <tbody>
+                                    @foreach (var item in Model)
+                                    {
+                                        <tr>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.Nome)
+                                            </td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
                         </div>
-                        <hr />                        
+
+
+                        <div class="data-nascimento">
+                            <table class="table">
+                                <thead class="card-header">
+                                    <tr class="tr_header">
+                                        <th>
+                                            @Html.DisplayNameFor(model => model.DataNascimento)
+                                        </th>
+                                    <tr />
+                                </thead>
+                                <tbody class="cardTB-body">
+                                    @foreach (var item in Model)
+                                    {
+                                        <tr>
+                                            <td style="width:100px;">
+                                                @Html.DisplayFor(modelItem => item.DataNascimento)
+                                            </td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="telefone">
+                            <table class="table">
+                                <thead class="card-header">
+                                    <tr class="tr_header">
+                                        <th>
+                                            @Html.DisplayNameFor(model => model.Telefone)
+                                        </th>
+                                    <tr />
+                                </thead>
+                                <tbody class="cardTB-body">
+                                    @foreach (var item in Model)
+                                    {
+                                        <tr>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.Telefone)
+                                            </td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+
+
+                        <div class="endereco">
+                            <table class="table">
+                                <thead class="card-header">
+                                    <tr class="tr_header">
+                                        <th>
+                                            @Html.DisplayNameFor(model => model.Bairro)
+                                        </th>
+                                    <tr />
+                                </thead>
+                                <tbody class="cardTB-body">
+                                    @foreach (var item in Model)
+                                    {
+                                        <tr>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.Bairro)
+                                            </td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+
+                            <table class="table">
+                                <thead class="card-header">
+                                    <tr class="tr_header">
+                                        <th>
+                                            @Html.DisplayNameFor(model => model.Endereco)
+                                        </th>
+                                    <tr />
+                                </thead>
+                                <tbody class="cardTB-body">
+                                    @foreach (var item in Model)
+                                    {
+                                        <tr>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.Endereco)
+                                            </td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="cep">
+                            <table class="table">
+                                <thead class="card-header">
+                                    <tr class="tr_header">
+                                        <th>
+                                            @Html.DisplayNameFor(model => model.Cidade)
+                                        </th>
+                                    <tr />
+                                </thead>
+                                <tbody class="cardTB-body">
+                                    @foreach (var item in Model)
+                                    {
+                                        <tr>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.Cidade)
+                                            </td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+
+
+                            <table class="table">
+                                <thead class="card-header">
+                                    <tr class="tr_header">
+                                        <th>
+                                            @Html.DisplayNameFor(model => model.CEP)
+                                        </th>
+                                    <tr />
+                                </thead>
+                                <tbody class="cardTB-body">
+                                    @foreach (var item in Model)
+                                    {
+                                        <tr>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.CEP)
+                                            </td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+
+
+                        <div class="email">
+                            <table class="table">
+                                <thead class="card-header">
+                                    <tr class="tr_header">
+                                        <th>
+                                            @Html.DisplayNameFor(model => model.Email)
+                                        </th>
+                                    <tr />
+                                </thead>
+                                <tbody class="cardTB-body">
+                                    @foreach (var item in Model)
+                                    {
+                                        <tr>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.Email)
+                                            </td>
+                                        </tr>
+
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+
+                    </div>
+
+                    <div>
+                        <h4 style="margin-left:20px;">Resumo</h4>
+                    </div>
+                    <hr />
+                    <p class="resumo-txt">
+                        <!-- <h3>Resumo</h3> Descrição -->
+                        @foreach (var item in Model)
+                        {
+                            @Html.DisplayFor(model => item.Resumo)
+                        }
+                    </p>
+                </div>
+
+                <div class="card-body">
+                    <div class="experiencias">
+                        <div>
+                            <h4>Cargo de Interesse</h4>
+                        </div>
+                        <hr>
+                        <div class="exp-card">
+                            <div class="exp-card-body">
+                                <table class="table">
+                                    @*<thead class="card-header">
+                                        <tr class="tr_header">
+                                        <th>
+                                        @Html.DisplayNameFor(model => model.CargoInteresse)
+                                        </th>
+                                        <tr />
+                                        </thead>  *@
+                                    <tbody class="cardTB-body">
+                                        @foreach (var item in Model)
+                                        {
+                                            <tr class="cargo">
+                                                <td style="font-size:24px;">
+                                                    @Html.DisplayFor(modelItem => item.CargoInteresse)
+                                                </td>
+                                            </tr>
+
+                                        }
+                                    </tbody>
+                                </table>
+                                <div>
+                                    <h4>Formação</h4>
+                                </div>
+                                <hr />
+                                <table class="table">
+                                    <thead class="card-header">
+                                        <tr class="tr_header">
+                                            <th>
+                                                @Html.DisplayNameFor(model => model.GrauFormacao)
+                                            </th>
+                                        <tr />
+                                    </thead>
+                                    <tbody class="cardTB-body">
+                                        @foreach (var item in Model)
+                                        {
+                                            <tr>
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => item.GrauFormacao)
+                                                </td>
+                                            </tr>
+
+                                        }
+                                    </tbody>
+                                </table>
+                                <table class="table">
+                                    <thead class="card-header">
+                                        <tr class="tr_header">
+                                            <th>
+                                                @Html.DisplayNameFor(model => model.NomeCurso)
+                                            </th>
+                                        <tr />
+                                    </thead>
+                                    <tbody class="cardTB-body">
+                                        @foreach (var item in Model)
+                                        {
+                                            <tr>
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => item.NomeCurso)
+                                                </td>
+                                            </tr>
+
+                                        }
+                                    </tbody>
+                                </table>
+                                <table class="table">
+                                    <thead class="card-header">
+                                        <tr class="tr_header">
+                                            <th>
+
+                                                @Html.DisplayNameFor(model => model.Duracao)
+                                            </th>
+                                        <tr />
+                                    </thead>
+                                    <tbody class="cardTB-body">
+                                        @foreach (var item in Model)
+                                        {
+                                            <tr>
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => item.Duracao)
+                                                </td>
+                                            </tr>
+
+                                        }
+                                    </tbody>
+                                </table>
+                                <table class="table">
+                                    <thead class="card-header">
+                                        <tr class="tr_header">
+                                            <th>
+                                                @Html.DisplayNameFor(model => model.AnoConclusao)
+                                            </th>
+                                        <tr />
+                                    </thead>
+                                    <tbody class="cardTB-body">
+                                        @foreach (var item in Model)
+                                        {
+                                            <tr>
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => item.AnoConclusao)
+                                                </td>
+                                            </tr>
+
+                                        }
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="instituicao">
                         <table class="table">
                             <thead class="card-header">
                                 <tr class="tr_header">
                                     <th>
-                                        @Html.DisplayNameFor(model => model.GrauFormacao)
+                                        @Html.DisplayNameFor(model => model.Instituicao)
                                     </th>
                                 <tr />
                             </thead>
@@ -255,269 +355,292 @@
                                 {
                                     <tr>
                                         <td>
-                                            @Html.DisplayFor(modelItem => item.GrauFormacao)
+                                            @Html.DisplayFor(modelItem => item.Instituicao)
+                                        </td>
+                                        <td>
+                                            @*<a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                                                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                                                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>*@
                                         </td>
                                     </tr>
-
                                 }
                             </tbody>
                         </table>
-                        <table class="table">
-                            <thead class="card-header">
-                                <tr class="tr_header">
-                                    <th>
-                                        @Html.DisplayNameFor(model => model.NomeCurso)
-                                    </th>
-                                <tr />
-                            </thead>
-                            <tbody class="cardTB-body">
-                                @foreach (var item in Model)
-                                {
-                                    <tr>
-                                        <td>
-                                            @Html.DisplayFor(modelItem => item.NomeCurso)
-                                        </td>
-                                    </tr>
-
-                                }
-                            </tbody>
-                        </table>   
-                        <table class="table">
-                            <thead class="card-header">
-                                <tr class="tr_header">
-                                    <th>
-
-                                        @Html.DisplayNameFor(model => model.Duracao)
-                                    </th>
-                                <tr />
-                            </thead>
-                            <tbody class="cardTB-body">
-                                @foreach (var item in Model)
-                                {
-                                    <tr>
-                                        <td>
-                                            @Html.DisplayFor(modelItem => item.Duracao)
-                                        </td>
-                                    </tr>
-
-                                }
-                            </tbody>
-                        </table> 
-                        <table class="table">
-                            <thead class="card-header">
-                                <tr class="tr_header">
-                                    <th>
-                                        @Html.DisplayNameFor(model => model.AnoConclusao)
-                                    </th>
-                                <tr />
-                            </thead>
-                            <tbody class="cardTB-body">
-                                @foreach (var item in Model)
-                                {
-                                    <tr>
-                                        <td>
-                                            @Html.DisplayFor(modelItem => item.AnoConclusao)
-                                        </td>
-                                    </tr>
-
-                                }
-                            </tbody>
-                        </table>                                  
+                    </div>
                 </div>
+
             </div>
-        </div>
+        </section>
 
-
-        <div class="instituicao">           
-                <table class="table">
-                    <thead class="card-header">
-                        <tr class="tr_header">
-                            <th>
-                                @Html.DisplayNameFor(model => model.Instituicao)
-                            </th>
-                        <tr />
-                    </thead>
-                    <tbody class="cardTB-body">
-                        @foreach (var item in Model)
-                        {
-                            <tr>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.Instituicao)
-                                </td>
-                                <td>
-                                    @*<a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>*@
-                                </td> 
-                            </tr>
-                        }
-                    </tbody>
-                </table>        
-        </div>
-    </div>
-
-</div>
-</section>
-
-}
+    }
     else
     {
-        <h1>Você ainda não criou nenhum curriculo <a asp-action="Create">Criar Curriculo</a></h1>                          
+
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>@ViewData["Title"] - EmpregaSENAI</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,800&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="~/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+        <link rel="stylesheet" href="~/css/home-conectada.css" asp-append-version="true" />
+        <link rel="stylesheet" href="~/EmpregaSENAI.styles.css" asp-append-version="true" />
+        <link rel="icon" type="image/png" href="img/S.jpg">
+        <!--CSS Booststrap-->
+        <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
+        <!-- jQuery -->
+        <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+            crossorigin="anonymous"></script>
+        <!-- Bootstrap files (jQuery first, then Popper.js, then Bootstrap JS) -->
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js" type="text/javascript"></script>
+        <!--Icons Bootstrap-->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
+        <!--JS Booststrap-->
+        <script src="./bootstrap/js/bootstrap.bundle.min.js"></script>
+
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container">
+                <a class="logo navbar-brand fw-bold" href="./home-conectada.html">EmpregaSENAI!</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main_nav">
+                    <span><i class="bi bi-list"></i></span>
+                </button>
+                <div class="collapse navbar-collapse" id="main_nav">
+                    <ul class="navbar-nav mx-auto">
+                        <li class="nav-item active"> <a class="nav-link text-dark" href="./home-conectada.html">Home </a> </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link  dropdown-toggle active text-dark" href="#" data-toggle="dropdown">
+                                Vagas
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item text-dark" href="./form-vagas.html"> Adicionar vagas   </a></li>
+                                <li><a class="dropdown-item text-dark" href="#"> Ver vagas </a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link  dropdown-toggle active text-dark" href="#" data-toggle="dropdown">
+                                Currículos
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item text-dark" href="./form-curriculo.html"> Adicionar currículo   </a></li>
+                                <li><a class="dropdown-item text-dark" href="./curriculo-detalhes.html"> Ver currículo </a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item active"><a class="nav-link text-dark" href="contato-dev.html"> Contato </a></li>
+                    </ul>
+                    <div class="dropdown">
+                        <a href="#" class="btn-perfil d-block link-dark text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="bi bi-person-fill" alt="mdo" class=" rounded-circle"></i>
+                        </a>
+                        <ul class="dropdown-menu text-small" style="">
+                            <li _mstvisible="1"><a class="dropdown-item" href="./perfil.html">Perfil               </a></li>
+                            <li _mstvisible="1"><a class="dropdown-item" href="./config-email.html">Alterar Email  </a></li>
+                            <li _mstvisible="1"><a class="dropdown-item" href="./config-senha.html">Alterar Senha  </a></li>
+                            <li _mstvisible="1"><hr class="dropdown-divider">                             </li>
+                            <li _mstvisible="1"><a class="dropdown-item" href="#">Sair           </a> </li>
+                        </ul>
+                    </div>
+                </div> <!-- navbar-collapse.// -->
+        </div>
+        </nav>
+
+        <h1 style="margin-top:250px; margin-left:75px">Você ainda não criou nenhum curriculo <a asp-action="Create">Criar Curriculo</a></h1>
+
+        <div class="footer" style="margin-top:250px">
+            <div class="container">
+                <div class="py-5">
+                    <footer class="row row-cols-1 row-cols-sm-2 row-cols-md-5 py-5 my-5">
+                        <div class="col mb-3">
+                            <ul class="icon-contato list-unstyled d-flex">
+                                <li class="ms-3"><a class="link-dark" href="#"></a><i class="bi bi-dribbble"></i></li>
+                                <li class="ms-3"><a class="link-dark" href="#"><i class="bi bi-linkedin"></i></a></li>
+                                <li class="ms-3"><a class="link-dark" href="#"><i class="bi bi-github"></i></a></li>
+                            </ul>
+                            <p class="text-muted text-decoration-none" _msthash="769574" _msttexthash="116831">
+                                © 2022 EmpregaSENAI, Inc. Todos os direitos reservados.
+                            </p>
+                        </div>
+                        <div class="col mb-3"></div>
+
+                        <div class="col mb-3">
+                            <h5 _msthash="1118078" _msttexthash="109447">Empresa</h5>
+                            <ul class="nav flex-column">
+                                <li class="nav-item mb-2"><a href="./sobre-nos.html" class="nav-link p-0 text-muted" _msthash="1617278" _msttexthash="42250">Sobre</a></li>
+                                <li class="nav-item mb-2"><a href="./termos.html" class="nav-link p-0 text-muted" _msthash="1617642" _msttexthash="253617">Política de Privacidade</a></li>
+                                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted" _msthash="1618006" _msttexthash="59826">Fazer Parte</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="col mb-3">
+                            <h5 _msthash="1118286" _msttexthash="109447">Suporte</h5>
+                            <ul class="nav flex-column">
+                                <li class="nav-item mb-2"><a href="https://ribeiraopreto.sp.senai.br/" class="nav-link p-0 text-muted" _msthash="1617785" _msttexthash="313612">SENAI RP</a></li>
+                                <li class="nav-item mb-2"><a href="https://www.sp.senai.br/" class="nav-link p-0 text-muted" _msthash="1617967" _msttexthash="253617">SENAI SP</a></li>
+                                <li class="nav-item mb-2"><a href="https://www.sp.senai.br/fale-conosco?menu=39&idescola=602" class="nav-link p-0 text-muted" _msthash="1618149" _msttexthash="429065">Fale com a gente</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="col mb-3">
+                            <h5 _msthash="1118494" _msttexthash="109447">Contato</h5>
+                            <ul class="nav flex-column">
+                                <li class="nav-item mb-2"><a href="./contato-dev.html" class="nav-link p-0 text-muted" _msthash="1617928" _msttexthash="42250">Desenvolvedores</a></li>
+                                <li class="nav-item mb-2"><a href="https://ribeiraopreto.sp.senai.br/" class="nav-link p-0 text-muted" _msthash="1618110" _msttexthash="313612">SENAI RP</a></li>
+                                <li class="nav-item mb-2"><a href="https://www.sp.senai.br/" class="nav-link p-0 text-muted" _msthash="1618292" _msttexthash="253617">SENAI SP</a></li>
+                            </ul>
+                        </div>
+                    </footer>
+                </div>
+            </div>
+        </div>
     }
 }
 
 <style>
 
-    section{
+    section {
         margin: 0;
         padding: 0;
         justify-content: center;
         display: flex;
-        
-    }
-        
-/* CARD */
-    .card{
-        display:inline-flexbox;
-        flex-direction: column;
-        float:right;
-        width:800px;
-        height:max-content;
     }
 
-/*CARD HEADER TABLE*/
-    th{
-        display:inline-flex;
+    /* CARD */
+    .card {
+        display: inline-flexbox;
+        flex-direction: column;
+        float: right;
+        width: 800px;
+        height: max-content;
+    }
+
+    /*CARD HEADER TABLE*/
+    th {
+        display: inline-flex;
         width: 300px;
         height: 35px;
-        border:none;
-        font-weight:normal;
-        font-style:normal;
-        font-size:20px;
-        justify-content:space-between;
+        border: none;
+        font-weight: normal;
+        font-style: normal;
+        font-size: 20px;
+        justify-content: space-between;
     }
 
-    .card-header{
-        display:inline-flex;       
-        width:250px;
-        background:none;
-        flex-direction:row;
-        justify-content:space-between;
-        border:none;
-        margin-left:50px;
+    .card-header {
+        display: inline-flex;
+        width: 250px;
+        background: none;
+        flex-direction: row;
+        justify-content: space-between;
+        border: none;
+        margin-left: 50px;
     }
 
     /* TABLE-BODY*/
 
-    .cardTB-body{
-    display:inline-flex;   
-    justify-content:center;
-    flex-direction:row;
-    text-align:center;
-    border-color:white;
-    border-style:none;
-    width:200px;
-    background:none;
-    margin-top:10px;
-    margin-left:250px;
+    .cardTB-body {
+        display: inline-flex;
+        justify-content: center;
+        flex-direction: row;
+        text-align: center;
+        border-color: white;
+        border-style: none;
+        width: 200px;
+        background: none;
+        margin-top: 10px;
+        margin-left: 250px;
     }
 
 
     /*CONTATO*/
-    .nome{
+    .nome {
         position: relative;
         text-align: center;
         font-size: 32px
     }
 
-    .data-nascimento{
+    .data-nascimento {
         position: relative;
         flex-direction: row;
-       
     }
 
-    .estado-civil{
+    .estado-civil {
         position: relative;
         flex-direction: row;
-       
     }
 
-    .cidade-UF{
+    .cidade-UF {
         position: relative;
         flex-direction: row;
-       
     }
 
-    .cep{
+    .cep {
         position: relative;
         flex-direction: row;
-       
     }
 
-    .telefone{
+    .telefone {
         position: relative;
         flex-direction: row;
-        
     }
 
-    .email{
+    .email {
         position: relative;
         flex-direction: row;
-        
-    }
-    
-    .endereco{
-        position: relative;
-        flex-direction: row;
-        
     }
 
-    .resumo{
-        
+    .endereco {
+        position: relative;
+        flex-direction: row;
+    }
+
+    .resumo {
         font-size: large;
         position: relative;
     }
 
-/*CARD BODY*/
+    /*CARD BODY*/
 
-    .resumo-txt{
-        display:flex;
-        text-align:justify;
-        padding:10px;
-        margin:10px;
+    .resumo-txt {
+        display: flex;
+        text-align: justify;
+        padding: 10px;
+        margin: 10px;
     }
 
     /*EXPERIÊNCIAS*/
-    .experiencias{
+    .experiencias {
         position: relative;
         margin-left: 5px;
     }
 
     /*INSTITUICAO*/
-    .instituicao{
+    .instituicao {
         position: relative;
         margin-left: 5px;
     }
 
     /*COMPETENCIAS*/
-    .competencias{
+    .competencias {
         position: relative;
         margin-left: 5px;
     }
 
-  
-  /*CARD FOOTER*/
-    .habilidades-interp{
+
+    /*CARD FOOTER*/
+    .habilidades-interp {
         position: relative;
         margin-left: 10px;
     }
 
-    .cursos-certif{
+    .cursos-certif {
         position: relative;
         margin-left: 10px;
     }
 
-    </style>
+</style>
 
 <style type="text/css" media="screen and (max-width:989px)">
 
@@ -539,12 +662,12 @@
         border-style: none;
         width: 200px;
         margin-left: 100px;
-        background: none;             
+        background: none;
     }
 
-    .cargo{
-        display:flex;
-        margin-left:200px;
+    .cargo {
+        display: flex;
+        margin-left: 200px;
     }
 
     /*CARD HEADER TABLE*/
@@ -564,7 +687,7 @@
         width: 250px;
         background: none;
         flex-direction: row;
-        justify-content: space-between; 
+        justify-content: space-between;
         border: none;
         margin-left: 0px;
     }
@@ -572,7 +695,7 @@
 </style>
 
 <style type="text/css" media="screen and (max-width:765px)">
-    
+
     section {
         margin: 0;
         padding: 0;
@@ -591,8 +714,8 @@
         border-style: none;
         width: 100px;
         background: none;
-        margin-left:90px;
-        margin-top:20px;
+        margin-left: 90px;
+        margin-top: 20px;
     }
 
     /*CARD HEADER TABLE*/
@@ -628,30 +751,30 @@
         display: flex;
     }
 
-    
 
-    .cargo{
-        display:flex;
-        margin-left:-90px;
+
+    .cargo {
+        display: flex;
+        margin-left: -90px;
     }
 
-    .card{
-        text-align:center;
-        display:flexbox;
-        align-content:center;
-        justify-content:center;
-        align-items:center;
-        align-self:center;
+    .card {
+        text-align: center;
+        display: flexbox;
+        align-content: center;
+        justify-content: center;
+        align-items: center;
+        align-self: center;
     }
 
     /*TABLE BODY*/
     .cardTB-body {
         display: flexbox;
         justify-content: center;
-        align-items:center;        
+        align-items: center;
         text-align: center;
-        border-color: white;        
-        width: 100px;        
+        border-color: white;
+        width: 100px;
     }
 
     /*CARD HEADER TABLE*/
@@ -662,17 +785,17 @@
         border: none;
         font-size: 20px;
         justify-content: center;
-        align-content:center;
-        text-align:center;
-        align-items:center;
-        margin-top:20px;
+        align-content: center;
+        text-align: center;
+        align-items: center;
+        margin-top: 20px;
     }
 
     .card-header {
         display: flexbox;
         width: 120px;
-        align-items:center;
-        justify-content: center;        
+        align-items: center;
+        justify-content: center;
     }
 
 </style>
