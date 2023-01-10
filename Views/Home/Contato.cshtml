@@ -39,20 +39,20 @@
 
 <nav class="navbar navbar-expand-lg navbar-dark">
     <div class="container">
-        <a class="logo navbar-brand fw-bold" asp-controller="Home" asp-action="Index">EmpregaSENAI!</a>
+        <a class="logo navbar-brand fw-bold" asp-controller="Home" asp-action="Index">EmpregaSENAI</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main_nav">
             <span><i class="bi bi-list"></i></span>
         </button>
         <div class="collapse navbar-collapse" id="main_nav">
             <ul class="navbar-nav mx-auto">
-                <li class="nav-item active fw-bold"> <a class="nav-link text-dark" asp-controller="Home" asp-action="Index">Home </a> </li>
+                <li class="nav-item active "> <a class="nav-link text-dark" asp-controller="Home" asp-action="Index">Home </a> </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link  dropdown-toggle active text-dark" href="#" data-toggle="dropdown">
                         Vagas
                     </a>
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item text-dark" asp-controller="Vagas" asp-action="Create"> Adicionar vagas   </a></li>
-                        <li><a class="dropdown-item text-dark" asp-controller="Vagas" asp-action="Index"> Ver vagas </a></li>
+                        <li><a class="dropdown-item text-dark" asp-controller="Vagas" asp-action="Create"> Ver vagas </a></li>
                     </ul>
                 </li>
                 <li class="nav-item dropdown">
@@ -64,7 +64,7 @@
                         <li><a class="dropdown-item text-dark" asp-controller="Curriculos" asp-action="Index"> Ver currículo </a></li>
                     </ul>
                 </li>
-                <li class="nav-item active"><a class="nav-link text-dark" asp-controller="Home" asp-action="Contato"> Contato </a></li>
+                <li class="nav-item active"><a class="nav-link text-dark fw-bold" asp-controller="Home" asp-action="Contato"> Contato </a></li>
             </ul>
 
             @if (SignInManager.IsSignedIn(User))
@@ -121,7 +121,7 @@
             <div class="card-dev col-md-6 col-lg-4">
                 <div class="card my-3">
                     <div class="card-thumbnail">
-                        <img src="./img/leo.png">
+                        <img src="~/img/leo.png" class="img-fluid" alt="thumbnail">
                         <img />
                     </div>
                     <div class="card-body">
@@ -129,26 +129,27 @@
                         <p class="card-text">Idade: 18 anos</p>
                         <p class="card-text">Estudante de ADS</p>
                         <p class="card-text">Responsável pelo Front-End</p>
-                        <h5 class="card-contato"><a href="#">Contatos:</a></h5>
-                        <p class="card-text">Telefone: </p>
-                        <p class="card-text">Email: </p>
+                        <h5 class="card-contato"><a href="#">Contatos</a></h5>
+                        <p class="card-text">Telefone: (16)98874-5269 </p>
+                        <p class="card-text">Email: leonardo@gmail.com</p>
                     </div>
                 </div>
             </div>
 
+
             <div class="card-dev col-md-6 col-lg-4">
                 <div class="card my-3">
                     <div class="card-thumbnail">
-                        <img src="img/murilo.png" class="img-fluid" alt="thumbnail">
+                        <img src="~/img/murilo.png" class="img-fluid" alt="thumbnail">
                     </div>
                     <div class="card-body">
-                        <h3 class="card-title"><a href="#">Murilo Amaral</a></h3>
-                        <p class="card-text">Idade: 22 anos</p>
+                        <h3 class="card-title"><a href="https://www.linkedin.com/in/muriloaamaral/">Murilo Amaral</a></h3>
+                        <p class="card-text">Idade: 23 anos</p>
                         <p class="card-text">Estudante de ADS</p>
                         <p class="card-text">Responsável pelo Back-End</p>
-                        <h5 class="card-contato"><a href="#">Contatos:</a></h5>
-                        <p class="card-text">Telefone: </p>
-                        <p class="card-text">Email: </p>
+                        <h5 class="card-contato"><a href="#">Contatos</a></h5>
+                        <p class="card-text">Telefone: (16)99710-6403</p>
+                        <p class="card-text">Email: murilo.amaral1901@outlook.com</p>
                     </div>
                 </div>
             </div>
@@ -156,16 +157,16 @@
             <div class="card-dev col-md-6 col-lg-4">
                 <div class="card my-3">
                     <div class="card-thumbnail">
-                        <img src="img/sara.png" class="img-fluid" alt="thumbnail">
+                        <img src="~/img/sara.png" class="img-fluid" alt="thumbnail">
                     </div>
                     <div class="card-body">
                         <h3 class="card-title"><a href="#">Sara Borges</a></h3>
                         <p class="card-text">Idade: 18 anos</p>
                         <p class="card-text">Estudante de ADS e T.I</p>
                         <p class="card-text">Responsável pela documentação e Front-End</p>
-                        <h5 class="card-contato"><a href="#">Contatos:</a></h5>
-                        <p class="card-text">Telefone: </p>
-                        <p class="card-text">Email: </p>
+                        <h5 class="card-contato"><a href="#">Contatos</a></h5>
+                        <p class="card-text">Telefone: (16)98854-7823</p>
+                        <p class="card-text">Email: saraborges@gmail.com</p>
                     </div>
                 </div>
             </div>
@@ -173,16 +174,16 @@
             <div class="card-dev col-md-6 col-lg-4">
                 <div class="card my-3">
                     <div class="card-thumbnail">
-                        <img src="../wwwroot/img/abraham.png" class="img-fluid" alt="thumbnail">
+                        <img src="~/img/abraham.png" class="img-fluid" alt="thumbnail">
                     </div>
                     <div class="card-body">
-                        <h3 class="card-title"><a href="#">Abraham Luccas</a></h3>
+                        <h3 class="card-title"><a href="https://www.linkedin.com/in/abraham-santos-966b871a1/">Abraham Luccas</a></h3>
                         <p class="card-text">Idade: 20 anos</p>
                         <p class="card-text">Estudante de ADS</p>
                         <p class="card-text">Responsável pelo Back-End</p>
-                        <h5 class="card-contato"><a href="#">Contatos:</a></h5>
-                        <p class="card-text">Telefone: </p>
-                        <p class="card-text">Email: </p>
+                        <h5 class="card-contato"><a href="#">Contatos</a></h5>
+                        <p class="card-text">Telefone: (16)98874-5987</p>
+                        <p class="card-text">Email: abrahamluccas@gmail.com</p>
                     </div>
                 </div>
             </div>
@@ -190,16 +191,16 @@
             <div class="card-dev col-md-6 col-lg-4">
                 <div class="card my-3">
                     <div class="card-thumbnail">
-                        <img src="./img/lorena.png" class="img-fluid" alt="thumbnail">
+                        <img src="~/img/lorena.png" class="img-fluid" alt="thumbnail">
                     </div>
                     <div class="card-body">
                         <h3 class="card-title"><a href="#">Lorena Franco</a></h3>
                         <p class="card-text">Idade: 18 anos</p>
                         <p class="card-text">Estudante de ADS</p>
                         <p class="card-text">Responsável pelo Front-End</p>
-                        <h5 class="card-contato"><a href="#">Contatos:</a></h5>
-                        <p class="card-text">Telefone: </p>
-                        <p class="card-text">Email: </p>
+                        <h5 class="card-contato"><a href="#">Contatos</a></h5>
+                        <p class="card-text">Telefone: (16)98877-5541</p>
+                        <p class="card-text">Email: lorenafranco@gmail.com</p>
 
                     </div>
                 </div>
@@ -208,14 +209,17 @@
             <div class="card-dev col-md-6 col-lg-4">
                 <div class="card my-3">
                     <div class="card-thumbnail">
-                        <img src="./img/senai.png" class="img-fluid" alt="thumbnail">
+                        <img src="~/img/senai.png" class="img-fluid" alt="thumbnail">
                     </div>
                     <div class="card-body">
-                        <h3 class="card-title"><a href="#" class="text-secondary">SENAI Ribeirão Preto</a></h3>
-                        <p class="card-text">Texto sobre senai aqui</p>
-                        <h5 class="card-contato"><a href="#">Contatos:</a></h5>
-                        <p class="card-text">Telefone: </p>
-                        <p class="card-text">Email: </p>
+                        <h3 class="card-title"><a href="#">SENAI Ribeirão Preto</a></h3>
+                        <p class="card-text">SENAI Ribeirão Preto</a></h3>
+                            <p class="card-text">Um dos cinco maiores 
+                                complexos de educação profissional do mundo e o maior da América Latina.
+                             </p>
+                        <h5 class="card-contato"><a href="#">Contatos</a></h5>
+                        <p class="card-text">Telefone: (16)3789-4512</p>
+                        <p class="card-text">Email: senairp@gmail.com</p>
                     </div>
                 </div>
             </div>

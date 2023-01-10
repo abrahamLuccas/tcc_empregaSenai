@@ -37,6 +37,8 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
 <!--JS Booststrap-->
 <script src="./bootstrap/js/bootstrap.bundle.min.js"></script>
+<html>
+<body>
 
 <nav class="navbar navbar-expand-lg navbar-dark">
     <div class="container">
@@ -82,7 +84,7 @@
                         <i class="bi bi-person-fill" alt="mdo" class=" rounded-circle"></i>
                     </a>
                     <ul class="dropdown-menu text-small" style="">
-                        <li _mstvisible="1"><a class="dropdown-item" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Perfil               </a></li>
+                        <li _mstvisible="1"><a class="dropdown-item" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Perfil </a></li>
                         <li _mstvisible="1"><a class="dropdown-item" href="./config-email.html">Alterar Email  </a></li>
                         <li _mstvisible="1"><a class="dropdown-item" href="./config-senha.html">Alterar Senha  </a></li>
                         <li _mstvisible="1"><hr class="dropdown-divider">                             </li>
@@ -108,12 +110,14 @@
 
 @if (User.IsInRole(Constants.Roles.Empresa))
 {
-    <h1 style="color:black">
-        <a asp-action="Create">Criar nova vaga</a>
+    <h1 style="color:black" class="container bg-add">
+        <a class="btn-add-vaga btn fw-bold" asp-action="Create"> Adicionar nova vaga</a>
     </h1>
 }
 
-<section>
+    <h1 class="mural-text container fw-bold">
+         Mural de vagas
+    </h1>
 
 
 
@@ -159,14 +163,20 @@
     </table>
     </section>*@
 
+    <section class="py-4 my-5">
+        <div class="container">
+            <div class="row">
+
 @foreach (var i in Model)
 {
-    <table class="demo border border-2" id="card">        
-            <thead>
+        <div class="card-dev col-md-6 col-lg-4">
+            <div class="my-3">
+                            <table class="container demo  border rounded-4 border-2" id="card" style="border-radius:15px;">
+                                <thead>
                 <tr>
                     <th>
-                        <a asp-action="">
-                            <i class="bi bi-three-dots-vertical"></i>
+                         <a asp-action="Details" asp-route-id="@i.Id" class="icon-detalhes">
+                            <i class=" bi bi-three-dots-vertical"></i>
                         </a>
                     </th>
                 </tr>
@@ -179,7 +189,7 @@
                 </tr>
                 <tr>
                     <td class="text-center">
-                        <h6 class="descricao"><i class="bi bi-pin-angle"></i>@i.Desc</h6>
+                        <h6 class="setor"><i class="bi bi-pin-angle"></i>@i.Setor</h6>
                     </td>
                 </tr>
                 <tr>
@@ -189,8 +199,11 @@
                 </tr>
             </tbody>
     </table>
+    </div>
+</div>
 }
-
+</div>
+</div>
 </section>
 
 <div class="footer" style="margin-top:369px">
@@ -244,6 +257,20 @@
 
 
 <style>
+        .mural-text{
+            color: #F20201;
+        }
+    .btn-add-vaga{
+        background-color: #F20201;
+        color: white;
+        border-radius: 10px;
+        margin-top: 50px;
+    }
+
+        .btn-add-vaga:hover {
+                background-color: #6A45A5;
+            color: white;
+        }
     section {
         margin: 0;
         padding: 0px;
@@ -288,7 +315,7 @@
         align-items: center;
     }
     
-    .descricao {
+    .setor {
         border: none;
         display: flex;
         margin-top: -30px;
@@ -309,12 +336,15 @@
         width: max-content;
     }
 
-    a i {
+        .icon-detalhes i {
         color: #f20201;
         font-size: 25px;
         margin-left: 253px;
         margin-top: 5px;
         display: flex;
+        text-decoration: none;
     }
 
 </style>
+</body>
+</html>

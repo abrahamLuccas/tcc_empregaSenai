@@ -2,7 +2,7 @@
 @model LoginModel
 
 <html>
-<body>
+<body>                                                              
 
   <nav class="navbar navbar-expand-lg navbar-dark">
     <div class="container">
@@ -34,38 +34,10 @@
           <li class="nav-item active"><a class="nav-link text-dark" href="./contato-dev.html"> Contato </a></li>
         </ul>
         <button type="button" class="btn-login btn fw-bold" data-bs-toggle="modal" data-bs-target="#JanelaModal">
-          Entrar
-        </button>
-        <div id="JanelaModal" class="modal fade">
-          <div class="modal-dialog" role="document">
-            <div class="modal-content rounded-4 shadow">
-              <div class="modal-header p-5 pb-4 border-bottom-0">
-                <h3 class="modal-title fw-bold">Entrar</h3>
-                <button type="button" class="btn btn-close" data-bs-dismiss="modal"></button>
-              </div>
-              <div class="modal-body p-5 pt-0">
-                <form class="modal-form">
-                  <div class="mb-3">
-                    <label for="exampleInputEmail1" class="form-label">E-mail</label>
-                    <input type="email" class="form-control border" id="exampleInputEmail1" aria-describedby="emailHelp">
-                  </div>
-                  <div class="mb-3">
-                    <label for="exampleInputPassword1" class="form-label">Senha</label>
-                    <input type="password" class="form-control border" id="exampleInputPassword1">
-                  </div>
-                  <p class="small"><a class="esquece-senha" href="forget-password.html">Esqueceu sua senha?</a></p>
-                  <div class="d-grid">
-                    <button class="modal-btn-enviar btn fw-bold" type="submit">Entrar</button>
-                  </div>
-                  <div class="sem-conta mt-3">
-                    <p class="mb-0  text-center">Não tem uma conta? <a href="./registro.html"class=" fw-bold">Inscreva-se</a></p>
-                  </div>
-                  <small class="text-muted">Ao clicar em Inscrever-se, você concorda com os termos de uso.</small>
-                </form>
-              </div>
-            </div>
-          </div>
-        </div>
+                    Entrar
+                </button>
+                
+            
       </div> <!-- navbar-collapse.// -->
     </div>
     </nav>
@@ -74,30 +46,23 @@
 
 
   <div class="login-container h-100 d-flex justify-content-center align-items-center">
-      <div class="rounded-4 shadow">
+        <div class="rounded-4 shadow" style="border-radius: 15px;">
         <div class="login-form-header p-5 pb-5 border-bottom-0">
           <h3 class="login-form-title fw-bold">Entrar</h3>
         </div>
         <div class="form-body p-5 pt-0">
                 <form class="login-form" id="account" method="post">
-            <div class="input-box mb-1">                          
-                        <input asp-for="Input.Email" class="form-control border" id="exampleInputEmail1" aria-describedby="emailHelp" aria-required="true" />
+            <div class="input-box mb-1">
                         <label asp-for="Input.Email" for="exampleInputEmail1" class="form-label">Email</label>
+                        <input asp-for="Input.Email" class="form-control border" id="exampleInputEmail1" aria-describedby="emailHelp" aria-required="true" />
                         <span asp-validation-for="Input.Email" class="text-danger"></span>
             </div>
             <div class="input-box mb-3">
-                    <input asp-for="Input.Password" class="form-control border" id="exampleInputPassword1" autocomplete="current-password" aria-required="true" />
                     <label asp-for="Input.Password" for="exampleInputPassword1" class="form-label">Senha</label>
+                    <input asp-for="Input.Password" class="form-control border" id="exampleInputPassword1" autocomplete="current-password" aria-required="true" />
                     <span asp-validation-for="Input.Password" class="text-danger"></span>
             </div>
-            <div>
-                 <div class="checkbox">
-                     <label asp-for="Input.RememberMe" class="form-label">
-                         <input class="form-check-input" asp-for="Input.RememberMe" />
-                         @Html.DisplayNameFor(m => m.Input.RememberMe)
-                     </label>
-                 </div>
-            </div>            
+           
             <div class="d-grid">
               <button class="form-btn-entrar btn fw-bold" type="submit">Entrar</button>
             </div>
@@ -270,11 +235,15 @@ body{
 
 /*form-login*/
 .login-container{
-    margin-top: 5%;
+    margin-top: -5%;
 }
 .login-form-header{
     height: 5px;
 }
+
+    .login-form-title {
+        margin-top: -30px;
+    }
 .login-form-title, .esquece-senha, .sem-conta a{
     color: #F20201;
 }

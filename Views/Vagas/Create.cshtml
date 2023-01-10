@@ -40,20 +40,20 @@
 
 <nav class="navbar navbar-expand-lg navbar-dark">
     <div class="container">
-        <a class="logo navbar-brand fw-bold" href="./home-conectada.html">EmpregaSENAI!</a>
+        <a class="logo navbar-brand fw-bold" asp-controller="Home" asp-action="Index">EmpregaSENAI!</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main_nav">
             <span><i class="bi bi-list"></i></span>
         </button>
         <div class="collapse navbar-collapse" id="main_nav">
             <ul class="navbar-nav mx-auto">
-                <li class="nav-item active"> <a class="nav-link text-dark" href="./home-conectada.html">Home </a> </li>
+                <li class="nav-item active"> <a class="nav-link text-dark" asp-controller="Home" asp-action="Index">Home </a> </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link  dropdown-toggle active text-dark" href="#" data-toggle="dropdown">
                         Vagas
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item text-dark" href="./form-vagas.html"> Adicionar vagas   </a></li>
-                        <li><a class="dropdown-item text-dark" href="#"> Ver vagas </a></li>
+                        <li><a class="dropdown-item text-dark" asp-controller="Vagas" asp-action="Create"> Adicionar vagas   </a></li>
+                        <li><a class="dropdown-item text-dark" asp-controller="Vagas" asp-action="Index"> Ver vagas </a></li>
                     </ul>
                 </li>
                 <li class="nav-item dropdown">
@@ -61,11 +61,11 @@
                         Currículos
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item text-dark" href="./form-curriculo.html"> Adicionar currículo   </a></li>
-                        <li><a class="dropdown-item text-dark" href="./curriculo-detalhes.html"> Ver currículo </a></li>
+                        <li><a class="dropdown-item text-dark" asp-controller="Curriculos" asp-action="Create"> Adicionar currículo   </a></li>
+                        <li><a class="dropdown-item text-dark" asp-controller="Curriculos" asp-action="Index"> Ver currículo </a></li>
                     </ul>
                 </li>
-                <li class="nav-item active"><a class="nav-link text-dark" href="contato-dev.html"> Contato </a></li>
+                <li class="nav-item active"><a class="nav-link text-dark" asp-controller="Home" asp-action="Contato"> Contato </a></li>
             </ul>
             <div class="dropdown">
                 <a href="#" class="btn-perfil d-block link-dark text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">

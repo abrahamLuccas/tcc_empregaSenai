@@ -154,13 +154,13 @@
                             <div class="col-md-6 mb-4 pb-2">
                                 <div class="mb-3">
                                     <label class="form-label" for="form4Example3">@Html.DisplayNameFor(model => model.Requisitos)</label>
-                                    <textarea class="form-control" id="form4Example3" rows="4">@Html.DisplayFor(model => model.Requisitos)</textarea>
+                                    <textarea disabled class="form-control" id="form4Example3" rows="4">@Html.DisplayFor(model => model.Requisitos)</textarea>
                                 </div>
                             </div>
                             <div class="col-md-6 mb-4 pb-2">
                                 <div class="mb-3">
                                     <label class="form-label" for="form4Example3">@Html.DisplayNameFor(model => model.Infos)</label>
-                                    <textarea class="form-control" id="form4Example3" rows="4">@Html.DisplayFor(model => model.Infos)</textarea>
+                                    <textarea disabled class="form-control" id="form4Example3" rows="4">@Html.DisplayFor(model => model.Infos)</textarea>
                                 </div>
                             </div>
                         </div>
@@ -174,10 +174,14 @@
                                     </button>
                                 </a>
 
-
-                                <input type="hidden" asp-for="Id" />
-                                <i class="bi bi-trash3"><input type="submit" value="Delete" class="form-btn-editar btn fw-bold" /></i>
+                                <a>
+                                    <button type="submit" value="Delete" class="form-btn-editar btn fw-bold">
+                                        <i class="bi bi-trash3">Deletar</i>
+                                    </button>
+                                </a>
                             </form>
+
+                                
 
 
 
@@ -275,6 +279,11 @@
 </style>
 
 <style>
+
+    .form-btn-editar:hover {
+        background-color: #6A45A5;
+        color: white;
+    }
 
     body {
         overflow-x: hidden;

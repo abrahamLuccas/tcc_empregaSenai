@@ -106,11 +106,9 @@
     </div>
 </nav>
 
-<h1>Details</h1>
 
 <div>
-    <h4>Curriculo</h4>
-    <hr />
+
     <section class="vh-100 gradient-custom">
         <div class="container py-5 h-100">
             <div class="row justify-content-center align-items-center h-100">
@@ -127,8 +125,9 @@
                                 </div>
                                 <div class="col-md-6 mb-4 pb-2">
                                     <div class="mb-3">
-                                        <label class="form-label">@Html.DisplayNameFor(model => model.Email)</label>
-                                        <a class="form-control border" id="nome-empresa" aria-describedby="nome-empresa">@Html.DisplayFor(model => model.Email)</a>
+                                        <label class="form-label"> Idade:</label>
+                                        <a class="form-control border" id="nome-empresa" aria-describedby="nome-empresa">@Html.DisplayFor(model => model.DataNascimento)</a>
+                                        
                                     </div>
                                 </div>
                             </div>
@@ -181,7 +180,7 @@
                                 <div class="col-12">
                                     <div class="mb-3">
                                         <label class="form-label">@Html.DisplayNameFor(model => model.Resumo)</label>
-                                        <textarea class="form-control" id="form4Example3" rows="5">@Html.DisplayFor(model => model.CargoInteresse)</textarea>
+                                        <textarea disabled class="form-control" id="form4Example3" rows="5">@Html.DisplayFor(model => model.CargoInteresse)</textarea>
                                     </div>
                                 </div>
                             </div>
@@ -189,8 +188,9 @@
                             <div class="row">
                                 <div class="col-12">
                                     <div class="mb-3">
-                                        <label class="form-label">@Html.DisplayNameFor(model => model.GrauFormacao)</label>
-                                        <a class="form-control border" id="nome-empresa" aria-describedby="nome-empresa">@Html.DisplayFor(model => model.GrauFormacao)</a>
+                                        <label class="form-label">@Html.DisplayNameFor(model => model.Email)</label>
+                                        <a class="form-control border" id="nome-empresa" aria-describedby="nome-empresa">@Html.DisplayFor(model => model.Email)</a>
+                                        
                                     </div>
                                 </div>
                                 <h5 class="form-title fw-bold">Formação</h5>
@@ -227,22 +227,22 @@
                             <div class="row">
                                 <div class="col-12">
                                     <div class="mb-3">
-                                        <label class="form-label">@Html.DisplayNameFor(model => model.DataNascimento)</label>
-                                        <a class="form-control border" id="nome-empresa" aria-describedby="nome-empresa">@Html.DisplayFor(model => model.DataNascimento)</a>
+                                        <label class="form-label">@Html.DisplayNameFor(model => model.GrauFormacao)</label>
+                                        <a class="form-control border" id="nome-empresa" aria-describedby="nome-empresa">@Html.DisplayFor(model => model.GrauFormacao)</a>
+                                        
                                     </div>
                                 </div>
                             </div>
-                            <form asp-action="Delete">
-                                <a asp-action="Edit" asp-route-id="@Model.Id">
-                                    <button class="form-btn-editar btn fw-bold" type="submit">
-                                        <i class="bi bi-arrow-left-short"> Editar </i>
-                                    </button>
-                                </a>
+                            
+                                
 
+                                <div>
+                                    <a class="form-btn-editar btn fw-bold" asp-action="Index">Voltar</a>
+                                    <a class="form-btn-editar btn fw-bold"  asp-action="Edit" asp-route-id="@Model?.Id">Editar</a>
+                                   
+                                </div>
 
-                                <input type="hidden" asp-for="Id" />
-                                <i class="bi bi-trash3"><input type="submit" value="Delete" class="form-btn-editar btn fw-bold" /></i>
-                            </form>
+                         
                             @*<div id="JanelaModal" class="modal fade">
                             <div class="modal-dialog" role="document">
                             <div class="modal-content rounded-4">
@@ -263,10 +263,7 @@
                             </div>
                             </div>
                             </div>*@
-    <div>
-    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
-    <a asp-action="Index">Back to List</a>
-</div>
+    
                         </div>
                     </div>
                 </div>

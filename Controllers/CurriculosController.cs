@@ -78,7 +78,7 @@ namespace EmpregaSENAI.Controllers
 
             if (curriculo > 0)
             {
-                return NotFound("Você já possui Curriculo criado");
+                return NotFound("                                                                             VOCÊ JÁ POSSUI CURRÍCULO");
             }
             else
             {
@@ -142,7 +142,13 @@ namespace EmpregaSENAI.Controllers
             {
                 return NotFound();
             }
-
+            var user = await _userManager.GetUserAsync(User);
+            if (user == null)
+            {
+                return NotFound($"Unable to load user with ID '{_userManager.GetUserId(User)}'.");
+            }
+            var userId = await _userManager.GetUserIdAsync(user);
+            curriculo.FK_UserId = userId;
             if (ModelState.IsValid)
             {
                 try

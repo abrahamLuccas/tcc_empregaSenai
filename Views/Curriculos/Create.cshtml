@@ -127,7 +127,7 @@
                                 </div>
                                 <div class="col-md-6 mb-4 pb-2">
                                     <div class="mb-3">
-                                        <label asp-for="DataNascimento" class="control-label"></label>
+                                        <label asp-for="DataNascimento" class="control-label"> Idade:</label>
                                         <input asp-for="DataNascimento" class="form-control" />
                                         <span asp-validation-for="DataNascimento" class="text-danger"></span>
                                     </div>
@@ -185,6 +185,17 @@
                                 </div>
                             </div>
 
+
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="mb-3">
+                                        <label asp-for="Resumo" class="control-label"></label>
+                                        <textarea asp-for="Resumo" type="text" class="form-control form-control-resumo" rows="5"></textarea>
+                                        <span asp-validation-for="Resumo" class="text-danger"></span>
+                                    </div>
+                                </div>
+                            </div>
+
                             <div class="row">
                                 <div class="col-12">
                                     <div class="mb-3">
@@ -196,19 +207,14 @@
                             </div>
 
                             <div class="row">
-                                <div class="col-12">
+                                
+
+                                <h5 class="form-title fw-bold">Formação</h5>
+                                <div class="col-md-6 mb-4 pb-2">
                                     <div class="mb-3">
                                         <label asp-for="Instituicao" class="control-label"></label>
                                         <input asp-for="Instituicao" class="form-control" />
                                         <span asp-validation-for="Instituicao" class="text-danger"></span>
-                                    </div>
-                                </div>
-                                <h5 class="form-title fw-bold">Formação</h5>
-                                <div class="col-md-6 mb-4 pb-2">
-                                    <div class="mb-3">
-                                        <label asp-for="Resumo" class="control-label"></label>
-                                        <input asp-for="Resumo" type="text" class="form-control" />
-                                        <span asp-validation-for="Resumo" class="text-danger"></span>
                                     </div>
                                 </div>
                                 <div class="col-md-6 mb-4 pb-2">
@@ -253,6 +259,7 @@
                             <div class="form-group">
                                 <input type="submit" value="Criar" class="form-btn-salvar btn fw-bold" />
                             </div>
+
 
                         </form>
                     </div>
@@ -427,6 +434,7 @@
 
 <style>
 
+
     body{
     overflow-x: hidden;
 }
@@ -517,6 +525,9 @@
     border-radius: 10px;
 }
 
+    width:50rem;
+}
+
 /*form-login*/
 
 .form-title{
@@ -554,7 +565,7 @@
 /* footer */
 .footer{
     background-color: #d6b2ff;
-    margin-top: 750px;
+    margin-top: 400px;
 }
 .btn-enviar{
     border-radius: 10px;

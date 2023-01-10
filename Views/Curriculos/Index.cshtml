@@ -2,6 +2,7 @@
 @using Microsoft.AspNetCore.Identity
 @using EmpregaSENAI.Areas.Identity.Data
 
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
 @inject SignInManager<EmpregaSENAI.Models.Users> SignInManager
 @inject UserManager<EmpregaSENAI.Models.Users> UserManager
 @{
@@ -32,8 +33,24 @@
                         @if (@item.FK_UserId == @UserManager.GetUserId(User))
                         {
                             <div style="cursor:pointer;">
-                                <i class="bi bi-printer-fill fw-bold"> <a asp-action="Edit" asp-route-id="@item.Id">Editar Curriculo</a> </i>
+                                 <a class="botao btn fw-bold" asp-action="Edit" asp-route-id="@item.Id">Editar Curriculo</a>
+                                <a class="botao btn fw-bold" asp-action="Details" asp-route-id="@item.Id">Detalhes</a>
                             </div>
+                           
+
+                            <style>
+                                .botao {
+                                    background-color: #F20201 !important;
+                                    color: white;
+                                    border-radius: 10px;
+                                }
+
+                                .botao:hover {
+                                    background-color: #6A45A5;
+                                    color: white;
+                                    text-decoration: none;
+                                }
+                            </style>
                         }
                     }
 
@@ -44,7 +61,7 @@
                                     @foreach (var item in Model)
                                     {
                                         <tr>
-                                            <td>
+                                            <td class="fw-bold">
                                                 @Html.DisplayFor(modelItem => item.Nome)
                                             </td>
                                         </tr>
@@ -410,14 +427,14 @@
                 </button>
                 <div class="collapse navbar-collapse" id="main_nav">
                     <ul class="navbar-nav mx-auto">
-                        <li class="nav-item active"> <a class="nav-link text-dark" href="./home-conectada.html">Home </a> </li>
+                        <li class="nav-item active"> <a class="nav-link text-dark" asp-controller="Home" asp-action="Index">Home </a> </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link  dropdown-toggle active text-dark" href="#" data-toggle="dropdown">
                                 Vagas
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item text-dark" href="./form-vagas.html"> Adicionar vagas   </a></li>
-                                <li><a class="dropdown-item text-dark" href="#"> Ver vagas </a></li>
+                                <li><a class="dropdown-item text-dark" asp-controller="Vagas" asp-action="Create"> Adicionar vagas   </a></li>
+                                <li><a class="dropdown-item text-dark" asp-controller="Vagas" asp-action="Index"> Ver vagas </a></li>
                             </ul>
                         </li>
                         <li class="nav-item dropdown">
@@ -425,11 +442,11 @@
                                 Currículos
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item text-dark" href="./form-curriculo.html"> Adicionar currículo   </a></li>
-                                <li><a class="dropdown-item text-dark" href="./curriculo-detalhes.html"> Ver currículo </a></li>
+                                <li><a class="dropdown-item text-dark" asp-controller="Curriculos" asp-action="Create"> Adicionar currículo   </a></li>
+                                <li><a class="dropdown-item text-dark" asp-controller="Curriculos" asp-action="Index"> Ver currículo </a></li>
                             </ul>
                         </li>
-                        <li class="nav-item active"><a class="nav-link text-dark" href="contato-dev.html"> Contato </a></li>
+                        <li class="nav-item active"><a class="nav-link text-dark" asp-controller="Home" asp-action="Contato"> Contato </a></li>
                     </ul>
                     <div class="dropdown">
                         <a href="#" class="btn-perfil d-block link-dark text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
@@ -447,7 +464,52 @@
         </div>
         </nav>
 
-        <h1 style="margin-top:250px; margin-left:75px">Você ainda não criou nenhum curriculo <a asp-action="Create">Criar Curriculo</a></h1>
+
+
+
+
+
+
+
+
+
+
+
+        <div class="mensagem-curriculo container  text-center">
+            <img src="./img/index-curriculo.png" class="col-md-8" alt="menina">
+            <h2 style="margin-top: -65px; margin-left:75px">Você ainda não criou seu currículo!<a asp-controller="Curriculos" asp-action="Create"> Criar Agora</a></h2>
+        </div>
+
+        <style>
+          .mensagem-curriculo{
+              height:300px;
+          }
+          h2 a{
+                color: #F20201;
+          }
+          .botao{
+                color: #F20201;
+          }
+        </style>
+
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         <div class="footer" style="margin-top:250px">
             <div class="container">

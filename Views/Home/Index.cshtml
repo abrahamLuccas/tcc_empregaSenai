@@ -76,18 +76,20 @@
                     Sair
                     </button>
                     </form>*@
+
+
                 <div class="dropdown">
                     <a href="#" class="btn-perfil d-block link-dark text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
                         <i class="bi bi-person-fill" alt="mdo" class=" rounded-circle"></i>
                     </a>
                     <ul class="dropdown-menu text-small" style="">
                         <li _mstvisible="1"><a class="dropdown-item" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Perfil               </a></li>
-                        <li _mstvisible="1"><a class="dropdown-item" href="./config-email.html">Alterar Email  </a></li>
-                        <li _mstvisible="1"><a class="dropdown-item" href="./config-senha.html">Alterar Senha  </a></li>
+                        <li _mstvisible="1"><a class="dropdown-item" asp-area="Identity" asp-page="/Account/Manage/Email" title="Manage">Alterar Email  </a></li>
+                        <li _mstvisible="1"><a class="dropdown-item" asp-area="Identity" asp-page="/Account/Manage/ChangePassword" title="Manage">Alterar Senha  </a></li>
                         <li _mstvisible="1"><hr class="dropdown-divider">                             </li>
                         <li _mstvisible="1">
                             <form id="logoutForm" class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
-                                <button id="Logout" type="submit" class="btn-login btn fw-bold">
+                                <button id="Logout" type="submit" class="btn fw-bold" style="margin-left:15px;">
                                     Sair
                                 </button>
                             </form>
@@ -97,6 +99,7 @@
             }
             else
             {
+
                 <a class="btn-login btn fw-bold" asp-area="Identity" asp-page="/Account/Login">
                     Entrar
                 </a>
@@ -161,7 +164,7 @@
 
 
 <div class="container py-5">
-    <h2 class="pb-2 border-bottom fw-bold">Dúvidas Frequentes</h2>
+    <h2 class="dvds-frequentes pb-2 border-bottom fw-bold">Dúvidas Frequentes</h2>
 
     <div class="row row-cols-1 row-cols-md-2  g-5 py-5">
         <div class="d-flex flex-column align-items-start gap-2">
@@ -258,7 +261,8 @@
 
 
 
-<div id="carouselExampleIndicators" class="carrosel-avaliacao carousel slide" data-bs-ride="true">
+<div id="carouselExampleIndicators" class="container carrosel-avaliacao carousel slide" data-bs-ride="true">
+    <h2 class="pgnt-frequentes pb-2 border-bottom fw-bold">Quem usa te conta</h2>
     <div class="carousel-inner">
         <div class="carousel-item active">
             <div class="container">
@@ -266,18 +270,17 @@
                     <div class="texto-avaliacao col-md-7 order-md-2">
                         <i class="icon-aspas bi bi-quote"></i>
                         <p class="lead">
-                            Moonlight newspaper up its enjoyment Um ótimo conteúdo de espaço reservado para o primeiro
-                            featurette aqui. Imagine uma prosa emocionante aqui Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                            Corporis libero delectus quisquam quaerat, totam, nemo dignissimos.
+                            Já fui aluno do SENAI e não tinha ideia de como gerar um currículo bom e que
+                            chamasse a atenção das empresas, o site EmpregaSENAI me ajudou muito nesse sentindo!
                         </p>
                         <ul class="cinco-estrelas list-unstyled d-flex">
                             <li class="ms-3"><i class="bi bi-star-fill text-warning"></i>
                             <li class="ms-3"><i class="bi bi-star-fill text-warning"></i>
                             <li class="ms-3"><i class="bi bi-star-fill text-warning"></i>
-                            <li class="ms-3"><i class="bi bi-star-half text-warning"></i>
-                            <li class="ms-3"><i class="bi bi-star text-warning"></i>
+                            <li class="ms-3"><i class="bi bi-star-fill text-warning"></i>
+                            <li class="ms-3"><i class="bi bi-star-fill text-warning"></i>
                         </ul>
-                        <h4 class="fw-bold">Billy Vasquez</h4>
+                        <h4 class="fw-bold">Alexandre Prado</h4>
                         <h5 class="fw-normal">Empregado há 3 meses</h5>
                     </div>
                     <div class="img-avaliacao col-md-5 order-md-1 text-center">
@@ -292,18 +295,17 @@
                     <div class="texto-avaliacao col-md-7 order-md-2">
                         <i class="icon-aspas bi bi-quote"></i>
                         <p class="lead">
-                            Moonlight newspaper up its enjoyment Um ótimo conteúdo de espaço reservado para o primeiro
-                            featurette aqui. Imagine uma prosa emocionante aqui Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                            Corporis libero delectus quisquam quaerat, totam, nemo dignissimos.
+                            Eu como aluno do SENAI achei super útil o site desenvolvido, estou na
+                            expectativa de sair do Senai empregado e para isso é preciso eu ter um bom currículo!
                         </p>
                         <ul class="cinco-estrelas list-unstyled d-flex">
                             <li class="ms-3"><i class="bi bi-star-fill text-warning"></i>
                             <li class="ms-3"><i class="bi bi-star-fill text-warning"></i>
                             <li class="ms-3"><i class="bi bi-star-fill text-warning"></i>
-                            <li class="ms-3"><i class="bi bi-star-half text-warning"></i>
-                            <li class="ms-3"><i class="bi bi-star text-warning"></i>
+                            <li class="ms-3"><i class="bi bi-star-fill text-warning"></i>
+                            <li class="ms-3"><i class="bi bi-star-fill text-warning"></i>
                         </ul>
-                        <h4 class="fw-bold">Billy Vasquez</h4>
+                        <h4 class="fw-bold">Israel Alexandre</h4>
                         <h5 class="fw-normal">Empregado há 2 semanas</h5>
                     </div>
                     <div class="img-avaliacao col-md-5 order-md-1 text-center">
@@ -318,19 +320,18 @@
                     <div class="texto-avaliacao col-md-7 order-md-2">
                         <i class="icon-aspas bi bi-quote"></i>
                         <p class="lead">
-                            Moonlight newspaper up its enjoyment Um ótimo conteúdo de espaço reservado para o primeiro
-                            featurette aqui. Imagine uma prosa emocionante aqui Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                            Corporis libero delectus quisquam quaerat, totam, nemo dignissimos.
+                            Sendo ex-aluna do SENAI achei o site execpcional, poupei o meu tempo de
+                            criar um currículo do zero e além disso tenho acesso a bem mais oportunidades de entrevistas de emprego.
                         </p>
                         <ul class="cinco-estrelas list-unstyled d-flex">
                             <li class="ms-3"><i class="bi bi-star-fill text-warning"></i>
                             <li class="ms-3"><i class="bi bi-star-fill text-warning"></i>
                             <li class="ms-3"><i class="bi bi-star-fill text-warning"></i>
-                            <li class="ms-3"><i class="bi bi-star-half text-warning"></i>
-                            <li class="ms-3"><i class="bi bi-star text-warning"></i>
+                            <li class="ms-3"><i class="bi bi-star-fill text-warning"></i>
+                            <li class="ms-3"><i class="bi bi-star-fill text-warning"></i>
                         </ul>
-                        <h4 class="fw-bold">Billy Vasquez</h4>
-                        <h5 class="fw-normal">Empregado há 1 semana</h5>
+                        <h4 class="fw-bold">Maria Fernanda</h4>
+                        <h5 class="fw-normal">Empregada há 1 semana</h5>
                     </div>
                     <div class="img-avaliacao col-md-5 order-md-1 text-center">
                         <img src="./img/avaliacao-3.jpg" alt="avaliação3" width="395">
@@ -437,7 +438,7 @@
                     <h5 _msthash="1118078" _msttexthash="109447">Empresa</h5>
                     <ul class="nav flex-column">
                         <li class="nav-item mb-2"><a href="./sobre-nos.html" class="nav-link p-0 text-muted" _msthash="1617278" _msttexthash="42250">Sobre</a></li>
-                        <li class="nav-item mb-2"><a href="./termos.html" class="nav-link p-0 text-muted" _msthash="1617642" _msttexthash="253617">Política de Privacidade</a></li>
+                        <li class="nav-item mb-2"><a href="./termos.html" class="nav-link p-0 text-muted" _msthash="1617642" _msttexthash="253617" >Política de Privacidade</a></li>
                         <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted" _msthash="1618006" _msttexthash="59826">Fazer Parte</a></li>
                     </ul>
                 </div>
@@ -465,6 +466,38 @@
 </div>
 
 <style>
+
+    .dvds-frequentes {
+        color: #6A45A5 !important;
+ }
+    .accordion-button:not(.collapsed) {
+        border: 0px !important;
+        color: #6A45A5;
+        background-color: #ffffff;
+        box-shadow: inset 0 0px 0 rgb(0 0 0 / 13%);
+    }
+
+    .btn-criarCV, .btn-duvidas, .btn-login {
+        background-color: #F20201;
+        color: white;
+        border-radius: 10px;
+    }
+
+        .btn-criarCV:hover, .btn-duvidas:hover, .btn-login:hover {
+            background-color: #6A45A5;
+            color: white;
+            text-decoration: none;
+        }
+
+    <style >
+    .accordion-button:not(.collapsed) {
+        border: 0px !important;
+        color: #6A45A5;
+        background-color: #ffffff;
+        box-shadow: inset 0 0px 0 rgb(0 0 0 / 13%);
+    }
+    
+
 
     body {
         overflow-x: hidden;

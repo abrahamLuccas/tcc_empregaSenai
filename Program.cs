@@ -50,6 +50,8 @@ app.MapRazorPages();
 
 app.Run();
 
+
+
 void AddAuthorizationPolicies(IServiceCollection services)
 {
 

@@ -44,13 +44,13 @@ border-colort-size: 25px;
 
     <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container">
-            <a class="logo navbar-brand fw-bold" href="./home.html">EmpregaSENAI!</a>
+            <a class="logo navbar-brand fw-bold" asp-action="Index" style="color: #F20201;">EmpregaSENAI!</a>
             <buttom class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main_nav">
                 <span><i class="bi bi-list"></i></span>
             </buttom>
             <div class="collapse navbar-collapse" id="main_nav">
                 <ul class="navbar-nav mx-auto">
-                    <li class="nav-item active fw-bold"> <a class="nav-link text-dark" href="./home.html">Home </a> </li>
+                    <li class="nav-item active fw-bold"> <a class="nav-link text-dark" asp-action="Index">Home </a> </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link  dropdown-toggle active text-dark" href="#" data-toggle="dropdown">
                             Vagas
@@ -71,152 +71,132 @@ border-colort-size: 25px;
                     </li>
                     <li class="nav-item active"><a class="nav-link text-dark" href="./contato-dev.html"> Contato </a></li>
                 </ul>
-                <button type="button" class="btn-login btn fw-bold" data-bs-toggle="modal" data-bs-target="#JanelaModal">
+                <a class="btn-login btn fw-bold" asp-area="Identity" asp-page="/Account/Login">
                     Entrar
-                </button>
-                <div id="JanelaModal" class="modal fade">
-                    <div class="modal-dialog" role="document">
-                        <div class="modal-content rounded-4 shadow">
-                            <div class="modal-header p-5 pb-4 border-bottom-0">
-                                <h3 class="modal-title fw-bold">Entrar</h3>
-                                <button type="button" class="btn btn-close" data-bs-dismiss="modal"></button>
-                            </div>
-                            <div class="modal-body p-5 pt-0">
-                                <form class="modal-form">
-                                    <div class="mb-3">
-                                        <label for="exampleInputEmail1" class="form-label">E-mail</label>
-                                        <input type="email" class="form-control border" id="exampleInputEmail1" aria-describedby="emailHelp">
-                                    </div>
-                                    <div class="mb-3">
-                                        <label for="exampleInputPassword1" class="form-label">Senha</label>
-                                        <input type="password" class="form-control border" id="exampleInputPassword1">
-                                    </div>
-                                    <p class="small"><a class="esquece-senha" href="forget-password.html">Esqueceu sua senha?</a></p>
-                                    <div class="d-grid">
-                                        <button class="modal-btn-enviar btn fw-bold" type="submit">Entrar</button>
-                                    </div>
-                                    <div class="sem-conta mt-3">
-                                        <p class="mb-0  text-center">Não tem uma conta? <a href="./registro.html" class=" fw-bold">Inscreva-se</a></p>
-                                    </div>
-                                    <small class="text-muted">Ao clicar em Inscrever-se, você concorda com os termos de uso.</small>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                </a>
+                
             </div> <!-- navbar-collapse.// -->
         </div>
     </nav>
     <section>
-        <form id="registerForm" asp-route-returnUrl="@Model.ReturnUrl" method="post">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <form id="registerForm" asp-route-returnUrl="@Model.ReturnUrl" method="post" />
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
-            <div class="vh-100 d-flex justify-content-center align-items-center" id="forms">
-                <div class="col-md-4 p-5 shadow-sm border border rounded-3">
-                    <h2 class="text-center mb-4" style="color: #F20201;">Criar Conta</h2>
-
-
-                    <div class="form">
-                        <div class="group" style="width: 40%;">
-                            <select asp-for="Input.Tipo" class="form-label" id="opcao">
-                                <option value="Empresa">Empresa</option>
-                                <option value="Aluno">Aluno</option>
-                            </select>
+        <div class="vh-100 d-flex justify-content-center align-items-center" id="forms">
+            <div class="col-md-4 p-5 shadow-sm border border rounded-3">
+                <h2 class=" mb-4 fw-bold" style="color: #F20201;">Criar Conta</h2>
 
 
-                        </div>
-                    </div>
-
-                    <form id="registerForm" asp-route-returnUrl="@Model.ReturnUrl" method="post">
-                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                        <div class="row ">
-                            <div class="col-sm-6">
-
-
-
-
-
-
-
-
-                                <input asp-for="Input.FirstName" type="text" class="form-control" style="border:1px solid #F20201;" autocomplete="firstname" aria-required="true" />
-                                <label asp-for="Input.FirstName" class="form-label">Nome</label>
-                                <span asp-validation-for="Input.FirstName" class=" fw-bold"></span>
-
-
-
-
-                                <input asp-for="Input.Email" class="form-control" style="border:1px solid #F20201;" autocomplete="username" aria-required="true" />
-                                <label asp-for="Input.Email" class="form-label">E-Mail</label>
-                                <span asp-validation-for="Input.Email" class="  "></span>
-
-
-
-                            </div>
-                            <div class="col-sm-6">
-                                <input asp-for="Input.LastName" class="form-control" style="border:1px solid #F20201;" autocomplete="lastname" aria-required="true" />
-                                <label asp-for="Input.LastName" class="form-label">Sobrenome</label>
-                                <span asp-validation-for="Input.LastName" class="  "></span>
-
-
-
-
-
-
-
-                                <div class="form-label" id="form-empresa">
-                                    <input class="form-control" style="border:1px solid #F20201;" autocomplete="email" />
-                                    <label>CNPJ</label>
-                                </div>
-                                <div class="form-label" id="form-aluno">
-                                    <input class="form-control" style="border:1px solid #F20201;" autocomplete="email" />
-                                    <label>RA</label>
-                                </div>
-
-
-
-
-                            </div>
-                        </div>
-
-                        <div class="md-12">
-                            <input asp-for="Input.Password" class="form-control" style="border:1px solid #F20201;" autocomplete="new-password" aria-required="true" />
-                            <label asp-for="Input.Password" class="form-label">Senha</label>
-                            <span asp-validation-for="Input.Password" class="  "></span>
-                        </div>
-
-
-
-                        <div class="mb-3">
-                            <input asp-for="Input.ConfirmPassword" class="form-control" style="border:1px solid #F20201;" autocomplete="new-password" aria-required="true" />
-                            <label asp-for="Input.ConfirmPassword" class="form-label">Confirmar Senha</label>
-                            <span asp-validation-for="Input.ConfirmPassword" class="  "></span>
-                        </div>
-                        <div class="form-check text-center">
-                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                            <label class="form-check-label fw-bold" for="exampleCheck1">Eu conconcordo com os <a href="../Account/Termos" style="color: #6A45A5;">termos de uso</a> do EmpregaSENAI.</label>
-                        </div>                        
-
-                        <div class="d-grid">
-                            <button id="registerSubmit" type="submit" class="w-100 btn btn-lg" style="background-color: #F20201;color:white;">Cadastrar</button>
-                        </div>
-                    </form>
-                    <div class="mt-3">
-                        <p class="mb-0  text-center text-bg-danger">
-                            Ja tem uma conta? <a href="../Account/Login" class="fw-bold" style="color: #F20201;">
-                                Faça login
-                            </a>
-                        </p>
+                <div class="form">
+                    <div class="group" style="width: 4%;">
+                        <select asp-for="Input.Tipo" class="form-label empresa-aluno fw-bold" id="opcao">
+                            <option value="Empresa">Empresa</option>
+                            <option value="Aluno">Aluno</option>
+                        </select>
                     </div>
                 </div>
+                <style>
+                    .empresa-aluno {
+                        background-color: white !important;
+                        color: #F20201;
+                        border-radius: 5px;
+                        border-style: none;
+                    }
+                </style>
+
+                <form id="registerForm" asp-route-returnUrl="@Model.ReturnUrl" method="post">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="row ">
+                        <div class="col-sm-6">
+
+
+
+
+
+
+
+                            <label asp-for="Input.FirstName" class="form-label">Nome</label>
+                            <input asp-for="Input.FirstName" type="text" class="form-control" style="border:1px solid #F20201;" autocomplete="firstname" aria-required="true" />
+                            <span asp-validation-for="Input.FirstName" class=" fw-bold"></span>
+
+
+
+                            <label asp-for="Input.Email" class="form-label">E-Mail</label>
+                            <input asp-for="Input.Email" class="form-control" style="border:1px solid #F20201;" autocomplete="username" aria-required="true" />
+                            <span asp-validation-for="Input.Email" class="  "></span>
+
+
+
+                        </div>
+                        <div class="col-sm-6">
+                            <label asp-for="Input.LastName" class="form-label">Sobrenome</label>
+                            <input asp-for="Input.LastName" class="form-control" style="border:1px solid #F20201;" autocomplete="lastname" aria-required="true" />
+                            <span asp-validation-for="Input.LastName" class="  "></span>
+
+
+
+
+
+
+
+                            <div class="form-label" id="form-empresa">
+                                <label>CNPJ</label>
+                                <input class="form-control" style="border:1px solid #F20201;" autocomplete="email" />
+                            </div>
+                            <div class="form-label" id="form-aluno">
+                                <label>RA</label>
+                                <input class="form-control" style="border:1px solid #F20201;" autocomplete="email" />
+                            </div>
+
+
+
+
+                        </div>
+                    </div>
+
+                    <div class="md-12">
+                        <label asp-for="Input.Password" class="form-label">Senha</label>
+                        <input asp-for="Input.Password" class="form-control" style="border:1px solid #F20201;" autocomplete="new-password" aria-required="true" />
+
+                        <span asp-validation-for="Input.Password" class="  "></span>
+                    </div>
+
+
+
+                    <div class="mb-3">
+                        <label asp-for="Input.ConfirmPassword" class="form-label">Confirmar Senha</label>
+                        <input asp-for="Input.ConfirmPassword" class="form-control" style="border:1px solid #F20201;" autocomplete="new-password" aria-required="true" />
+                        <span asp-validation-for="Input.ConfirmPassword" class="  "></span>
+                    </div>
+                    <div class="form-check text-center">
+                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                        <label class="form-check-label fw-bold" for="exampleCheck1">Eu conconcordo com os <a href="../Account/Termos" style="color: #6A45A5;">termos de uso</a> do EmpregaSENAI.</label>
+                    </div>
+
+                    <div class="d-grid">
+                        <button id="registerSubmit" type="submit" class="w-100 btn btn-lg" style="background-color: #F20201;color:white;">Cadastrar</button>
+                    </div>
+                </form>
+                <div class="mt-3">
+                    <p class="mb-0  text-center text-bg-danger">
+                        Ja tem uma conta? <a href="../Account/Login" class="fw-bold" style="color: #F20201;">
+                            Faça login
+                        </a>
+                    </p>
+                </div>
             </div>
+        </div>
 
 
 
 
-        </form>
-
-</section>
+        <style>
+            .form-control {
+                border: 1px solid #F20201 !important;
+                border-radius: 10px;
+            }
+        </style>
+    </section>
 </body>
 </html>
 
